@@ -1,0 +1,132 @@
+// out: css/main.css, compress: true, strictMath: true
+
+@import "less/bootstrap.less";
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+
+/**
+ * Wordpress customization
+ */
+
+
+/* If WP-Adminbar is visible */
+body.admin-bar #header nav.navbar-fixed-top {
+    top: 32px;
+}
+
+
+/* Header */
+
+.navbar-brand {
+	
+	padding: 5px 15px;
+	
+    img {
+        height: 40px;
+    }
+	
+}
+
+
+/* Footer */
+
+#footer {
+	
+    p {
+        margin-top: 10px;
+    }
+	
+}
+
+
+/* Sidebar */
+
+#sidebar {
+	
+	padding: 0 30px;
+	
+}
+
+.widget-area {
+	
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	
+}
+
+
+/* Author */
+
+#author-avatar {
+	
+	.avatar {
+		width: 64px;
+		height: auto;
+	}
+}
+
+#author-links {
+	
+	a {
+		margin: 0 10px;
+	}
+}
+
+
+/* Posts */
+
+.sticky {
+	background-color: @gray-lighter;
+}
+
+.entry-meta {
+	margin-bottom: 5px;
+}
+
+.comment-meta {
+	height: 40px;
+}
+
+.commentlist {
+	list-style: none;
+	margin: 0 auto;
+	width: 68.9%;
+    
+    > li.comment {
+        border: 1px solid @gray-lighter;
+        margin: 0 0 1.625em;
+        padding: 1.625em;
+        position: relative;
+    }
+    
+    .children {
+        list-style: none;
+        margin-top: 20px;
+        
+        > li.comment {
+            border-top: 1px solid @gray-lighter;
+            padding-top: 10px;
+            position: relative;
+        }
+    }
+    
+    .avatar {
+		width: 64px;
+		height: 64px;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px @gray-light;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: -102px;
+    }
+    
+}
