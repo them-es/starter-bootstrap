@@ -41,7 +41,13 @@
 					echo '<div class="post-thumbnail">' . the_post_thumbnail() . '</div>';
 				endif;
 			?>
-			<?php the_content(); ?>
+			<?php 
+				if ( is_search() ) :
+					the_excerpt();
+				else:
+					the_content();
+				endif;
+			?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'my-theme' ) . '</span>', 'after' => '</div>' ) ); ?>
 		</div><!-- /.entry-content -->
 

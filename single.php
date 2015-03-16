@@ -32,7 +32,7 @@
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 previous">
 						<?php previous_post_link( __( 'Previous Post', 'my-theme') . '<br/>%link' ); ?>
 					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 next">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 next text-right">
 						<?php next_post_link( __( 'Next Post', 'my-theme' ) . '<br/>%link' ); ?>
 					</div>
 				</div><!-- /.row -->
