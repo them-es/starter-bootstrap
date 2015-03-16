@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = "1.0";
+$theme_version = "1.1";
 
 	/**
 	 * Include Theme Customizer
@@ -402,6 +402,8 @@ $theme_version = "1.0";
 		 * Custom Comment form
 		 * 
 		 * @since v1.0
+		 * 
+		 * @since v1.1: 'submit_button' and 'submit_field'
 		 */
 		function themes_starter_custom_commentform( $args = array(), $post_id = null ) {
 		   if ( null === $post_id )
@@ -441,6 +443,8 @@ $theme_version = "1.0";
 				'title_reply_to'       => __( 'Leave a Reply to %s', 'my-theme' ),
 				'cancel_reply_link'    => __( 'Cancel reply', 'my-theme' ),
 				'label_submit'         => __( 'Post Comment', 'my-theme' ),
+				'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+				'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
 				'format'               => 'html5',
 			);
 

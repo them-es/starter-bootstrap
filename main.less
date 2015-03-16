@@ -47,12 +47,6 @@ body.admin-bar #header nav.navbar-fixed-top {
 
 /* Sidebar */
 
-#sidebar {
-	
-	padding: 0 30px;
-	
-}
-
 .widget-area {
 	
 	ul {
@@ -73,11 +67,12 @@ body.admin-bar #header nav.navbar-fixed-top {
 	}
 }
 
-#author-links {
+#author-description {
 	
-	a {
-		margin: 0 10px;
+	h2, h3 {
+		margin-top: 0;
 	}
+	
 }
 
 
@@ -129,4 +124,17 @@ body.admin-bar #header nav.navbar-fixed-top {
         left: -102px;
     }
     
+}
+
+
+/**
+ * Responsive Design
+ */
+
+@media (max-width: @screen-sm-max) {
+	
+	#sidebar {
+		margin-top: 60px;
+	}
+	
 }
