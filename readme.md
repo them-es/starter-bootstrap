@@ -11,12 +11,18 @@ If you want to see it in action or want to download a customized Theme for free,
 * Customization API
 * 2 Menus
 * Custom WordPress Nav Walker class
-* LESS Source files
+* LESS/SASS Source files
 * Demo Content
 
 
-## LESS
+## Compatible with CSS Preprocessors
+You can use [LESS](http://lesscss.org/) or [SASS](http://sass-lang.com/) to create your main stylesheet. It's up to you which technology you prefer. Both solutions require a Precompiler.
+
+* LESS
 **`main.less`** needs to be compiled as **`/css/main.css`**
+
+* SASS
+**`main.scss`** needs to be compiled as **`/css/main.css`**
 
 
 ## Free Add-ons Plugin
@@ -26,6 +32,8 @@ We are running a Sister project which brings useful **WordPress Add-ons** to The
 ## Technology
 
 * [Bootstrap](https://github.com/twbs/bootstrap), [MIT licence](https://github.com/twbs/bootstrap/blob/master/LICENSE)
+* [LESS](https://github.com/less/less.js), [Apache License](https://github.com/less/less.js/blob/master/LICENSE)
+* [SASS](https://github.com/sass/sass), [MIT licence](https://github.com/sass/sass/blob/stable/MIT-LICENSE)
 * [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker), [GPLv2+](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
 
 
