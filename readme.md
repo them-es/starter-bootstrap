@@ -8,21 +8,17 @@ If you want to see it in action or want to download a customized Theme for free,
 ## What's included?
 * WordPress Theme
 * Bootstrap Framework
+* LESS/SASS Source files
 * Customization API
 * 2 Menus
 * Custom WordPress Nav Walker class
-* LESS/SASS Source files
 * Demo Content
 
 
 ## Compatible with CSS Preprocessors
-You can use [LESS](http://lesscss.org/) or [SASS](http://sass-lang.com/) to create your main stylesheet. It's up to you which technology you prefer. Both solutions require a Precompiler.
+You can use [LESS](http://lesscss.org/) or [SASS](http://sass-lang.com/) to create your main stylesheet which includes all the required Bootstrap styles.
 
-* LESS
-**`main.less`** needs to be compiled as **`/css/main.css`**
-
-* SASS
-**`main.scss`** needs to be compiled as **`/css/main.css`**
+**`main.less`** or **`main.scss`** needs to be compiled as **`/css/main.css`**
 
 
 ## Free Add-ons Plugin
