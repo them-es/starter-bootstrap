@@ -1,16 +1,17 @@
-// out: css/main.css, compress: true, strictMath: true
-
-/**
- * Import bootstrap source
- */
-@import "less/bootstrap.less";
-
+// Compile "main.scss" as "css/main.css"
 
 /**
  * Add custom Bootstrap styles
  */
 
 // Silence Is Golden!
+
+
+/**
+ * Import bootstrap source
+ */
+
+@import "sass/_bootstrap.scss";
 
 
 /**
@@ -93,7 +94,7 @@ body.admin-bar #header nav.navbar-fixed-top {
 /* Posts */
 
 .sticky {
-	background-color: @gray-lighter;
+	background-color: $gray-lighter;
 }
 
 .entry-meta {
@@ -110,7 +111,7 @@ body.admin-bar #header nav.navbar-fixed-top {
 	width: 68.9%;
 		
 	> li.comment {
-		border: 1px solid @gray-lighter;
+		border: 1px solid $gray-lighter;
 		margin: 0 0 1.625em;
 		padding: 1.625em;
 		position: relative;
@@ -121,7 +122,7 @@ body.admin-bar #header nav.navbar-fixed-top {
 		margin-top: 20px;
 
 		> li.comment {
-			border-top: 1px solid @gray-lighter;
+			border-top: 1px solid $gray-lighter;
 			padding-top: 10px;
 			position: relative;
 		}
@@ -131,7 +132,7 @@ body.admin-bar #header nav.navbar-fixed-top {
 		width: 64px;
 		height: 64px;
 		border-radius: 3px;
-		box-shadow: 0 1px 2px @gray-light;
+		box-shadow: 0 1px 2px $gray-light;
 		padding: 0;
 		position: absolute;
 		top: 0;
@@ -145,7 +146,7 @@ body.admin-bar #header nav.navbar-fixed-top {
  * Responsive Design
  */
 
-@media (max-width: @screen-sm-max) {
+@media (max-width: $screen-sm-max) {
 	
 	#sidebar {
 		margin-top: 60px;
