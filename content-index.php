@@ -38,7 +38,7 @@
 		<div class="entry-content panel-body">
 			<?php
 				if ( has_post_thumbnail() ) :
-					echo '<div class="post-thumbnail">' . the_post_thumbnail() . '</div>';
+					echo '<div class="post-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'large' ) . '</div>';
 				endif;
 			?>
 			<?php 
