@@ -146,7 +146,7 @@ body.admin-bar #header nav.navbar-fixed-top {
  * Responsive Design
  */
 
-@media (max-width: $screen-sm-max) {
+@media (max-width: $screen-sm-min) {
 	
 	#sidebar {
 		margin-top: 60px;
