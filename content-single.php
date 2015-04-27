@@ -18,7 +18,7 @@
 	<div class="entry-content">
         <?php
             if ( has_post_thumbnail() ) :
-                echo '<p class="post-thumbnail">' . the_post_thumbnail() . '</p>';
+                echo '<p class="post-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'large' ) . '</p>';
             endif;
         ?>
         
