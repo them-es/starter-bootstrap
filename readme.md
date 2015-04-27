@@ -9,6 +9,7 @@ If you want to see it in action or want to download a customized Theme for free,
 * WordPress Theme
 * Bootstrap Framework
 * LESS/SASS Source files
+* Grunt Task Automation
 * Customization API
 * 2 Menus
 * Custom WordPress Nav Walker class
@@ -21,6 +22,16 @@ You can use [LESS](http://lesscss.org/) or [SASS](http://sass-lang.com/) to crea
 **`main.less`** or **`main.scss`** needs to be compiled as **`/css/main.css`**
 
 
+## Grunt Task Automation
+This Theme comes with a built in Task Automation. LESS/SASS files will be complied if changed, vendor prefixes will be added automatically if required and files will be minified.
+
+* Prerequisites: **[npm](https://www.npmjs.com)** needs to be installed on your system
+* Open the Project directory in your Terminal and install the required modules listed in **packages.json**
+* `$ LOCAL-PATH-TO-THEME/sudo npm install -g`
+* Run Grunt and start working
+* `$ LOCAL-PATH-TO-THEME/grunt`
+
+
 ## Free Add-ons Plugin
 We are running a Sister project which brings useful **WordPress Add-ons** to Themes built with Bootstrap. For more information, have a look at [https://wordpress.org/plugins/themes-plus](https://wordpress.org/plugins/themes-plus) or [https://github.com/them-es/themes-plus](https://github.com/them-es/themes-plus)
 
@@ -28,8 +39,9 @@ We are running a Sister project which brings useful **WordPress Add-ons** to The
 ## Technology
 
 * [Bootstrap](https://github.com/twbs/bootstrap), [MIT licence](https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* [LESS](https://github.com/less/less.js), [Apache License](https://github.com/less/less.js/blob/master/LICENSE)
+* [LESS](https://github.com/less/less.js), [Apache license](https://github.com/less/less.js/blob/master/LICENSE)
 * [SASS](https://github.com/sass/sass), [MIT licence](https://github.com/sass/sass/blob/stable/MIT-LICENSE)
+* [Grunt](https://github.com/gruntjs/grunt), [MIT licence](https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT)
 * [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker), [GPLv2+](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
 
 
