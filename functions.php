@@ -195,7 +195,7 @@ $theme_version = "1.1";
 				<ul id="<?php echo $nav_id; ?>" class="pager">
 					<li><?php next_posts_link( '<span aria-hidden="true">&larr;</span> ' . __( 'Older posts', 'my-theme' ) ); ?></li>
 					<li><?php previous_posts_link( __( 'Newer posts', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></li>
-				</ul><!-- #nav -->
+				</ul><!-- /.pager -->
 			<?php
 			else:
 				echo '<div class="clearfix"></div>';

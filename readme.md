@@ -26,10 +26,10 @@ You can use [LESS](http://lesscss.org/) or [SASS](http://sass-lang.com/) to crea
 This Theme comes with a built in Task Automation. LESS/SASS files will be complied if changed, vendor prefixes will be added automatically if required and files will be minified.
 
 * Prerequisites: **[npm](https://www.npmjs.com)** needs to be installed on your system
-* Open the Project directory in your Terminal and install the required modules listed in **packages.json**
-* `$ LOCAL-PATH-TO-THEME/sudo npm install -g`
+* Open the Project directory in your Terminal and install the required modules from packages.json
+* `$ PROJECT-PATH/sudo npm install`
 * Run Grunt and start working
-* `$ LOCAL-PATH-TO-THEME/grunt`
+* `$ PROJECT-PATH/grunt`
 
 
 ## Free Add-ons Plugin

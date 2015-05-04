@@ -10,19 +10,6 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"https://www.npmjs.com/package/grunt": "",
-		"https://www.npmjs.com/package/grunt-autoprefixer": "",
-		"https://www.npmjs.com/package/grunt-browser-sync": "",
-		"https://www.npmjs.com/package/grunt-contrib-cssmin": "",
-		"https://www.npmjs.com/package/grunt-contrib-imagemin": "",
-		"https://www.npmjs.com/package/grunt-contrib-jshint": "",
-		"https://www.npmjs.com/package/grunt-contrib-less": "",
-		"https://www.npmjs.com/package/grunt-contrib-sass": "",
-		"https://www.npmjs.com/package/grunt-contrib-uglify": "",
-		"https://www.npmjs.com/package/grunt-contrib-watch": "",
-		"https://www.npmjs.com/package/load-grunt-tasks": ""
-	},
-	"devDependencies": {
 		"grunt": "~0.4.5",
 		"grunt-autoprefixer": "~3.0.0",
 		"grunt-browser-sync": "~2.1.2",
@@ -34,5 +21,19 @@
 		"grunt-contrib-uglify": "~0.9.1",
 		"grunt-contrib-watch": "~0.6.1",
 		"load-grunt-tasks": "^3.1.0"
+	},
+	"_weblinks_npm_packages": {
+		"This is just a workaround to show all links to the NPM packages - ignore it!": "",
+		"https://www.npmjs.com/package/grunt": "",
+		"https://www.npmjs.com/package/grunt-autoprefixer": "",
+		"https://www.npmjs.com/package/grunt-browser-sync": "",
+		"https://www.npmjs.com/package/grunt-contrib-cssmin": "",
+		"https://www.npmjs.com/package/grunt-contrib-imagemin": "",
+		"https://www.npmjs.com/package/grunt-contrib-jshint": "",
+		"https://www.npmjs.com/package/grunt-contrib-less": "",
+		"https://www.npmjs.com/package/grunt-contrib-sass": "",
+		"https://www.npmjs.com/package/grunt-contrib-uglify": "",
+		"https://www.npmjs.com/package/grunt-contrib-watch": "",
+		"https://www.npmjs.com/package/load-grunt-tasks": ""
 	}
 }

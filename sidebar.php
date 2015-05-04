@@ -18,29 +18,31 @@ if ( is_active_sidebar('primary_widget_area') || is_archive() || is_single()  ):
 				<a href="<?php echo admin_url( 'widgets.php' ); ?>" class="badge badge-info">Edit</a><!-- Show Edit Widget link -->
 			<?php endif; ?>
 		</div><!-- .widget-area -->
+		
+	<?php endif; ?>
 
-	<?php elseif ( is_archive() || is_single() ) : ?>
+	<?php if ( is_archive() || is_single() ) : ?>
 		
 		<div class="well sidebar-nav">
 			<div id="primary-two" class="widget-area">
 				<?php
-                    $content = '<ul class="recentposts">';
-                        $content .= '<li><h3>' . __('Recent Posts', 'my-theme') . '</h3></li>';
+                    $output = '<ul class="recentposts">';
+                        $output .= '<li><h3>' . __('Recent Posts', 'my-theme') . '</h3></li>';
                         $recentposts_query = new WP_Query( "posts_per_page=5" );// max 5 posts in Sidebar!
                         $month_check = null;
                         if ( $recentposts_query->have_posts() ) : while ( $recentposts_query->have_posts() ) : $recentposts_query->the_post();
-                            $content .= '<li>';
+                            $output .= '<li>';
                                 // Show monthly archive and link to months
                                 $month = get_the_date('F, Y');
-                                if ($month !== $month_check) : $content .= '<p><a href="' . get_month_link( get_the_date('Y'), get_the_date('m') ) . '" title="' . get_the_date('F, Y') . '">' . $month . '</a></p>'; endif;
+                                if ($month !== $month_check) : $output .= '<p><a href="' . get_month_link( get_the_date('Y'), get_the_date('m') ) . '" title="' . get_the_date('F, Y') . '">' . $month . '</a></p>'; endif;
                                 $month_check = $month;
-                            $content .= '<h4><a href="' . get_the_permalink() . '" title="' . sprintf( __('Permalink to %s', 'my-theme'), the_title_attribute('echo=0') ) . '" rel="bookmark">' . get_the_title() . '</a></h4>';
-                            $content .= '</li>';
+                            $output .= '<h4><a href="' . get_the_permalink() . '" title="' . sprintf( __('Permalink to %s', 'my-theme'), the_title_attribute('echo=0') ) . '" rel="bookmark">' . get_the_title() . '</a></h4>';
+                            $output .= '</li>';
                         endwhile; endif; wp_reset_postdata(); // end of the loop.
-                    $content .= '</ul>';
+                    $output .= '</ul>';
 
-                    //$content = ob_get_clean();
-                    echo $content;
+                    //$output = ob_get_clean();
+                    echo $output;
                 ?>
 				<br />
 				<ul>

@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 		
 		pkg: grunt.file.readJSON('package.json'),
 
-        // watch for changes and trigger sass, less, jshint, uglify and livereload
+        // watch for changes and trigger tasks
         watch: {
             sass: {
                 files: ['*.{scss,sass}'],
