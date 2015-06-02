@@ -35,6 +35,15 @@ body.admin-bar #header nav.navbar-fixed-top {
 	top: 32px;
 }
 
+/* WordPress Embeds */
+
+.post-thumbnail,
+.wp-video,
+.embed-responsive {
+    margin: 5px 0;
+	width: 100% !important;
+}
+
 
 /* Header */
 

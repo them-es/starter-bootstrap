@@ -1,6 +1,6 @@
 ## them.es<sup>+</sup>
 
-**them.es Starter** is a WordPress Starter Theme built with Bootstrap. Please note that the Source files is only recommended for WordPress Developers who are searching for a simple, solid, proved and tested **Bootstrap Starter Theme** to build upon. **_Don't_ expect a ready-to-use WordPress Theme!**
+**them.es Starter** is a WordPress Starter Theme built with Bootstrap. Please note that the Source files are only recommended for WordPress Developers who are searching for a simple, solid, proved and tested **Bootstrap Starter Theme** to build upon. **_Don't_ expect a ready-to-use WordPress Theme!**
 
 If you want to see it in action or want to download a customized Theme for free, check out [http://them.es/starter](http://them.es/starter)
 
@@ -25,7 +25,7 @@ You can use [LESS](http://lesscss.org/) or [SASS](http://sass-lang.com/) to crea
 ## Grunt Task Automation
 This Theme comes with a built in Task Automation. LESS/SASS files will be complied if changed, vendor prefixes will be added automatically if required and files will be minified.
 
-* Prerequisites: **[npm](https://www.npmjs.com)** needs to be installed on your system
+* Prerequisites: **[Node.js](https://nodejs.org)** (NPM needs to be installed on your system)
 * Open the Project directory in your Terminal and install the required modules from packages.json
 * `$ PROJECT-PATH/sudo npm install`
 * Run Grunt and start working

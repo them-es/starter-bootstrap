@@ -3,492 +3,432 @@ msgstr ""
 "Project-Id-Version: them.es Starter Theme v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-03-05 10:28:52+0000\n"
-"Last-Translator: admin <test@test.com>\n"
+"PO-Revision-Date: Wed May 06 2015 10:53:16 GMT+0200 (CEST)\n"
+"Last-Translator: them.es <themes@klicc.at>\n"
 "Language-Team: \n"
+"Language: German\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: CSL v1.x\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Loco - https://localise.biz/\n"
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
+"X-Textdomain-Support: yes\n"
+"X-Loco-Target-Locale: de_DE"
 
-#: 404.php:12
-#@ my-theme
+#: ../404.php:12
 msgid "Not Found"
 msgstr "Nicht gefunden"
 
-#: archive.php:24
-#@ my-theme
-msgid "Blog Archives"
-msgstr "Blog Archiv"
+#: ../404.php:14
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Leider wurde hier nichts gefunden. Versuchen Sie die Seitensuche!"
 
-#: content-index.php:11
-#: content.php:12
-#: content.php:16
-#: sidebar.php:37
+#: ../archive.php:18
 #, php-format
-#@ my-theme
-msgid "Permalink to %s"
-msgstr "Permalink zu %s"
+msgid "Daily Archives: %s"
+msgstr "Tages-Archiv: %s"
 
-#: functions.php:290
+#: ../archive.php:20
 #, php-format
-#@ my-theme
-msgid "View all posts by %s"
-msgstr "Zeige alle Artikel von %s"
+msgid "Monthly Archives: %s"
+msgstr "Monats-Archiv: %s"
 
-#: content-single.php:55
-#: content.php:73
-#: functions.php:351
-#: functions.php:378
-#: image.php:18
-#: image.php:69
-#: index.php:23
-#: page-full.php:25
-#: page.php:29
-#@ my-theme
-msgid "Edit"
-msgstr "Editieren"
-
-#: functions.php:140
-#@ my-theme
-msgid "Page "
-msgstr "Seite "
-
-#: content-index.php:45
-#: content-single.php:26
-#: content.php:33
-#: image.php:58
-#: page-full.php:24
-#: page.php:28
-#@ my-theme
-msgid "Pages:"
-msgstr "Seiten:"
-
-#: content-none.php:9
-#: search.php:40
-#@ my-theme
-msgid "Nothing Found"
-msgstr "Nichts gefunden"
-
-#: search.php:43
-#@ my-theme
-msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
-msgstr "Leider wurde zu diesem Suchbegriff nichts gefunden. Bitte versuchen Sie es erneut."
-
-#: comments.php:35
-#: comments.php:55
-#@ my-theme
-msgid "Comment navigation"
-msgstr "Kommentar Navigation"
-
-#: comments.php:36
-#: comments.php:56
-#@ my-theme
-msgid "&larr; Older Comments"
-msgstr "&larr; Ältere Kommentare"
-
-#: comments.php:37
-#: comments.php:57
-#@ my-theme
-msgid "Newer Comments &rarr;"
-msgstr "Neuere Kommentare &rarr;"
-
-#: comments.php:67
-#@ my-theme
-msgid "Comments are closed."
-msgstr "Kommentare sind geschlossen."
-
-#: archive.php:20
-#@ my-theme
+#: ../archive.php:20
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: archive.php:22
-#@ my-theme
+#: ../archive.php:22
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Jahres-Archiv: %s"
+
+#: ../archive.php:22
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: content-none.php:13
-#@ my-theme
-msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr "Leider wurden in diesem Archiv keine Einträge gefunden. Bitte verwenden Sie die Suche, um den gewünschten Eintrag zu finden."
+#: ../archive.php:24
+msgid "Blog Archives"
+msgstr "Blog Archiv"
 
-#: author-bio.php:13
+#: ../author-bio.php:14
 #, php-format
-#@ my-theme
 msgid "About %s"
 msgstr "Über %s"
 
-#: functions.php:419
-#@ my-theme
-msgid "Name"
+#: ../author-bio.php:17
+#, php-format
+msgid "<a href=\"%s\" class=\"www btn btn-default btn-sm\">Website</a>"
 msgstr ""
 
-#: functions.php:421
-#@ my-theme
-msgid "Email"
-msgstr "E-Mail-Adresse"
-
-#. translators: used between list items, there is a space after the comma
-#: content-single.php:33
-#: content-single.php:36
-#: content.php:42
-#: content.php:52
-#@ my-theme
-msgid ", "
-msgstr ""
-
-#: content.php:13
-#@ my-theme
-msgid "Featured"
-msgstr "Empfohlen"
-
-#: content.php:32
-#@ my-theme
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
-
-#: content.php:46
+#: ../author.php:28
 #, php-format
-#@ my-theme
-msgid "<span class=\"%1$s\">Posted in</span> %2$s"
-msgstr "<span class=\"%1$s\">Veröffentlicht unter</span> %2$s"
-
-#: content.php:58
-#, php-format
-#@ my-theme
-msgid "<span class=\"%1$s\">Tagged</span> %2$s"
-msgstr "<span class=\"%1$s\">Getagged</span> %2$s"
-
-#: search.php:12
-#, php-format
-#@ my-theme
-msgid "Search Results for: %s"
-msgstr "Suchresultat für: %s"
-
-#: content-index.php:49
-#: content.php:71
-#: sidebar.php:54
-#@ my-theme
-msgid "more"
-msgstr "mehr"
-
-#: header.php:65
-#: header.php:66
-#: searchform.php:7
-#: searchform.php:11
-#: searchform.php:13
-#@ my-theme
-msgid "Search"
-msgstr "Suche"
-
-#: content-index.php:26
-#: functions.php:429
-#@ my-theme
-msgid "Comment"
-msgstr "Kommentar"
-
-#: content.php:68
-#@ my-theme
-msgid "Leave a reply"
-msgstr "Kommentar abgeben"
-
-#: content.php:68
-#@ my-theme
-msgid "<b>1</b> Reply"
-msgstr "<b>1</b> Antwort"
-
-#: content.php:68
-#@ my-theme
-msgid "<b>%</b> Replies"
-msgstr "<b>%</b> Antworten"
-
-#: functions.php:351
-#@ my-theme
-msgid "Pingback:"
-msgstr ""
-
-#: functions.php:382
-#@ my-theme
-msgid "Your comment is awaiting moderation."
-msgstr "Ihr Kommentar wird derzeit überprüft."
-
-#. translators: 1: date, 2: time
-#: functions.php:373
-#, php-format
-#@ my-theme
-msgid "%1$s ago"
-msgstr "vor %1$s"
-
-#: functions.php:391
-#@ my-theme
-msgid "Reply"
-msgstr "Antworten"
-
-#: functions.php:431
-#, php-format
-#@ my-theme
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "Bitte <a href=\"%s\">loggen Sie sich ein</a> um einen Kommentar zu posten."
-
-#: functions.php:433
-#, php-format
-#@ my-theme
-msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
-msgstr "Eingeloggt als <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Aus dem Account ausloggen?\">Ausloggen?</a>"
-
-#: functions.php:435
-#@ my-theme
-msgid "Your Email address will not be published."
-msgstr "Ihre Email Adresse wird nicht veröffentlicht."
-
-#: inc/customizer.php:37
-#@ my-theme
-msgid "Upload Header Logo"
-msgstr "Headerlogo hochladen"
-
-#: inc/customizer.php:86
-#@ my-theme
-msgid "Show Searchfield?"
-msgstr "Suchfeld anzeigen?"
-
-#: inc/customizer.php:54
-#@ my-theme
-msgid "Default"
-msgstr "Standard"
-
-#: inc/customizer.php:55
-#@ my-theme
-msgid "Inverse"
-msgstr ""
-
-#: sidebar.php:47
-#@ my-theme
-msgid "Categories"
-msgstr "Kategorien"
-
-#. translators: 1: comment author, 2: date and time
-#: functions.php:366
-#, php-format
-#@ my-theme
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: functions.php:196
-#@ my-theme
-msgid "Older posts"
-msgstr "Ältere Einträge"
-
-#: functions.php:197
-#@ my-theme
-msgid "Newer posts"
-msgstr "Neuere Einträge"
-
-#: 404.php:14
-#@ my-theme
-msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "Leider wurde hier nichts gefunden. Versuchen Sie die Seitensuche!"
-
-#: archive.php:18
-#, php-format
-#@ my-theme
-msgid "Daily Archives: %s"
-msgstr "Tages-Archiv: %s"
-
-#: archive.php:20
-#, php-format
-#@ my-theme
-msgid "Monthly Archives: %s"
-msgstr "Monats-Archiv: %s"
-
-#: archive.php:22
-#, php-format
-#@ my-theme
-msgid "Yearly Archives: %s"
-msgstr "Jahres-Archiv: %s"
-
-#: author-bio.php:16
-#, php-format
-#@ my-theme
-msgid "<a href=\"%s\" class=\"www\">Website</a>"
-msgstr "<a href=\"%s\" class=\"www\">Webseite</a>"
-
-#: author.php:28
-#, php-format
-#@ my-theme
 msgid "Author Archives: %s"
 msgstr "Autor: %s"
 
-#: category.php:16
+#: ../category.php:16
 #, php-format
-#@ my-theme
 msgid "Category Archives: %s"
 msgstr "Kategorie: %s"
 
-#: comments.php:20
-#@ my-theme
+#: ../comments.php:20
 msgid "No Comments yet!"
 msgstr "Noch keine Kommentare!"
 
-#: comments.php:28
+#: ../comments.php:28
 #, php-format
-#@ my-theme
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Ein Kommentar zu &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
 
-#: content-index.php:24
-#@ my-theme
+#: ../comments.php:35 ../comments.php:55
+msgid "Comment navigation"
+msgstr "Kommentar Navigation"
+
+#: ../comments.php:36 ../comments.php:56
+msgid "&larr; Older Comments"
+msgstr "&larr; Ältere Kommentare"
+
+#: ../comments.php:37 ../comments.php:57
+msgid "Newer Comments &rarr;"
+msgstr "Neuere Kommentare &rarr;"
+
+#: ../comments.php:67
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: ../content-index.php:11 ../content.php:12 ../content.php:16 ../sidebar.php:39
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permalink zu %s"
+
+#: ../content-index.php:24
 msgid "Comments"
 msgstr "Kommentare"
 
-#: content-single.php:38
-#, php-format
-#@ my-theme
-msgid "This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Dieser Eintrag wurde in %1$s und getagged mit %2$s von <a href=\"%6$s\">%5$s</a> veröffentlicht. Bookmark <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">erstellen</a>."
+#: ../content-index.php:26 ../functions.php:431
+msgid "Comment"
+msgstr "Kommentar"
 
-#: content-single.php:40
-#, php-format
-#@ my-theme
-msgid "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Dieser Eintrag wurde in %1$s von <a href=\"%6$s\">%5$s</a> veröffentlicht. Bookmark <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">erstellen</a>."
+#: ../content-index.php:51 ../content-single.php:26 ../content.php:33 ../image.
+#: php:58 ../page-full.php:24 ../page.php:28
+msgid "Pages:"
+msgstr "Seiten:"
 
-#: content-single.php:42
-#, php-format
-#@ my-theme
-msgid "This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr "Dieser Eintrag wurde von <a href=\"%6$s\">%5$s</a> veröffentlicht. Bookmark <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">erstellen</a>."
+#: ../content-index.php:55 ../content.php:71 ../sidebar.php:56
+msgid "more"
+msgstr "mehr"
 
-#: functions.php:284
-#, php-format
-#@ my-theme
-msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author-meta vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
-msgstr "<span class=\"sep\">Veröffentlicht am </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> von </span> <span class=\"author-meta vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+#: ../content-none.php:9 ../search.php:40
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
 
-#: functions.php:309
-#@ my-theme
-msgid "This content is password protected. To view it please enter your password below."
+#: ../content-none.php:13
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Leider wurden in diesem Archiv keine Einträge gefunden. Bitte verwenden Sie "
+"die Suche, um den gewünschten Eintrag zu finden."
+
+#. translators: used between list items, there is a space after the comma
+#: ../content-single.php:33 ../content-single.php:36 ../content.php:42 ../content.
+#: php:52
+msgid ", "
+msgstr ""
+
+#: ../content-single.php:38
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>. "
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" "
+"rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dieser Eintrag wurde in %1$s und getagged mit %2$s von <a "
+"href=\"%6$s\">%5$s</a> veröffentlicht. Bookmark <a href=\"%3$s\" "
+"title=\"Permalink zu %4$s\" rel=\"bookmark\">erstellen</a>."
+
+#: ../content-single.php:40
+#, php-format
+msgid ""
+"This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
+"href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dieser Eintrag wurde in %1$s von <a href=\"%6$s\">%5$s</a> veröffentlicht. "
+"Bookmark <a href=\"%3$s\" title=\"Permalink zu %4$s\" "
+"rel=\"bookmark\">erstellen</a>."
+
+#: ../content-single.php:42
+#, php-format
+msgid ""
+"This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
+"href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dieser Eintrag wurde von <a href=\"%6$s\">%5$s</a> veröffentlicht. Bookmark <a "
+"href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">erstellen</a>."
+
+#: ../content-single.php:55 ../content.php:73 ../functions.php:351 ../functions.
+#: php:378 ../image.php:18 ../image.php:69 ../index.php:23 ../page-full.php:25 ..
+#: /page.php:29
+msgid "Edit"
+msgstr "Editieren"
+
+#: ../content.php:13
+msgid "Featured"
+msgstr "Empfohlen"
+
+#: ../content.php:32
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../content.php:46
+#, php-format
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Veröffentlicht unter</span> %2$s"
+
+#: ../content.php:58
+#, php-format
+msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+msgstr "<span class=\"%1$s\">Getagged</span> %2$s"
+
+#: ../content.php:68
+msgid "Leave a reply"
+msgstr "Kommentar abgeben"
+
+#: ../content.php:68
+msgid "<b>1</b> Reply"
+msgstr "<b>1</b> Antwort"
+
+#: ../content.php:68
+msgid "<b>%</b> Replies"
+msgstr "<b>%</b> Antworten"
+
+#: ../functions.php:140
+msgid "Page "
+msgstr "Seite "
+
+#: ../functions.php:196
+msgid "Older posts"
+msgstr "Ältere Einträge"
+
+#: ../functions.php:197
+msgid "Newer posts"
+msgstr "Neuere Einträge"
+
+#: ../functions.php:284
+#, php-format
+msgid ""
+"<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" "
+"rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" "
+"pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by "
+"</span> <span class=\"author-meta vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+"<span class=\"sep\">Veröffentlicht am </span><a href=\"%1$s\" title=\"%2$s\" "
+"rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" "
+"pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> von "
+"</span> <span class=\"author-meta vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#: ../functions.php:290
+#, php-format
+msgid "View all posts by %s"
+msgstr "Zeige alle Artikel von %s"
+
+#: ../functions.php:309
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below."
 msgstr "Dieser Inhalt ist passwortgeschützt. Bitte geben Sie das Passwort ein."
 
-#: functions.php:312
-#@ my-theme
+#: ../functions.php:312
 msgid "Password"
 msgstr "Passwort"
 
-#: functions.php:313
-#@ my-theme
+#: ../functions.php:313
 msgid "Submit"
 msgstr "Senden"
 
-#: functions.php:441
+#: ../functions.php:351
+msgid "Pingback:"
+msgstr ""
+
+#. translators: 1: comment author, 2: date and time
+#: ../functions.php:366
 #, php-format
-#@ my-theme
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: ../functions.php:373
+#, php-format
+msgid "%1$s ago"
+msgstr "vor %1$s"
+
+#: ../functions.php:382
+msgid "Your comment is awaiting moderation."
+msgstr "Ihr Kommentar wird derzeit überprüft."
+
+#: ../functions.php:391
+msgid "Reply"
+msgstr "Antworten"
+
+#: ../functions.php:421
+msgid "Name"
+msgstr ""
+
+#: ../functions.php:423
+msgid "Email"
+msgstr "E-Mail-Adresse"
+
+#: ../functions.php:433
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Bitte <a href=\"%s\">loggen Sie sich ein</a> um einen Kommentar zu posten."
+
+#: ../functions.php:435
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this "
+"account\">Log out?</a>"
+msgstr ""
+"Eingeloggt als <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Aus dem "
+"Account ausloggen?\">Ausloggen?</a>"
+
+#: ../functions.php:437
+msgid "Your Email address will not be published."
+msgstr "Ihre Email Adresse wird nicht veröffentlicht."
+
+#: ../functions.php:443
+#, php-format
 msgid "Leave a Reply to %s"
 msgstr "Kommentar abgeben zu %s"
 
-#: functions.php:442
-#@ my-theme
+#: ../functions.php:444
 msgid "Cancel reply"
 msgstr "Antwort abbrechen"
 
-#: functions.php:443
-#@ my-theme
+#: ../functions.php:445
 msgid "Post Comment"
 msgstr "Kommentar posten"
 
-#: image.php:32
-#@ my-theme
+#: ../header.php:65 ../header.php:66 ../searchform.php:7 ../searchform.php:11 ..
+#: /searchform.php:13
+msgid "Search"
+msgstr "Suche"
+
+#: ../image.php:32
 msgid "Previous Image"
 msgstr "Voriges Bild"
 
-#: image.php:32
-#@ my-theme
+#: ../image.php:32
 msgid "Next Image"
 msgstr "Nächstes Bild"
 
-#: image.php:62
-#@ my-theme
+#: ../image.php:62
 msgid "Page"
 msgstr "Seite"
 
-#: image.php:82
-#, php-format
-#@ my-theme
+#: ../image.php:82
 msgctxt "Parent post link"
-msgid "<span class=\"meta-nav\">Published in</span> <span class=\"post-title\">%title</span>"
-msgstr "<span class=\"meta-nav\">Veröffentlicht in</span> <span class=\"post-title\">%title</span>"
-
-#: inc/customizer.php:38
-#@ my-theme
-msgid "Height: &gt;80px"
+msgid ""
+"<span class=\"meta-nav\">Published in</span> <span class=\"post-"
+"title\">%title</span>"
 msgstr ""
+"<span class=\"meta-nav\">Veröffentlicht in</span> <span class=\"post-"
+"title\">%title</span>"
 
-#: inc/customizer.php:51
-#@ my-theme
-msgid "Navbar Scheme"
+#: ../search.php:12
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Suchresultat für: %s"
+
+#: ../search.php:43
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
 msgstr ""
+"Leider wurde zu diesem Suchbegriff nichts gefunden. Bitte versuchen Sie es "
+"erneut."
 
-#: inc/customizer.php:68
-#@ my-theme
-msgid "Navbar"
-msgstr ""
-
-#: inc/customizer.php:71
-#@ my-theme
-msgid "Static"
-msgstr ""
-
-#: inc/customizer.php:72
-#@ my-theme
-msgid "Fixed to top"
-msgstr ""
-
-#: inc/customizer.php:73
-#@ my-theme
-msgid "Fixed to bottom"
-msgstr ""
-
-#: inc/metaboxes.php:39
-#@ my-theme
-msgid "class"
-msgstr ""
-
-#: inc/metaboxes.php:48
-#@ my-theme
-msgid "style"
-msgstr ""
-
-#: sidebar.php:28
-#@ my-theme
+#: ../sidebar.php:30
 msgid "Recent Posts"
 msgstr "Aktuelle Einträge"
 
-#: tag.php:16
-#, php-format
-#@ my-theme
-msgid "Tag: %s"
-msgstr ""
+#: ../sidebar.php:49
+msgid "Categories"
+msgstr "Kategorien"
 
-#: single.php:33
-#@ my-theme
+#: ../single.php:32
 msgid "Previous Post"
 msgstr "Voriger Eintrag"
 
-#: single.php:36
-#@ my-theme
+#: ../single.php:33
 msgid "Next Post"
 msgstr "Nächster Eintrag"
 
+#: ../tag.php:16
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: ../inc/customizer.php:37
+msgid "Upload Header Logo"
+msgstr "Headerlogo hochladen"
+
+#: ../inc/customizer.php:38
+msgid "Height: &gt;80px"
+msgstr ""
+
+#: ../inc/customizer.php:51
+msgid "Navbar Scheme"
+msgstr ""
+
+#: ../inc/customizer.php:54
+msgid "Default"
+msgstr "Standard"
+
+#: ../inc/customizer.php:55
+msgid "Inverse"
+msgstr ""
+
+#: ../inc/customizer.php:68
+msgid "Navbar"
+msgstr ""
+
+#: ../inc/customizer.php:71
+msgid "Static"
+msgstr ""
+
+#: ../inc/customizer.php:72
+msgid "Fixed to top"
+msgstr ""
+
+#: ../inc/customizer.php:73
+msgid "Fixed to bottom"
+msgstr ""
+
+#: ../inc/customizer.php:86
+msgid "Show Searchfield?"
+msgstr "Suchfeld anzeigen?"
+
+#: ../inc/metaboxes.php:39
+msgid "class"
+msgstr ""
+
+#: ../inc/metaboxes.php:48
+msgid "style"
+msgstr ""

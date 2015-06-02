@@ -1,4 +1,4 @@
-        <footer id="footer">
+        <div id="footer">
             <hr>
             <div class="row">
                 <p class="col-lg-6 col-md-6">&copy; <?php echo date('Y'); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
@@ -28,7 +28,7 @@
                     <div class="pull-right"><?php dynamic_sidebar('third_widget_area'); ?></div>
                 <?php endif; ?>
             </div>
-        </footer>
+        </div><!-- /#footer -->
 
 	</div><!-- /#main -->
 	

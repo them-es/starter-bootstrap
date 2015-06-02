@@ -8,7 +8,6 @@
     get_header();
 
     $page_id = get_option('page_for_posts');
-
 ?>
 
 	<div class="row">
@@ -16,8 +15,8 @@
 		<div class="col-lg-12">
 			
 			<?php
-				if ( is_page($page_id) ) :
-					echo nl2br( get_post_field('post_content', $page_id) );// = Page content
+				if ( is_page() && is_home() ) :
+					echo nl2br( get_post_field('post_content', $page_id) );// = echo content from Bloghome
 				endif;
 
 				edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>', $page_id );

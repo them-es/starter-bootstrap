@@ -33,7 +33,7 @@ $theme_version = "1.1";
 	if ( is_readable($theme_wordpresscom) ) {
         require_once($theme_wordpresscom);
     }
-
+	
 	
 	/**
 	 * Set the content width based on the theme's design and stylesheet
@@ -43,13 +43,14 @@ $theme_version = "1.1";
     if ( ! isset( $content_width ) ) {
         $content_width = 800;
     }
-
+	
+	
+	/**
+	 * General Theme Settings
+	 *
+	 * @since v1.0
+	 */
     if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
-		/**
-		 * General Theme Settings
-		 *
-		 * @since v1.0
-		 */
 		function themes_starter_setup_theme() {
 
 			// Make theme available for translation: Translations can be filed in the /languages/ directory
