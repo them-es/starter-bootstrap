@@ -89,7 +89,7 @@ $theme_version = "1.1";
 	 *
 	 * @since v1.0
 	 */
-	if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	if ( ! function_exists( 'themes_starter_render_title' ) ) :
 		function themes_starter_render_title() {
 		?>
 			<title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -104,18 +104,20 @@ $theme_version = "1.1";
 	 *
 	 * @since v1.0
 	 */
-    function themes_starter_add_user_fields($fields) {
-        // Add new fields
-        $fields['facebook_profile'] = 'Facebook URL';
-        $fields['twitter_profile'] = 'Twitter URL';
-        $fields['google_profile'] = 'Google+ URL';
-        $fields['linkedin_profile'] = 'LinkedIn URL';
-        $fields['xing_profile'] = 'Xing URL';
-        $fields['github_profile'] = 'GitHub URL';
+	if ( ! function_exists( 'themes_starter_add_user_fields' ) ) :
+		function themes_starter_add_user_fields($fields) {
+			// Add new fields
+			$fields['facebook_profile'] = 'Facebook URL';
+			$fields['twitter_profile'] = 'Twitter URL';
+			$fields['google_profile'] = 'Google+ URL';
+			$fields['linkedin_profile'] = 'LinkedIn URL';
+			$fields['xing_profile'] = 'Xing URL';
+			$fields['github_profile'] = 'GitHub URL';
 
-        return $fields;
-    }
-    add_filter('user_contactmethods', 'themes_starter_add_user_fields');
+			return $fields;
+		}
+		add_filter('user_contactmethods', 'themes_starter_add_user_fields');
+	endif;
 	
 	
 	/**

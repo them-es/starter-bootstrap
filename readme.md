@@ -1,4 +1,4 @@
-## them.es<sup>+</sup>
+## them.es Starter Theme
 
 **them.es Starter** is a WordPress Starter Theme built with Bootstrap. Please note that the Source files are only recommended for WordPress Developers who are searching for a simple, solid, proved and tested **Bootstrap Starter Theme** to build upon. **_Don't_ expect a ready-to-use WordPress Theme!**
 
