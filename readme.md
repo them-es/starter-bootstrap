@@ -9,7 +9,7 @@ If you want to see it in action or want to download a customized Theme for free,
 * WordPress Theme
 * Bootstrap Framework
 * LESS/SASS Source files
-* Grunt Task Automation
+* Grunt configuration
 * Customization API
 * 2 Menus
 * Custom WordPress Nav Walker class
@@ -25,11 +25,11 @@ You can use [LESS](http://lesscss.org/) or [SASS](http://sass-lang.com/) to crea
 ## Grunt Task Automation
 This Theme comes with a built in Task Automation. LESS/SASS files will be complied if changed, vendor prefixes will be added automatically if required and files will be minified.
 
-* Prerequisites: **[Node.js](https://nodejs.org)** (NPM needs to be installed on your system)
+* Prerequisites: [Node.js](https://nodejs.org) (NPM) needs to be installed on your system
 * Open the Project directory in your Terminal and install the required modules from packages.json
-* `$ PROJECT-PATH/sudo npm install`
+* `$ npm install`
 * Run Grunt and start working
-* `$ PROJECT-PATH/grunt`
+* `$ grunt`
 
 
 ## Free Add-ons Plugin

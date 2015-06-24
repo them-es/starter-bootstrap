@@ -115,7 +115,7 @@
             $value = sanitize_text_field( get_post_meta( $post->ID, '_class', true ) );
 
             // Display the form, using the current value.
-            echo '<input type="text" id="class" name="class"';
+            echo '<input type="text" id="_class" name="class"';
             echo ' value="' . esc_attr( $value ) . '" size="25" />';
         }
         
@@ -128,7 +128,7 @@
             $value = get_post_meta( $post->ID, '_style', true );
 
             // Display the form, using the current value.
-            echo '<input type="text" id="style" name="style"';
+            echo '<input type="text" id="_style" name="style"';
             echo ' value="' . esc_attr( $value ) . '" size="25" />';
         }
 		
