@@ -89,7 +89,7 @@ $theme_version = "1.1";
 	 *
 	 * @since v1.0
 	 */
-	if ( ! function_exists( 'themes_starter_render_title' ) ) :
+	if ( ! function_exists( '_wp_render_title_tag' ) ) :
 		function themes_starter_render_title() {
 		?>
 			<title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -419,7 +419,7 @@ $theme_version = "1.1";
 			$args = wp_parse_args( $args );
 
 			$req      = get_option( 'require_name_email' );
-			$aria_req = ( $req ? " aria-required='true'" : '' );
+			$aria_req = ( $req ? " aria-required='true' required" : '' );
 			$fields   =  array(
 				'author' => '<p><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
 							'<br /><input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></p>',
