@@ -1,16 +1,29 @@
 // Compile "main.less" as "css/main.css"
 
 /**
- * Import bootstrap source
+ * Import Bootstrap source
  */
-@import "less/bootstrap.less";
+@import "bower_components/bootstrap/less/bootstrap.less";
 
 
 /**
  * Add custom Bootstrap styles
  */
 
-// Silence Is Golden!
+// 1. Overwrite Bootstrap variables
+
+/*
+@brand-primary:         darken(#428bca, 6.5%); // #337ab7
+@brand-success:         #5cb85c;
+@brand-info:            #5bc0de;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
+
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+*/
 
 
 /**
@@ -83,7 +96,7 @@ body.admin-bar #header nav.navbar-fixed-top {
 
 /* Author */
 
-#author-avatar {
+.author-avatar {
 	
 	.avatar {
 		width: 64px;
@@ -91,7 +104,7 @@ body.admin-bar #header nav.navbar-fixed-top {
 	}
 }
 
-#author-description {
+.author-description {
 	
 	h2, h3 {
 		margin-top: 0;

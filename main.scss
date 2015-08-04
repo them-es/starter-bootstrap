@@ -4,14 +4,27 @@
  * Add custom Bootstrap styles
  */
 
-// Silence Is Golden!
+// 1. Overwrite Bootstrap variables
+
+/*
+$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+*/
 
 
 /**
- * Import bootstrap source
+ * Import Bootstrap source
  */
 
-@import "sass/_bootstrap.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 
 /**
@@ -83,7 +96,7 @@ body.admin-bar #header nav.navbar-fixed-top {
 
 /* Author */
 
-#author-avatar {
+.author-avatar {
 	
 	.avatar {
 		width: 64px;
@@ -91,7 +104,7 @@ body.admin-bar #header nav.navbar-fixed-top {
 	}
 }
 
-#author-description {
+.author-description {
 	
 	h2, h3 {
 		margin-top: 0;

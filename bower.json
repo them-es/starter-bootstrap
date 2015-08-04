@@ -1,0 +1,14 @@
+{
+  "name": "themes-starter",
+  "version": "1.0",
+  "homepage": "https://github.com/them-es",
+  "authors": [
+    "them.es"
+  ],
+  "description": "WordPress Starter Theme built with Bootstrap",
+  "license": "GPLv2+",
+  "dependencies": {
+    "bootstrap": "twbs/bootstrap",
+	"bootstrap-sass": "twbs/bootstrap-sass"
+  }
+}
