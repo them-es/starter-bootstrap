@@ -74,3 +74,13 @@
 	</header><!-- /#header -->
 	
 	<div id="main" class="container"<?php if ( isset($navbar_position) && $navbar_position == "fixed_top" ) : echo ' style="padding-top: 80px;"'; elseif ( isset($navbar_position) && $navbar_position == "fixed_bottom" ) : echo ' style="padding-bottom: 80px;"'; endif; ?>>
+		
+		<?php
+			// An Archive is a Category, Tag, Author or a Date based page
+			if ( is_archive() ) :
+		?>
+			<div class="row">
+				<div class="col-lg-8 col-lg-push-4 col-md-8 col-md-push-4 col-sm-12">
+		<?php
+			endif;
+		?>

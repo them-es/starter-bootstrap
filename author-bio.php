@@ -5,15 +5,15 @@
 
 	if ( get_the_author_meta( 'description' ) ) :
 ?>
-	<div id="author-info"<?php if ( !is_single() ) : ?> class="well"<?php endif; ?>>
+	<div class="author-info<?php if ( !is_single() ) : ?> well<?php endif; ?>">
 		<div class="row">
-			<div id="author-avatar" class="col-lg-3 col-md-3 col-sm-12 text-center">
+			<div class="col-lg-3 col-md-3 col-sm-12 author-avatar text-center">
 				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'themes_starter_author_bio_avatar_size', 128 ) ); ?>
-			</div><!-- #author-avatar -->
-			<div id="author-description" class="col-lg-9 col-md-9 col-sm-12">
+			</div><!-- /.author-avatar -->
+			<div class="col-lg-9 col-md-9 col-sm-12 author-description">
 				<h2><?php printf( __( 'About %s', 'my-theme' ), get_the_author() ); ?></h2>
 				<p><?php the_author_meta( 'description' ); ?></p>
-				<p id="author-links">
+				<p class="author-links">
 					<?php printf( __( '<a href="%s" class="www btn btn-default btn-sm">Website</a>', 'my-theme' ), esc_url( get_the_author_meta( 'user_url' ) ) ); ?>
 					<?php
 						// Add new Profile fields for Users in functions.php
@@ -47,9 +47,9 @@
 						}
 					?>
 				</p>
-			</div><!-- #author-description	-->
+			</div><!-- /.author-description	-->
 		</div><!-- /.row -->
-	</div><!-- #author-info -->
+	</div><!-- /.author-info -->
 
 	<hr>
 
