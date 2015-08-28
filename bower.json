@@ -8,7 +8,7 @@
   "description": "WordPress Starter Theme built with Bootstrap",
   "license": "GPLv2+",
   "dependencies": {
-    "bootstrap": "twbs/bootstrap",
-	"bootstrap-sass": "twbs/bootstrap-sass"
+    "bootstrap": "3",
+	"bootstrap-sass": "3"
   }
 }

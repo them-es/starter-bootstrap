@@ -26,7 +26,7 @@
 					the_content();
 					
 					wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'my-theme' ) . '&after=</div>');
-					edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>', get_the_ID() );
+					edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' );
 				?>
 			</div><!-- /#post-<?php the_ID(); ?> -->
 			

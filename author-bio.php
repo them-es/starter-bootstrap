@@ -14,7 +14,11 @@
 				<h2><?php printf( __( 'About %s', 'my-theme' ), get_the_author() ); ?></h2>
 				<p><?php the_author_meta( 'description' ); ?></p>
 				<p class="author-links">
-					<?php printf( __( '<a href="%s" class="www btn btn-default btn-sm">Website</a>', 'my-theme' ), esc_url( get_the_author_meta( 'user_url' ) ) ); ?>
+					<?php
+						if ( !empty(get_the_author_meta('user_url')) ):
+							printf( '<a href="%s" class="www btn btn-default btn-sm">' . __('Website', 'my-theme' ) . '</a>', esc_url( get_the_author_meta( 'user_url' ) ) );
+						endif;
+					?>
 					<?php
 						// Add new Profile fields for Users in functions.php
 						function social_profile_link( $link, $title ) {

@@ -63,7 +63,8 @@
 						<form class="navbar-form navbar-right" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 							<div class="input-group input-group-sm">
 								<input type="text" id="s" name="s" class="form-control" placeholder="<?php _e( 'Search', 'my-theme' ); ?>">
-								<span class="input-group-btn"><button type="submit" id="searchsubmit" name="submit" class="btn btn-default"><?php _e( 'Search', 'my-theme' ); ?></button>
+								<span class="input-group-btn">
+									<button type="submit" id="searchsubmit" name="submit" class="btn btn-default"><?php _e( 'Search', 'my-theme' ); ?></button>
 							</span>
 							</div>
 						</form>

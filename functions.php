@@ -195,7 +195,7 @@ $theme_version = "1.1";
 
 			if ( $wp_query->max_num_pages > 1 ) : ?>
 				<div class="clearfix"></div>
-				<ul id="<?php echo $nav_id; ?>" class="pager">
+				<ul id="<?php echo $nav_id; ?>" class="pager col-lg-12">
 					<li><?php next_posts_link( '<span aria-hidden="true">&larr;</span> ' . __( 'Older posts', 'my-theme' ) ); ?></li>
 					<li><?php previous_posts_link( __( 'Newer posts', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></li>
 				</ul><!-- /.pager -->
@@ -486,7 +486,7 @@ $theme_version = "1.1";
         
 		wp_enqueue_style('style', get_template_directory_uri().'/style.css', false, $theme_version, 'all' );
 		// wp_enqueue_style('boostrap', get_template_directory_uri().'/bower_components/bootstrap/dist/css/bootstrap.min.css', false, $theme_version, 'all' );
-		wp_enqueue_style('main', get_template_directory_uri().'/css/main.css', false, $theme_version, 'all' ); // Compiled Framework source + custom styles
+		wp_enqueue_style('main', get_template_directory_uri().'/css/main.css', false, $theme_version, 'all' ); // main(.less/.scss): Compiled Framework source + custom styles
         if ( is_rtl() ) {
             wp_enqueue_style( 'rtl', get_template_directory_uri().'/css/rtl.css', false, $theme_version, 'all' );
         }
@@ -519,13 +519,14 @@ $theme_version = "1.1";
 	 */
     function themes_starter_add_ie_html5_shims() {
         echo '
+		<!-- IE Compatibility shims -->
         <!--[if lt IE 9]>
-            <script src="' . esc_url( get_template_directory_uri() ) . '/js/html5.js"></script>
-            <script src="' . esc_url( get_template_directory_uri() ) . '/js/respond.min.js"></script>
+            <script src="' . esc_url( get_template_directory_uri() ) . '/js/ie/html5.js"></script>
+            <script src="' . esc_url( get_template_directory_uri() ) . '/js/ie/respond.min.js"></script>
         <![endif]-->';
         echo '
         <!--[if lte IE 9]>
-            <script src="' . esc_url( get_template_directory_uri() ) . '/js/placeholder.min.js"></script>
+            <script src="' . esc_url( get_template_directory_uri() ) . '/js/ie/placeholder.min.js"></script>
             <script>
                 (function ($) {
                     $("input, textarea").placeholder();

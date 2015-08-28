@@ -27,7 +27,7 @@
 							}
 
 							if ( isset($comments) ) {
-								echo ', <a href="' . get_comments_link() .'">'. $comments.'</a>';
+								echo ' <a href="' . get_comments_link() . '" class="btn btn-default btn-sm">' . $comments . '</a>';
 							}
 						endif;
 					?>
