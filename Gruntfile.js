@@ -73,17 +73,16 @@ module.exports = function (grunt) {
 
         // css minify
         cssmin: {
-            options: {
-                keepSpecialComments: 1
-            },
-            minify: {
-                expand: true,
-                cwd: 'css',
-                src: ['*.css', '!*.min.css'],
-				dest: 'css',
-                ext: '.css'
-            }
-        },
+			target: {
+				files: [{
+					expand: true,
+					cwd: 'css',
+					src: ['*.css', '!*.min.css'],
+					dest: 'css',
+					ext: '.min.css'
+				}]
+			}
+		},
 		
         // javascript linting with jshint
         jshint: {

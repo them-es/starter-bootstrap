@@ -15,9 +15,7 @@
 		<div class="col-lg-12">
 			
 			<?php
-				if ( is_page() && is_home() ) :
-					echo nl2br( get_post_field('post_content', $page_id) );// = echo content from Bloghome
-				endif;
+				echo nl2br( apply_filters('the_content', get_post_field('post_content', $page_id) ) );// = echo content from Bloghome
 
 				edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>', $page_id );
 			?>

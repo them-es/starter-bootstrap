@@ -16,7 +16,7 @@
 						themes_starter_article_posted_on();
 
 						$num_comments = get_comments_number();
-
+						
 						if ( comments_open() ) :
 							if ( $num_comments == 0 ) {
 								//$comments = __( 'No Comments', 'my-theme' );
@@ -25,9 +25,9 @@
 							} else {
 								$comments = '1 ' . __( 'Comment', 'my-theme' );
 							}
-
+							
 							if ( isset($comments) ) {
-								echo ' <a href="' . get_comments_link() . '" class="btn btn-default btn-sm">' . $comments . '</a>';
+								echo ' <a href="' . get_comments_link() . '" class="badge pull-right" title="' . $comments . '">' . $num_comments . '</a>';
 							}
 						endif;
 					?>

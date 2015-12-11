@@ -19,12 +19,12 @@
 <body <?php body_class(); ?>>
 
 <div id="wrapper">
-    
+	
 	<header id="header"<?php if ( is_home() || is_front_page() ) : ?> class="home"<?php endif; ?>>
-		<nav class="navbar navbar-<?php echo $navbar_scheme; if ( isset($navbar_position) && $navbar_position == "fixed_top" ) : echo ' navbar-fixed-top'; elseif ( isset($navbar_position) && $navbar_position == "fixed_bottom" ) : echo ' navbar-fixed-bottom'; else: echo ' navbar-static-top'; endif; ?>" role="navigation">
+		<nav class="navbar navbar-<?php echo $navbar_scheme; if ( isset($navbar_position) && $navbar_position == "fixed_top" ) : echo ' navbar-fixed-top'; elseif ( isset($navbar_position) && $navbar_position == "fixed_bottom" ) : echo ' navbar-fixed-bottom'; else: echo ' navbar-static-top'; endif; ?>">
 			<div class="container">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -45,7 +45,7 @@
 					?>
 					</a>
 				</div>
-				<div class="collapse navbar-collapse">
+				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 						<?php
 							/** Loading WordPress Custom Menu (theme_location) **/
