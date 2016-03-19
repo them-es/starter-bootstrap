@@ -10,6 +10,7 @@ If you want to see it in action or want to download a customized Theme for free,
 * Bootstrap Framework
 * LESS/SASS Source files
 * Grunt configuration
+* Bower configuration to keep required libraries updated
 * Customization API
 * 2 Menus
 * Custom WordPress Nav Walker class

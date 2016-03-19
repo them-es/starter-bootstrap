@@ -9,6 +9,9 @@
   "license": "GPLv2+",
   "dependencies": {
     "bootstrap": "3",
-	"bootstrap-sass": "3"
+	"bootstrap-sass": "3",
+	"html5shiv": "latest",
+	"jquery-placeholder": "latest",
+	"respond": "latest"
   }
 }

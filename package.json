@@ -1,6 +1,6 @@
 {
   "name": "themes-starter",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "GPL-2.0",
   "description": "A WordPress Starter Theme built with Bootstrap.",
   "homepage": "http://them.es",
@@ -12,15 +12,17 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "*",
-    "grunt-autoprefixer": "*",
-    "grunt-browser-sync": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-imagemin": "*",
-    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*",
     "grunt-contrib-less": "*",
     "grunt-contrib-sass": "*",
+  	"grunt-postcss": "*",
+  	"pixrem": "*",
+  	"autoprefixer": "*",
+  	"cssnano": "*",
+    "grunt-browser-sync": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-jshint": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
     "load-grunt-tasks": "*"
   }
 }

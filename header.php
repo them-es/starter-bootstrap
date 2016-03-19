@@ -46,18 +46,16 @@
 					</a>
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<?php
-							/** Loading WordPress Custom Menu (theme_location) **/
-							wp_nav_menu( array(
-								'theme_location'  => 'main-menu',
-								'container'       => '',
-								'items_wrap'      => '%3$s',
-								'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-								'walker'          => new wp_bootstrap_navwalker()
-							) );
-						?>
-					</ul>
+					<?php
+						/** Loading WordPress Custom Menu (theme_location) **/
+						wp_nav_menu( array(
+							'theme_location'  => 'main-menu',
+							'container'       => '',
+							'items_wrap'      => '<ul class="nav navbar-nav">%3$s</ul>',
+							'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+							'walker'          => new wp_bootstrap_navwalker()
+						) );
+					?>
 					
 					<?php if ( isset($search_enabled) && $search_enabled == "1" ) : ?>
 						<form class="navbar-form navbar-right" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">

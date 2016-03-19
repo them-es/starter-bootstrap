@@ -4,7 +4,7 @@
  * Add custom Bootstrap styles
  */
 
-// 1. Overwrite Bootstrap variables
+// Overwrite Bootstrap variables
 
 /*
 $brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
@@ -18,8 +18,6 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 */
-
-$screen-sm: 768px;
 
 
 /**
@@ -170,7 +168,7 @@ body.admin-bar #header nav.navbar-fixed-top {
  * Responsive Design
  */
 
-@media (max-width: $screen-sm) {
+@media (max-width: $screen-sm-max) {
 	
 	#sidebar {
 		margin-top: 60px;
