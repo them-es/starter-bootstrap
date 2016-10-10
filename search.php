@@ -3,7 +3,7 @@
  * The Template for displaying Search Results pages.
  */
 
-    get_header();
+	get_header();
 ?>
 
 	<?php if ( have_posts() ) : ?>
@@ -14,7 +14,7 @@
 		
 		<?php themes_starter_content_nav( 'nav-above' ); ?>
 	
-		<?php 
+		<?php
 			$count = 1;
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -44,6 +44,9 @@
 			<?php get_search_form(); ?>
 		</article><!-- /#post-0 -->
 	
-	<?php endif; wp_reset_query(); // end of the loop. ?>
+	<?php
+		endif;
+		wp_reset_postdata(); // end of the loop.
+	?>
 	
 <?php get_footer(); ?>

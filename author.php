@@ -3,9 +3,9 @@
  * The Template for displaying Author pages.
  */
 
-    get_header();
+	get_header();
 ?>
- 
+
 	<?php if ( have_posts() ) : ?>
 			
 		<?php
@@ -20,7 +20,7 @@
 
 		<header class="page-header">
 			<h1 class="page-title author">
-				<?php 
+				<?php
 					printf( __( 'Author Archives: %s', 'my-theme' ), '<span class="vcard">' . get_the_author() . '</span>' ); 
 				?>
 			</h1>
@@ -64,7 +64,10 @@
 			get_template_part( 'content', 'none' );
 		?>
 
-	<?php endif; wp_reset_query(); // end of the loop. ?>
+	<?php
+		endif;
+		wp_reset_postdata(); // end of the loop.
+	?>
 
 
 <?php get_footer(); ?>

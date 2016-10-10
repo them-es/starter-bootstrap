@@ -1,6 +1,6 @@
 	<?php
-		// An Archive is a Category, Tag, Author or a Date based page
-		if ( is_archive() ) :
+		// If Single or Archive (Category, Tag, Author or a Date based page)
+		if ( is_single() || is_archive() ) :
 	?>
 			</div><!-- /.col -->
 
@@ -12,9 +12,9 @@
 	?>
 
 		<div id="footer">
-            <hr>
-            <div class="row">
-                <p class="col-lg-6 col-md-6">&copy; <?php echo date('Y'); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
+			<hr>
+			<div class="row">
+				<p class="col-lg-6 col-md-6">&copy; <?php echo date('Y'); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
 				
 				<?php
 					if ( has_nav_menu( 'footer-menu' ) ) : // see function register_nav_menus() in functions.php
@@ -30,18 +30,18 @@
 								'container'       => '',
 								'fallback_cb'     => '',
 								'items_wrap'      => '%3$s',
-								'walker'          => ''
+								'walker'          => '',
 							) );
 
 						echo '</ul></div>';
 					endif;
 				?>
 
-                <?php if ( is_sidebar_active('third_widget_area') ) : ?>
-                    <div class="pull-right"><?php dynamic_sidebar('third_widget_area'); ?></div>
-                <?php endif; ?>
-            </div>
-        </div><!-- /#footer -->
+				<?php if ( is_sidebar_active( 'third_widget_area' ) ) : ?>
+					<div class="pull-right"><?php dynamic_sidebar( 'third_widget_area' ); ?></div>
+				<?php endif; ?>
+			</div>
+		</div><!-- /#footer -->
 
 	</div><!-- /#main -->
 	

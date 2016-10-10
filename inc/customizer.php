@@ -24,27 +24,27 @@ function themes_starter_customize( $wp_customize ) {
 		'title'          => 'Header',
 		'priority'       => 1000,
 	) );
-    
+	
 /*
  * Section: Page Layout
  */
 	// Header Logo
-    $wp_customize->add_setting('header_logo', array(
-        'default'           => '',
-        'sanitize_callback' => 'esc_url_raw',
-    ));
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'header_logo', array(
-        'label'       => __('Upload Header Logo', 'my-theme'),
-        'description' => __('Height: &gt;80px', 'my-theme'),
-        'section'  => 'theme_header_section',
-        'settings' => 'header_logo',
-        'priority' => 1,
-    )));
+	$wp_customize->add_setting('header_logo', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'header_logo', array(
+		'label'       => __('Upload Header Logo', 'my-theme'),
+		'description' => __('Height: &gt;80px', 'my-theme'),
+		'section'  => 'theme_header_section',
+		'settings' => 'header_logo',
+		'priority' => 1,
+	)));
 	
-    // Predefined Navbar scheme
-    $wp_customize->add_setting( 'navbar_scheme', array(
+	// Predefined Navbar scheme
+	$wp_customize->add_setting( 'navbar_scheme', array(
 		'default' => 'default',
-        'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'sanitize_text_field',
 	) );
 	$wp_customize->add_control( 'navbar_scheme', array(
 		'type'          => 'radio',
@@ -54,14 +54,14 @@ function themes_starter_customize( $wp_customize ) {
 			'default'   => __( 'Default', 'my-theme' ),
 			'inverse'   => __( 'Inverse', 'my-theme' )
 		),
-        'settings'   => 'navbar_scheme',
+		'settings'   => 'navbar_scheme',
 		'priority'   => 1,
 	) );
 	
 	// Fixed Header?
 	$wp_customize->add_setting( 'navbar_position', array(
 		'default' => 'static',
-        'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'sanitize_text_field',
 	) );
 	$wp_customize->add_control( 'navbar_position', array(
 		'type'          => 'radio',
@@ -72,21 +72,21 @@ function themes_starter_customize( $wp_customize ) {
 			'fixed_top'    => __( 'Fixed to top', 'my-theme' ),
 			'fixed_bottom' => __( 'Fixed to bottom', 'my-theme' )
 		),
-        'settings'   => 'navbar_position',
+		'settings'   => 'navbar_position',
 		'priority'   => 2,
 	) );
-    
-    // Search?
-    $wp_customize->add_setting( 'search_enabled', array(
+	
+	// Search?
+	$wp_customize->add_setting( 'search_enabled', array(
 		'default' => '1',
-        'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'sanitize_text_field',
 	) );
 	$wp_customize->add_control( 'search_enabled', array(
 		'type'          => 'checkbox',
 		'label'         => __( 'Show Searchfield?', 'my-theme' ),
 		'section'       => 'theme_header_section',
-        'settings'   => 'search_enabled',
-        'priority'   => 3,
+		'settings'   => 'search_enabled',
+		'priority'   => 3,
 	) );
 	
 }

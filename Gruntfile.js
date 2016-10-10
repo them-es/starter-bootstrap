@@ -27,6 +27,9 @@ module.exports = function (grunt) {
 			js: {
 				files: '<%= jshint.all %>',
 				tasks: ['jshint', 'uglify']
+			},
+			options: {
+				//livereload: true // Install and enable a Browser Plugin first: http://livereload.com/extensions/
 			}
 		},
 
@@ -111,22 +114,9 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// browserSync
-		/*browserSync: {
-			dev: {
-				bsFiles: {
-					src : ['style.css', 'css/main.css', 'js/*.js', 'img/*.{png,jpg,jpeg,gif,webp,svg}']
-				},
-				options: {
-					proxy: "local.dev",
-					watchTask: true
-				}
-			}
-		},*/
-
 	});
 	
 	// register task
-	grunt.registerTask('default', ['watch', 'sass', 'less', 'postcss', 'imagemin', 'uglify', /*'browserSync'*/]);
+	grunt.registerTask('default', ['watch', 'sass', 'less', 'postcss', 'imagemin', 'uglify']);
 
 };

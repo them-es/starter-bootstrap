@@ -5,13 +5,13 @@
  *
  */
 
-    get_header();
+	get_header();
 
 	$id = get_the_ID();
 
 	// Add class via custom field (optional)
-	$class = sanitize_text_field( get_post_meta($id, '_class', true) );// get custom meta-value
-	$style = sanitize_text_field( get_post_meta($id, '_style', true) );// get custom meta-value
+	$class = sanitize_text_field( get_post_meta( $id, '_class', true ) );// get custom meta-value
+	$style = sanitize_text_field( get_post_meta( $id, '_style', true ) );// get custom meta-value
 ?>
 
 	<?php the_post(); ?>

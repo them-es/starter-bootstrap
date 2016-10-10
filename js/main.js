@@ -1,12 +1,12 @@
 /*global jQuery:false */
 
 (function ($) {
-    "use strict";
+	"use strict";
 
-    // JQuery fallback: add title attribute from placeholder
-    $("input, textarea").attr("title", function () {
-        return $(this).attr("placeholder");
-    });
+	// JQuery fallback: add title attribute from placeholder
+	$("input, textarea").attr("title", function () {
+		return $(this).attr("placeholder");
+	});
 	
 	// Focus Search if Searchform is empty
 	$(".searchform").on("submit", function (event) {
