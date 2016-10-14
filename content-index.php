@@ -41,10 +41,10 @@
 					echo '<div class="post-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'large' ) . '</div>';
 				endif;
 			?>
-			<?php 
+			<?php
 				if ( is_search() ) :
 					the_excerpt();
-				else:
+				else :
 					the_content();
 				endif;
 			?>

@@ -142,7 +142,7 @@ $theme_version = "1.1";
 	 */
 	function get_page_number() {
 		if ( get_query_var( 'paged' ) ) {
-			print ' | ' . __( 'Page ' , 'my-theme') . get_query_var('paged');
+			print ' | ' . __( 'Page ' , 'my-theme') . get_query_var( 'paged' );
 		}
 	}
 
@@ -154,7 +154,7 @@ $theme_version = "1.1";
 	 */
 	function themes_starter_filter_media_comment_status( $open, $post_id ) {
 		$media_post = get_post( $post_id );
-		if( 'attachment' === $media_post->post_type ) {
+		if ( 'attachment' === $media_post->post_type ) {
 			return false;
 		}
 		return $open;
@@ -168,7 +168,7 @@ $theme_version = "1.1";
 	 * @since v1.0
 	 */
 	function themes_starter_custom_edit_post_link( $output ) {
-		$output = str_replace('class="post-edit-link"', 'class="post-edit-link badge badge-info"', $output);
+		$output = str_replace( 'class="post-edit-link"', 'class="post-edit-link badge badge-info"', $output );
 		return $output;
 	}
 	add_filter( 'edit_post_link', 'themes_starter_custom_edit_post_link' );
@@ -179,11 +179,11 @@ $theme_version = "1.1";
 	 *
 	 * @since v1.0
 	 */
-	function themes_starter_oembed_filter( $html, $url, $attr, $post_ID ) {
+	function themes_starter_oembed_filter( $html, $url, $attr, $post_id ) {
 		$return = '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
 		return $return;
 	}
-	add_filter( 'embed_oembed_html', 'themes_starter_oembed_filter', 10, 4 ) ;
+	add_filter( 'embed_oembed_html', 'themes_starter_oembed_filter', 10, 4 );
 
 
 	if ( ! function_exists( 'themes_starter_content_nav' ) ) :
@@ -224,7 +224,7 @@ $theme_version = "1.1";
 	 */
 	function themes_starter_widgets_init() {
 		// Area 1
-		register_sidebar( array (
+		register_sidebar( array(
 			'name' => 'Primary Widget Area (Sidebar)',
 			'id' => 'primary_widget_area',
 			'before_widget' => '',
@@ -234,7 +234,7 @@ $theme_version = "1.1";
 		) );
 
 		// Area 2
-		register_sidebar( array (
+		register_sidebar( array(
 			'name' => 'Secondary Widget Area (Header Navigation)',
 			'id' => 'secondary_widget_area',
 			'before_widget' => '',
@@ -244,7 +244,7 @@ $theme_version = "1.1";
 		) );
 
 		// Area 3
-		register_sidebar( array (
+		register_sidebar( array(
 			'name' => 'Third Widget Area (Footer)',
 			'id' => 'third_widget_area',
 			'before_widget' => '',
@@ -255,10 +255,10 @@ $theme_version = "1.1";
 	}
 	add_action( 'widgets_init', 'themes_starter_widgets_init' );
 
-	$preset_widgets = array (
-		'primary_widget_area'  => array( 'search', 'pages', 'categories', 'archives' ),
-		'secondary_widget_area'  => array( 'links', 'meta' ),
-		'third_widget_area'  => array( 'links', 'meta' )
+	$preset_widgets = array(
+		'primary_widget_area' => array( 'search', 'pages', 'categories', 'archives' ),
+		'secondary_widget_area' => array( 'links', 'meta' ),
+		'third_widget_area' => array( 'links', 'meta' ),
 	);
 	if ( isset( $_GET['activated'] ) ) {
 		update_option( 'sidebars_widgets', $preset_widgets );
@@ -271,7 +271,7 @@ $theme_version = "1.1";
 
 		$widgetcolums = wp_get_sidebars_widgets();
 
-		if ($widgetcolums[$index]) {
+		if ( $widgetcolums[$index] ) {
 			return true;
 		}
 
@@ -282,7 +282,7 @@ $theme_version = "1.1";
 	if ( ! function_exists( 'themes_starter_article_posted_on' ) ) :
 		/**
 		 * "Theme posted on" pattern
-		 * 
+		 *
 		 * @since v1.0
 		 */
 		function themes_starter_article_posted_on() {
@@ -311,18 +311,18 @@ $theme_version = "1.1";
 		global $post;
 		$label = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
 
-		$o = '<div class="row">';
-			$o .= '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">';
-			$o .= '<h4 class="col-lg-12 alert alert-warning">' . __( "This content is password protected. To view it please enter your password below.", "my-theme" ) . '</h4>';
-				$o .= '<div class="col-lg-6 col-md-6">';
-					$o .= '<div class="input-group">';
-						$o .= '<input name="post_password" id="' . $label . '" type="password" placeholder="' . __( "Password", 'my-theme' ) . '" class="form-control" />';
-						$o .= '<span class="input-group-btn"><input type="submit" name="submit" class="btn btn-default" value="' . esc_attr( __( "Submit", "my-theme" ) ) . '" /></span>';
-					$o .= '</div><!-- /.input-group -->';
-				$o .= '</div><!-- /.col -->';
-			$o .= '</form>';
-		$o .= '</div><!-- /.row -->';
-		return $o;
+		$output = '<div class="row">';
+			$output .= '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">';
+			$output .= '<h4 class="col-lg-12 alert alert-warning">' . __( "This content is password protected. To view it please enter your password below.", "my-theme" ) . '</h4>';
+				$output .= '<div class="col-lg-6 col-md-6">';
+					$output .= '<div class="input-group">';
+						$output .= '<input name="post_password" id="' . $label . '" type="password" placeholder="' . __( "Password", 'my-theme' ) . '" class="form-control" />';
+						$output .= '<span class="input-group-btn"><input type="submit" name="submit" class="btn btn-default" value="' . esc_attr( __( "Submit", "my-theme" ) ) . '" /></span>';
+					$output .= '</div><!-- /.input-group -->';
+				$output .= '</div><!-- /.col -->';
+			$output .= '</form>';
+		$output .= '</div><!-- /.row -->';
+		return $output;
 	}
 	add_filter( 'the_password_form', 'themes_starter_password_form' );
 
@@ -365,8 +365,10 @@ $theme_version = "1.1";
 						<div class="comment-author vcard">
 							<?php
 								$avatar_size = 136;
-								if ( '0' != $comment->comment_parent )
+								if ( '0' != $comment->comment_parent ) {
 									$avatar_size = 68;
+								}
+								
 								echo get_avatar( $comment, $avatar_size );
 								/* translators: 1: comment author, 2: date and time */
 								printf( __( '%1$s, %2$s', 'my-theme' ),
@@ -424,7 +426,7 @@ $theme_version = "1.1";
 
 			$req      = get_option( 'require_name_email' );
 			$aria_req = ( $req ? " aria-required='true' required" : '' );
-			$fields   =  array(
+			$fields   = array(
 				'author' => '<p><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
 							'<br /><input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></p>',
 				'email'  => '<p><label for="email">' . __( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .

@@ -36,9 +36,9 @@
 				*/
 				get_template_part( 'content', 'index' );
 
-				if ( 0 === $count % 2 ) {
-					echo '<div class="clearfix"></div>';
-				}
+				if ( 0 === $count % 2 ) :
+					echo '<div class="clearfix"></div>'; // clearfix after 2 posts
+				endif;
 				$count++;
 
 			endwhile;
@@ -57,6 +57,5 @@
 		endif;
 		wp_reset_postdata(); // end of the loop.
 	?>
-
 
 <?php get_footer(); ?>

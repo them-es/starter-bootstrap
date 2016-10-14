@@ -15,7 +15,7 @@
 				<p><?php the_author_meta( 'description' ); ?></p>
 				<p class="author-links">
 					<?php
-						if ( !empty(get_the_author_meta('user_url')) ):
+						if ( !empty(get_the_author_meta('user_url')) ) :
 							printf( '<a href="%s" class="www btn btn-default btn-sm">' . __('Website', 'my-theme' ) . '</a>', esc_url( get_the_author_meta( 'user_url' ) ) );
 						endif;
 					?>

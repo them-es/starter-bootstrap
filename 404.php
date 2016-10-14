@@ -15,5 +15,5 @@
 			<div><?php get_search_form(); ?></div>
 		</div><!-- /.entry-content -->
 	</div><!-- /#post-0 -->
- 
+
 <?php get_footer(); ?>

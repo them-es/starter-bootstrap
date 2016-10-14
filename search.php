@@ -17,7 +17,8 @@
 		<?php
 			$count = 1;
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) :
+				the_post();
 			
 				/* Include the Post-Format-specific template for the content.
 				* If you want to overload this in a child theme then include a file
@@ -25,7 +26,9 @@
 				*/
 				get_template_part( 'content', 'index' );
 				
-				if ( $count%2 == 0) echo '<div class="clearfix"></div>';
+				if ( 0 === $count % 2 ) :
+					echo '<div class="clearfix"></div>'; // clearfix after 2 posts
+				endif;
 				$count++;
 				
 			endwhile;

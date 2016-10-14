@@ -12,15 +12,14 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-	<div id="comments" class="form-horizontal">
-        
-    <?php if ( comments_open() && ! have_comments() ) : ?>
+<div id="comments" class="form-horizontal">
+	<?php if ( comments_open() && ! have_comments() ) : ?>
 		<h2 id="comments-title">
 			<?php
 				_e( 'No Comments yet!', 'my-theme' );
 			?>
 		</h2>
-    <?php endif; ?>
+	<?php endif; ?>
 
 	<?php if ( have_comments() ) : ?>
 		<h2 id="comments-title">
@@ -66,11 +65,10 @@ if ( post_password_required() ) {
 	?>
 		<h2 id="comments-title" class="nocomments"><?php _e( 'Comments are closed.', 'my-theme' ); ?></h2>
 		
-	<?php endif;
-	
+	<?php
+		endif;
+
 		// Show Comment Form (customized in functions.php!)
 		comment_form();
-		
 	?>
-
-	</div><!-- /#comments -->
+</div><!-- /#comments -->

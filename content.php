@@ -40,7 +40,7 @@
 			<?php
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( __( ', ', 'my-theme' ) );
-			if ( $categories_list ):
+			if ( $categories_list ) :
 				?>
 				<span class="cat-links">
 					<?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'my-theme' ), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
@@ -50,7 +50,7 @@
 			<?php
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', __( ', ', 'my-theme' ) );
-			if ( $tags_list ):
+			if ( $tags_list ) :
 				if ( $show_sep ) : ?>
 				<span class="sep"> | </span>
 			<?php endif; // End if $show_sep ?>
@@ -71,5 +71,5 @@
 	<a href="<?php echo get_permalink(); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a>
 	
 	<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
-    </footer><!-- /.entry-meta -->
+	</footer><!-- /.entry-meta -->
 </article><!-- /#post-<?php the_ID(); ?> -->
