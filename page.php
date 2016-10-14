@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Template Name: Page (Default)
  * Description: Page template with Sidebar on the left side
@@ -19,7 +19,7 @@
 		<div class="col-lg-8 col-lg-push-4 col-md-8 col-md-push-4 col-sm-12">
 			<?php the_post(); ?>
 			
-			<div id="post-<?php the_ID(); ?>" <?php if ( isset($class) && $class != "" ) : post_class('content ' . $class); else: echo post_class('content'); endif; ?><?php if ( isset($style) && $style != "" ) : echo ' style="' . $style . '"'; endif; ?>>
+			<div id="post-<?php the_ID(); ?>" <?php if ( isset( $class ) && ! empty( $class ) ) : post_class( 'content ' . $class ); else : echo post_class( 'content' ); endif; ?><?php if ( isset( $style ) && ! empty( $style ) ) : echo ' style="' . $style . '"'; endif; ?>>
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 				
 				<?php

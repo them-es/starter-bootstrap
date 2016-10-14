@@ -15,7 +15,7 @@
  */
 
 function themes_starter_customize( $wp_customize ) {
-	
+
 /*
  * Initialize sections
  */

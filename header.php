@@ -21,7 +21,7 @@
 <div id="wrapper">
 	
 	<header id="header"<?php if ( is_home() || is_front_page() ) : ?> class="home"<?php endif; ?>>
-		<nav class="navbar navbar-<?php echo $navbar_scheme; if ( isset( $navbar_position ) && $navbar_position == "fixed_top" ) : echo ' navbar-fixed-top'; elseif ( isset( $navbar_position ) && $navbar_position == "fixed_bottom" ) : echo ' navbar-fixed-bottom'; else : echo ' navbar-static-top'; endif; ?>">
+		<nav class="navbar navbar-<?php echo $navbar_scheme; if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' navbar-fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' navbar-fixed-bottom'; else : echo ' navbar-static-top'; endif; ?>">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -33,7 +33,7 @@
 					<?php
 						$header_logo = get_theme_mod( 'header_logo' ); // get custom meta-value
 
-						if ( isset( $header_logo ) && $header_logo != "" ) :
+						if ( isset( $header_logo ) && ! empty( $header_logo ) ) :
 					?>
 						<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 					<?php
@@ -49,15 +49,15 @@
 					<?php
 						/** Loading WordPress Custom Menu (theme_location) **/
 						wp_nav_menu( array(
-							'theme_location'  => 'main-menu',
-							'container'       => '',
-							'items_wrap'      => '<ul class="nav navbar-nav">%3$s</ul>',
-							'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-							'walker'          => new wp_bootstrap_navwalker(),
+							'theme_location' => 'main-menu',
+							'container'      => '',
+							'items_wrap'     => '<ul class="nav navbar-nav">%3$s</ul>',
+							'fallback_cb'    => 'wp_bootstrap_navwalker::fallback',
+							'walker'         => new wp_bootstrap_navwalker(),
 						) );
 					?>
 					
-					<?php if ( isset( $search_enabled ) && $search_enabled === 1 ) : ?>
+					<?php if ( isset( $search_enabled ) && 1 === $search_enabled ) : ?>
 						<form class="navbar-form navbar-right" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 							<div class="input-group input-group-sm">
 								<input type="text" id="s" name="s" class="form-control" placeholder="<?php _e( 'Search', 'my-theme' ); ?>">
@@ -72,7 +72,7 @@
 		</nav>
 	</header><!-- /#header -->
 	
-	<div id="main" class="container"<?php if ( isset( $navbar_position ) && $navbar_position == "fixed_top" ) : echo ' style="padding-top: 80px;"'; elseif ( isset( $navbar_position ) && $navbar_position == "fixed_bottom" ) : echo ' style="padding-bottom: 80px;"'; endif; ?>>
+	<div id="main" class="container"<?php if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' style="padding-top: 80px;"'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' style="padding-bottom: 80px;"'; endif; ?>>
 		
 		<?php
 			// If Single or Archive (Category, Tag, Author or a Date based page)
