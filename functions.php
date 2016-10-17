@@ -128,7 +128,7 @@ $theme_version = "1.1";
 	 *
 	 * @since v1.0
 	 */
-	function is_blog () {
+	function is_blog() {
 		global $post;
 		$posttype = get_post_type( $post );
 		return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( 'post' === $posttype ) ) ? true : false ;
@@ -365,11 +365,11 @@ $theme_version = "1.1";
 						<div class="comment-author vcard">
 							<?php
 								$avatar_size = 136;
-								if ( '0' != $comment->comment_parent ) {
+								if ( '0' !== $comment->comment_parent ) {
 									$avatar_size = 68;
 								}
-								
 								echo get_avatar( $comment, $avatar_size );
+
 								/* translators: 1: comment author, 2: date and time */
 								printf( __( '%1$s, %2$s', 'my-theme' ),
 									sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
@@ -386,7 +386,7 @@ $theme_version = "1.1";
 							<?php edit_comment_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
 						</div><!-- .comment-author .vcard -->
 
-						<?php if ( $comment->comment_approved == '0' ) : ?>
+						<?php if ( '0' === $comment->comment_approved ) : ?>
 							<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'my-theme' ); ?></em>
 							<br />
 						<?php endif; ?>
@@ -424,9 +424,9 @@ $theme_version = "1.1";
 
 			$args = wp_parse_args( $args );
 
-			$req      = get_option( 'require_name_email' );
+			$req = get_option( 'require_name_email' );
 			$aria_req = ( $req ? " aria-required='true' required" : '' );
-			$fields   = array(
+			$fields = array(
 				'author' => '<p><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
 							'<br /><input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></p>',
 				'email'  => '<p><label for="email">' . __( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .

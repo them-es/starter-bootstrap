@@ -15,7 +15,7 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 			<?php dynamic_sidebar( 'primary_widget_area' ); ?>
 
 			<?php if ( current_user_can( 'manage_options' ) ) : ?>
-				<a href="<?php echo admin_url( 'widgets.php' ); ?>" class="badge badge-info">Edit</a><!-- Show Edit Widget link -->
+				<p class="edit-link"><a href="<?php echo admin_url( 'widgets.php' ); ?>" class="badge badge-info"><?php _e( 'Edit', 'my-theme' ); ?></a></p><!-- Show Edit Widget link -->
 			<?php endif; ?>
 		</div><!-- .widget-area -->
 		
@@ -30,7 +30,7 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 						$recentposts_query = new WP_Query( 'posts_per_page=5' );// max 5 posts in Sidebar!
 						$month_check = null;
 						if ( $recentposts_query->have_posts() ) :
-							$output .= '<li><h3>' . __('Recent Posts', 'my-theme') . '</h3></li>';
+							$output .= '<li><h3>' . __( 'Recent Posts', 'my-theme' ) . '</h3></li>';
 							while ( $recentposts_query->have_posts() ) : $recentposts_query->the_post();
 								$output .= '<li>';
 									// Show monthly archive and link to months

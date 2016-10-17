@@ -26,11 +26,11 @@
 								!!! IMPORTANT: After adding all pages to the menu, don't forget to assign this menu to the Footer menu of "Theme locations" /wp-admin/nav-menus.php (on left side) ... Otherwise the themes will not know, which menu to use!!!
 							*/
 							wp_nav_menu( array(
-								'theme_location'  => 'footer-menu',
-								'container'       => '',
-								'fallback_cb'     => '',
-								'items_wrap'      => '%3$s',
-								'walker'          => '',
+								'theme_location' => 'footer-menu',
+								'container'      => '',
+								'fallback_cb'    => '',
+								'items_wrap'     => '%3$s',
+								'walker'         => '',
 							) );
 
 						echo '</ul></div>';
@@ -38,7 +38,13 @@
 				?>
 
 				<?php if ( is_sidebar_active( 'third_widget_area' ) ) : ?>
-					<div class="pull-right"><?php dynamic_sidebar( 'third_widget_area' ); ?></div>
+					<div class="pull-right">
+						<?php dynamic_sidebar( 'third_widget_area' ); ?>
+
+						<?php if ( current_user_can( 'manage_options' ) ) : ?>
+							<p class="edit-link"><a href="<?php echo admin_url( 'widgets.php' ); ?>" class="badge badge-info"><?php _e( 'Edit', 'my-theme' ); ?></a></p><!-- Show Edit Widget link -->
+						<?php endif; ?>
+					</div>
 				<?php endif; ?>
 			</div>
 		</div><!-- /#footer -->
