@@ -7,7 +7,7 @@ Description: I'm an Open-source Starter Theme developed and maintained by them.e
 Version: 1.4.2
 License: GPL version 2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0
-Tags: responsive-layout, custom-background, custom-colors, featured-images, flexible-header, microformats, post-formats, rtl-language-support, theme-options, translation-ready, accessibility-ready
+Tags: custom-background, custom-colors, featured-images, flexible-header, microformats, post-formats, rtl-language-support, theme-options, translation-ready, accessibility-ready
 Text Domain: my-theme
 */
 
@@ -83,6 +83,21 @@ a img.aligncenter {
 	line-height: 17px;
 	margin: 0;
 	padding: 0 4px 5px;
+}
+
+.gallery-caption {
+	display: block;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-style: italic;
+	line-height: 1.6153846154;
+	padding-top: 0.5384615385em;
+}
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
 }
 
 .sticky .entry-date {

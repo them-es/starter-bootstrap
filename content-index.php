@@ -18,7 +18,7 @@
 						$num_comments = get_comments_number();
 						
 						if ( comments_open() ) :
-							if ( $num_comments == 0 ) {
+							if ( 0 === $num_comments ) {
 								//$comments = __( 'No Comments', 'my-theme' );
 							} elseif ( $num_comments > 1 ) {
 								$comments = $num_comments . ' ' . __( 'Comments', 'my-theme' );
@@ -26,7 +26,7 @@
 								$comments = '1 ' . __( 'Comment', 'my-theme' );
 							}
 							
-							if ( isset($comments) ) {
+							if ( isset( $comments ) ) {
 								echo ' <a href="' . get_comments_link() . '" class="badge pull-right" title="' . $comments . '">' . $num_comments . '</a>';
 							}
 						endif;

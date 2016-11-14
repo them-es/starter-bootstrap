@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = "1.1";
+$theme_version = '1.1';
 
 	/**
 	 * Include Theme Customizer
@@ -63,11 +63,6 @@ $theme_version = "1.1";
 			add_theme_support( 'html5', array(
 				'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 			) );
-			/**
-				add_theme_support( 'post-formats', array(
-				'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
-			) );
-			*/
 
 			// Date/Time Format
 			$theme_dateformat = get_option( 'date_format' );
@@ -313,11 +308,11 @@ $theme_version = "1.1";
 
 		$output = '<div class="row">';
 			$output .= '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">';
-			$output .= '<h4 class="col-lg-12 alert alert-warning">' . __( "This content is password protected. To view it please enter your password below.", "my-theme" ) . '</h4>';
+			$output .= '<h4 class="col-lg-12 alert alert-warning">' . __( 'This content is password protected. To view it please enter your password below.', 'my-theme' ) . '</h4>';
 				$output .= '<div class="col-lg-6 col-md-6">';
 					$output .= '<div class="input-group">';
-						$output .= '<input name="post_password" id="' . $label . '" type="password" placeholder="' . __( "Password", 'my-theme' ) . '" class="form-control" />';
-						$output .= '<span class="input-group-btn"><input type="submit" name="submit" class="btn btn-default" value="' . esc_attr( __( "Submit", "my-theme" ) ) . '" /></span>';
+						$output .= '<input name="post_password" id="' . $label . '" type="password" placeholder="' . __( 'Password', 'my-theme' ) . '" class="form-control" />';
+						$output .= '<span class="input-group-btn"><input type="submit" name="submit" class="btn btn-default" value="' . esc_attr( __( 'Submit', 'my-theme' ) ) . '" /></span>';
 					$output .= '</div><!-- /.input-group -->';
 				$output .= '</div><!-- /.col -->';
 			$output .= '</form>';
@@ -430,7 +425,7 @@ $theme_version = "1.1";
 				'author' => '<p><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
 							'<br /><input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></p>',
 				'email'  => '<p><label for="email">' . __( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
-							'<br /><input id="email" name="email" class="form-control" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></p>',
+							'<br /><input id="email" name="email" class="form-control" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></p>',
 				'url'    => '',
 			);
 

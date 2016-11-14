@@ -31,13 +31,14 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 						$month_check = null;
 						if ( $recentposts_query->have_posts() ) :
 							$output .= '<li><h3>' . __( 'Recent Posts', 'my-theme' ) . '</h3></li>';
-							while ( $recentposts_query->have_posts() ) : $recentposts_query->the_post();
+							while ( $recentposts_query->have_posts() ) :
+								$recentposts_query->the_post();
 								$output .= '<li>';
 									// Show monthly archive and link to months
 									$month = get_the_date('F, Y');
-									if ( $month !== $month_check ) : $output .= '<p><a href="' . get_month_link( get_the_date('Y'), get_the_date('m') ) . '" title="' . get_the_date('F, Y') . '">' . $month . '</a></p>'; endif;
+									if ( $month !== $month_check ) : $output .= '<p><a href="' . get_month_link( get_the_date( 'Y' ), get_the_date( 'm' ) ) . '" title="' . get_the_date( 'F, Y' ) . '">' . $month . '</a></p>'; endif;
 									$month_check = $month;
-								$output .= '<h4><a href="' . get_the_permalink() . '" title="' . sprintf( __('Permalink to %s', 'my-theme'), the_title_attribute('echo=0') ) . '" rel="bookmark">' . get_the_title() . '</a></h4>';
+								$output .= '<h4><a href="' . get_the_permalink() . '" title="' . sprintf( __( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark">' . get_the_title() . '</a></h4>';
 								$output .= '</li>';
 							endwhile;
 						endif;
@@ -49,14 +50,14 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 				?>
 				<br />
 				<ul>
-					<li><h3 class="border-bottom"><?php _e('Categories', 'my-theme'); ?></h3></li>
+					<li><h3 class="border-bottom"><?php _e( 'Categories', 'my-theme' ); ?></h3></li>
 					<?php
-						wp_list_categories('&title_li=');
+						wp_list_categories( '&title_li=' );
 					?>
 					
 					<?php if ( ! is_author() ) : ?>
 						<li>&nbsp;</li>
-						<li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="btn btn-default"><?php _e('more', 'my-theme'); ?></a></li>
+						<li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a></li>
 					<?php endif; ?>
 				</ul>
 			</div><!-- /#primary-two -->
