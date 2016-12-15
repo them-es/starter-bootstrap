@@ -6,7 +6,11 @@
 	get_header();
 ?>
 	
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<?php
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+			the_post();
+		?>
 		
 		<?php
 			get_template_part( 'content', 'single' );
@@ -17,7 +21,11 @@
 			endif;
 		?>
 		
-	<?php endwhile; endif; wp_reset_postdata(); // end of the loop. ?>
+	<?php
+			endwhile;
+		endif;
+		wp_reset_postdata(); // end of the loop.
+	?>
 	
 	<?php
 		$count_posts = wp_count_posts();

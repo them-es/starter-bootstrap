@@ -77,7 +77,7 @@
 			<span class="comments-link"><?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'my-theme' ) . '</span>', __( '<b>1</b> Reply', 'my-theme' ), __( '<b>%</b> Replies', 'my-theme' ) ); ?></span>
 		<?php endif; // End if comments_open() ?>
 		
-		<a href="<?php echo get_permalink(); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a>
+		<a href="<?php echo get_the_permalink(); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a>
 		
 		<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- /.entry-meta -->

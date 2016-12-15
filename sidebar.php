@@ -57,7 +57,7 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 					
 					<?php if ( ! is_author() ) : ?>
 						<li>&nbsp;</li>
-						<li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a></li>
+						<li><a href="<?php echo get_the_permalink( get_option( 'page_for_posts' ) ); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a></li>
 					<?php endif; ?>
 				</ul>
 			</div><!-- /#primary-two -->

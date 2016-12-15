@@ -7,20 +7,20 @@
 ?>
 
 	<?php if ( have_posts() ) : ?>
-				
+		
 		<header class="page-header">
 			<h1 class="page-title"><?php printf( __( 'Category Archives: %s', 'my-theme' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
 			<?php
-			$category_description = category_description();
-			if ( ! empty( $category_description ) ) {
-				echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
-			}
+				$category_description = category_description();
+				if ( ! empty( $category_description ) ) :
+					echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
+				endif;
 			?>
 		</header>
 
 		<?php themes_starter_content_nav( 'nav-above' ); ?>
 
-			<?php 
+			<?php
 				$count = 1;
 				/* Start the Loop */
 				while ( have_posts() ) :
@@ -32,7 +32,9 @@
 					*/
 					get_template_part( 'content', 'index' );
 
-					if ( $count%2 == 0) echo '<div class="clearfix"></div>';
+					if ( 0 === $count % 2 ) :
+						echo '<div class="clearfix"></div>'; // clearfix after 2 posts
+					endif;
 					$count++;
 
 				endwhile;

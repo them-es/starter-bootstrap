@@ -52,7 +52,7 @@
 		</div><!-- /.entry-content -->
 
 		<footer class="entry-meta panel-body">
-			<a href="<?php echo get_permalink(); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a>
+			<a href="<?php echo get_the_permalink(); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a>
 		</footer><!-- .entry-meta -->
 	</div>
 </article><!-- /#post-<?php the_ID(); ?> -->
