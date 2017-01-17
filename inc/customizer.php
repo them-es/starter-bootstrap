@@ -34,8 +34,8 @@ function themes_starter_customize( $wp_customize ) {
 		'sanitize_callback' => 'esc_url_raw',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'header_logo', array(
-		'label'       => __('Upload Header Logo', 'my-theme'),
-		'description' => __('Height: &gt;80px', 'my-theme'),
+		'label'       => __( 'Upload Header Logo', 'my-theme' ),
+		'description' => __( 'Height: &gt;80px', 'my-theme' ),
 		'section'  => 'theme_header_section',
 		'settings' => 'header_logo',
 		'priority' => 1,
@@ -52,7 +52,7 @@ function themes_starter_customize( $wp_customize ) {
 		'section'       => 'theme_header_section',
 		'choices' => array(
 			'default'   => __( 'Default', 'my-theme' ),
-			'inverse'   => __( 'Inverse', 'my-theme' )
+			'inverse'   => __( 'Inverse', 'my-theme' ),
 		),
 		'settings'   => 'navbar_scheme',
 		'priority'   => 1,
@@ -70,7 +70,7 @@ function themes_starter_customize( $wp_customize ) {
 		'choices' => array(
 			'static'       => __( 'Static', 'my-theme' ),
 			'fixed_top'    => __( 'Fixed to top', 'my-theme' ),
-			'fixed_bottom' => __( 'Fixed to bottom', 'my-theme' )
+			'fixed_bottom' => __( 'Fixed to bottom', 'my-theme' ),
 		),
 		'settings'   => 'navbar_position',
 		'priority'   => 2,

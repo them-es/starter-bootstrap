@@ -14,7 +14,7 @@
     "grunt": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-less": "*",
-    "grunt-contrib-sass": "*",
+    "grunt-sass": "*",
     "grunt-postcss": "*",
     "pixrem": "*",
     "autoprefixer": "*",

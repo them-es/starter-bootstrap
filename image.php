@@ -31,7 +31,8 @@
 
 						<nav id="image-navigation" class="navigation image-navigation">
 							<div class="nav-links">
-								<div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'my-theme' ) ); ?></div>                                   <div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'my-theme' ) ); ?></div>
+								<div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'my-theme' ) ); ?></div>
+								<div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'my-theme' ) ); ?></div>
 							</div><!-- .nav-links -->
 						</nav><!-- .image-navigation -->
 						
@@ -43,7 +44,7 @@
 							
 							<div class="entry-attachment">
 								<?php
-									echo wp_get_attachment_image( get_the_ID(), 'large', false, array( 'class' => 'img-responsive' )  );
+									echo wp_get_attachment_image( get_the_ID(), 'large', false, array( 'class' => 'img-responsive' ) );
 								?>
 								
 								<?php if ( has_excerpt() ) : ?>
