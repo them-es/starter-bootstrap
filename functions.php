@@ -113,7 +113,7 @@ $theme_version = '1.1';
 
 			return $fields;
 		}
-		add_filter( 'user_contactmethods', 'themes_starter_add_user_fields' );
+		add_filter( 'user_contactmethods', 'themes_starter_add_user_fields' ); // get_user_meta( $user->ID, 'facebook_profile', true );
 	endif;
 
 

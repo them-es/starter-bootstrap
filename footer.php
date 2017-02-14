@@ -43,7 +43,7 @@
 						<?php endif; ?>
 					</div>
 				<?php endif; ?>
-			</div>
+			</div><!-- /.row -->
 		</div><!-- /#footer -->
 
 	</div><!-- /#main -->
