@@ -18,6 +18,8 @@
 
 <body <?php body_class(); ?>>
 
+<a href="#main" class="sr-only sr-only-focusable"><?php _e( 'Skip to main content', 'my-theme' ); ?></a>
+
 <div id="wrapper">
 	
 	<header id="header"<?php if ( is_home() || is_front_page() ) : ?> class="home"<?php endif; ?>>
@@ -57,8 +59,8 @@
 						) );
 					?>
 					
-					<?php if ( isset( $search_enabled ) && 1 === $search_enabled ) : ?>
-						<form class="navbar-form navbar-right" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<?php if ( isset( $search_enabled ) && '1' === $search_enabled ) : ?>
+						<form class="navbar-form navbar-right search-form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 							<div class="input-group input-group-sm">
 								<input type="text" id="s" name="s" class="form-control" placeholder="<?php _e( 'Search', 'my-theme' ); ?>">
 								<span class="input-group-btn">

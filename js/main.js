@@ -1,5 +1,3 @@
-/*global jQuery:false */
-
 (function ($) {
 	'use strict';
 
@@ -9,7 +7,7 @@
 	});
 	
 	// Focus Search if Searchform is empty
-	$('.searchform').on('submit', function (event) {
+	$('.search-form').on('submit', function (event) {
 		var search = document.getElementById('s');
 		if (search.value === '') {
 			search.focus();

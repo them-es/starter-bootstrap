@@ -496,7 +496,7 @@ $theme_version = '1.1';
 		}
 
 		// 2. Scripts
-		wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array('jquery'), $theme_version, true );
+		wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), $theme_version, true );
 		wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/js/main.min.js', false, $theme_version, true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -515,12 +515,12 @@ $theme_version = '1.1';
 		echo '
 		<!-- IE Compatibility shims -->
 		<!--[if lt IE 9]>
-			<script src="' . esc_url( get_template_directory_uri() ) . '/bower_components/html5shiv/dist/html5shiv.min.js"></script>
-			<script src="' . esc_url( get_template_directory_uri() ) . '/bower_components/respond/dest/respond.min.js"></script>
+			<script src="' . get_template_directory_uri() . '/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+			<script src="' . get_template_directory_uri() . '/bower_components/respond/dest/respond.min.js"></script>
 		<![endif]-->';
 		echo '
 		<!--[if lte IE 9]>
-			<script src="' . esc_url( get_template_directory_uri() ) . '/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+			<script src="' . get_template_directory_uri() . '/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
 			<script>
 				(function ($) {
 					$("input, textarea").placeholder();
