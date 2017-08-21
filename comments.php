@@ -12,7 +12,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="comments" class="form-horizontal">
+<div id="comments">
 	<?php if ( comments_open() && ! have_comments() ) : ?>
 		<h2 id="comments-title">
 			<?php

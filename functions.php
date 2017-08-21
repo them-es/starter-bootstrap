@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = '1.1';
+$theme_version = '1.4';
 
 	/**
 	 * Include Theme Customizer
@@ -311,7 +311,7 @@ $theme_version = '1.1';
 			$output .= '<h4 class="col-lg-12 alert alert-warning">' . __( 'This content is password protected. To view it please enter your password below.', 'my-theme' ) . '</h4>';
 				$output .= '<div class="col-lg-6 col-md-6">';
 					$output .= '<div class="input-group">';
-						$output .= '<input name="post_password" id="' . $label . '" type="password" placeholder="' . __( 'Password', 'my-theme' ) . '" class="form-control" />';
+						$output .= '<input type="password" name="post_password" id="' . $label . '" placeholder="' . __( 'Password', 'my-theme' ) . '" class="form-control" />';
 						$output .= '<span class="input-group-btn"><input type="submit" name="submit" class="btn btn-default" value="' . esc_attr( __( 'Submit', 'my-theme' ) ) . '" /></span>';
 					$output .= '</div><!-- /.input-group -->';
 				$output .= '</div><!-- /.col -->';
@@ -422,17 +422,17 @@ $theme_version = '1.1';
 			$req = get_option( 'require_name_email' );
 			$aria_req = ( $req ? " aria-required='true' required" : '' );
 			$fields = array(
-				'author' => '<p><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
-							'<br /><input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></p>',
-				'email'  => '<p><label for="email">' . __( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
-							'<br /><input id="email" name="email" class="form-control" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></p>',
+				'author' => '<div class="form-group"><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
+							'<input type="text" id="author" name="author" class="form-control" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></div>',
+				'email'  => '<div class="form-group"><label for="email">' . __( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
+							'<input type="email" id="email" name="email" class="form-control" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></div>',
 				'url'    => '',
 			);
 
 			$fields = apply_filters( 'comment_form_default_fields', $fields );
 			$defaults = array(
 				'fields'               => $fields,
-				'comment_field'        => '<fieldset><textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . __( 'Comment', 'my-theme' ) . ( $req ? '*' : '' ) . '"></textarea></fieldset>',
+				'comment_field'        => '<div class="form-group"><textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . __( 'Comment', 'my-theme' ) . ( $req ? '*' : '' ) . '"></textarea></div>',
 				/** This filter is documented in wp-includes/link-template.php */
 				'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'my-theme' ), wp_login_url( apply_filters( 'the_permalink', get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
 				/** This filter is documented in wp-includes/link-template.php */
@@ -447,8 +447,8 @@ $theme_version = '1.1';
 				'title_reply_to'       => __( 'Leave a Reply to %s', 'my-theme' ),
 				'cancel_reply_link'    => __( 'Cancel reply', 'my-theme' ),
 				'label_submit'         => __( 'Post Comment', 'my-theme' ),
-				'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
-				'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
+				'submit_button'        => '<input type="submit" id="%2$s" name="%1$s" class="%3$s" value="%4$s" />',
+				'submit_field'         => '<div class="form-submit">%1$s %2$s</div>',
 				'format'               => 'html5',
 			);
 

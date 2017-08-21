@@ -26,27 +26,27 @@
 						}
 
 						$facebook = get_the_author_meta( 'facebook_profile' );
-						if( ! empty( $facebook ) ) {
+						if ( ! empty( $facebook ) ) {
 							social_profile_link( $facebook, 'Facebook' );
 						}
 						$twitter = get_the_author_meta( 'twitter_profile' );
-						if( ! empty( $twitter ) ) {
+						if ( ! empty( $twitter ) ) {
 							social_profile_link( $twitter, 'Twitter' );
 						}
 						$google = get_the_author_meta( 'google_profile' );
-						if( ! empty( $google ) ) {
+						if ( ! empty( $google ) ) {
 							social_profile_link( $google, 'Google+' );
 						}
 						$linkedin = get_the_author_meta( 'linkedin_profile' );
-						if( ! empty( $linkedin ) ) {
+						if ( ! empty( $linkedin ) ) {
 							social_profile_link( $linkedin, 'LinkedIn' );
 						}
 						$xing = get_the_author_meta( 'xing_profile' );
-						if( ! empty( $xing ) ) {
+						if ( ! empty( $xing ) ) {
 							social_profile_link( $xing, 'Xing' );
 						}
 						$github = get_the_author_meta( 'github_profile' );
-						if( ! empty( $github ) ) {
+						if ( ! empty( $github ) ) {
 							social_profile_link( $github, 'GitHub' );
 						}
 					?>

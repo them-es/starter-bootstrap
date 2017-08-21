@@ -4,13 +4,13 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6 col-md-6'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'col-lg-6 col-md-6' ); ?>>
 	
 	<div class="panel panel-default">
 		<header class="entry-header panel-heading">
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
-			<?php if ( 'post' == get_post_type() ) : ?>
+			<?php if ( 'post' === get_post_type() ) : ?>
 				<div class="entry-meta">
 					<?php
 						themes_starter_article_posted_on();

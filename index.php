@@ -23,11 +23,6 @@
 		<?php themes_starter_content_nav( 'nav-above' ); ?>
 
 		<?php
-			/** Loading only 3 latest posts (no themes_starter_content_nav!!!) *
-			query_posts(array(
-				'showposts' => 3
-			));*/
-
 			$count = 1;
 
 			if ( have_posts() ) :

@@ -14,7 +14,7 @@
 		<div id="footer">
 			<hr>
 			<div class="row">
-				<p class="col-lg-6 col-md-6">&copy; <?php echo date('Y'); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
+				<p class="col-lg-6 col-md-6">&copy; <?php echo date( 'Y' ); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
 				
 				<?php
 					if ( has_nav_menu( 'footer-menu' ) ) : // see function register_nav_menus() in functions.php
