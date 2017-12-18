@@ -74,7 +74,11 @@
 			<?php if ( $show_sep ) : ?>
 				<span class="sep"> | </span>
 			<?php endif; // End if $show_sep ?>
-			<span class="comments-link"><?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'my-theme' ) . '</span>', __( '<b>1</b> Reply', 'my-theme' ), __( '<b>%</b> Replies', 'my-theme' ) ); ?></span>
+			<span class="comments-link">
+				<?php
+					printf( __( 'Leave a comment', 'my-theme' ), get_the_title() );
+				?>
+			</span>
 		<?php endif; // End if comments_open() ?>
 		
 		<a href="<?php echo get_the_permalink(); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a>

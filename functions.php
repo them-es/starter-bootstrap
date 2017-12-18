@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = '1.4';
+$theme_version = '1.4.5';
 
 	/**
 	 * Include Theme Customizer
@@ -9,7 +9,7 @@ $theme_version = '1.4';
 	 */
 	$theme_customizer = get_template_directory() . '/inc/customizer.php';
 	if ( is_readable( $theme_customizer ) ) {
-		require_once( $theme_customizer );
+		require_once $theme_customizer;
 	}
 
 
@@ -20,7 +20,7 @@ $theme_version = '1.4';
 	 */
 	$theme_metaboxes = get_template_directory() . '/inc/metaboxes.php';
 	if ( is_readable( $theme_metaboxes ) ) {
-		require_once( $theme_metaboxes );
+		require_once $theme_metaboxes;
 	}
 
 
@@ -31,7 +31,7 @@ $theme_version = '1.4';
 	 */
 	$theme_wordpresscom = get_template_directory() . '/inc/wordpresscom.php';
 	if ( is_readable( $theme_wordpresscom ) ) {
-		require_once( $theme_wordpresscom );
+		require_once $theme_wordpresscom;
 	}
 
 
@@ -250,29 +250,6 @@ $theme_version = '1.4';
 	}
 	add_action( 'widgets_init', 'themes_starter_widgets_init' );
 
-	$preset_widgets = array(
-		'primary_widget_area' => array( 'search', 'pages', 'categories', 'archives' ),
-		'secondary_widget_area' => array( 'links', 'meta' ),
-		'third_widget_area' => array( 'links', 'meta' ),
-	);
-	if ( isset( $_GET['activated'] ) ) {
-		update_option( 'sidebars_widgets', $preset_widgets );
-	}
-	// update_option( 'sidebars_widgets', NULL );
-
-	// Check for static widgets in widget-ready areas
-	function is_sidebar_active( $index ) {
-		global $wp_registered_sidebars;
-
-		$widgetcolums = wp_get_sidebars_widgets();
-
-		if ( $widgetcolums[$index] ) {
-			return true;
-		}
-
-		return false;
-	}
-
 
 	if ( ! function_exists( 'themes_starter_article_posted_on' ) ) :
 		/**
@@ -475,7 +452,7 @@ $theme_version = '1.4';
 	// Custom Nav Walker: wp_bootstrap_navwalker()
 	$custom_walker = get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 	if ( is_readable( $custom_walker ) ) {
-		require_once( $custom_walker );
+		require_once $custom_walker;
 	}
 
 
@@ -489,7 +466,7 @@ $theme_version = '1.4';
 
 		// 1. Styles
 		wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', false, $theme_version, 'all' );
-		// wp_enqueue_style( 'boostrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css', false, $theme_version, 'all' );
+		// wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css', false, $theme_version, 'all' );
 		wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.min.css', false, $theme_version, 'all' ); // main(.less/.scss): Compiled Framework source + custom styles
 		if ( is_rtl() ) {
 			wp_enqueue_style( 'rtl', get_template_directory_uri() . '/css/rtl.min.css', false, $theme_version, 'all' );

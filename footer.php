@@ -34,7 +34,7 @@
 					endif;
 				?>
 
-				<?php if ( is_sidebar_active( 'third_widget_area' ) ) : ?>
+				<?php if ( is_active_sidebar( 'third_widget_area' ) ) : ?>
 					<div class="pull-right">
 						<?php dynamic_sidebar( 'third_widget_area' ); ?>
 
