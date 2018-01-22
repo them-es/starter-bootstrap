@@ -5,24 +5,28 @@
 
 	if ( get_the_author_meta( 'description' ) ) :
 ?>
-	<div class="author-info<?php if ( ! is_single() ) : ?> well<?php endif; ?>">
+	<div class="author-info<?php if ( ! is_single() ) : ?> bg-faded<?php endif; ?>">
 		<div class="row">
-			<div class="col-lg-3 col-md-3 col-sm-12 author-avatar text-center">
-				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'themes_starter_author_bio_avatar_size', 128 ) ); ?>
-			</div><!-- /.author-avatar -->
-			<div class="col-lg-9 col-md-9 col-sm-12 author-description">
-				<h2><?php printf( __( 'About %s', 'my-theme' ), get_the_author() ); ?></h2>
-				<p><?php the_author_meta( 'description' ); ?></p>
+			<div class="col-sm-12">
+				<h2>
+					<?php
+						echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'themes_starter_author_bio_avatar_size', 48 ) ) . '&nbsp;';
+						printf( __( 'About %s', 'my-theme' ), get_the_author() );
+					?>
+				</h2>
+				<div class="author-description">
+					<?php the_author_meta( 'description' ); ?>
+				</div>
 				<p class="author-links">
 					<?php
 						if ( ! empty( get_the_author_meta( 'user_url' ) ) ) :
-							printf( '<a href="%s" class="www btn btn-default btn-sm">' . __( 'Website', 'my-theme' ) . '</a>', esc_url( get_the_author_meta( 'user_url' ) ) );
+							printf( '<a href="%s" class="www btn btn-secondary btn-sm">' . __( 'Website', 'my-theme' ) . '</a>', esc_url( get_the_author_meta( 'user_url' ) ) );
 						endif;
 					?>
 					<?php
 						// Add new Profile fields for Users in functions.php
 						function social_profile_link( $link, $title ) {
-							echo ' <a href="' . esc_url( $link ) . '" class="btn btn-default btn-sm" title="' . $title . '">' . $title . '</a> ';
+							echo ' <a href="' . esc_url( $link ) . '" class="btn btn-secondary btn-sm" title="' . $title . '">' . $title . '</a> ';
 						}
 
 						$facebook = get_the_author_meta( 'facebook_profile' );

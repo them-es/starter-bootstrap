@@ -5,7 +5,6 @@
 
 	get_header();
 ?>
-
 	<?php if ( have_posts() ) : ?>
 			
 		<?php
@@ -26,6 +25,8 @@
 			</h1>
 		</header>
 
+		<?php get_template_part( 'author', 'bio' ); ?>
+
 		<?php
 			/* Since we called the_post() above, we need to
 			* rewind the loop back to the beginning that way
@@ -34,31 +35,9 @@
 			rewind_posts();
 		?>
 
-		<?php themes_starter_content_nav( 'nav-above' ); ?>
-
-			<?php get_template_part( 'author', 'bio' ); ?>
-
 		<?php
-			$count = 1;
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/* Include the Post-Format-specific template for the content.
-				* If you want to overload this in a child theme then include a file
-				* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				*/
-				get_template_part( 'content', 'index' );
-
-				if ( 0 === $count % 2 ) :
-					echo '<div class="clearfix"></div>'; // clearfix after 2 posts
-				endif;
-				$count++;
-
-			endwhile;
+			get_template_part( 'archive', 'loop' );
 		?>
-
-		<?php themes_starter_content_nav( 'nav-below' ); ?>
 
 	<?php else : ?>
 

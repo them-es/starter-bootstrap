@@ -1,9 +1,9 @@
 /*global module:false, require:false */
 
 module.exports = function (grunt) {
-	"use strict";
+	'use strict';
 	
-	// load all grunt tasks matching the `grunt-*` pattern
+	// load all Grunt tasks matching the `grunt-*` pattern
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
@@ -16,10 +16,6 @@ module.exports = function (grunt) {
 				files: ['*.{scss,sass}'],
 				tasks: ['sass', 'postcss']
 			},
-			less: {
-				files: '*.less',
-				tasks: ['less', 'postcss']
-			},
 			images: {
 				files: ['img/*.{png,jpg,gif}'],
 				tasks: ['imagemin']
@@ -29,11 +25,11 @@ module.exports = function (grunt) {
 				tasks: ['jshint', 'uglify']
 			},
 			options: {
-				//livereload: true // Install and enable a Browser Plugin first: http://livereload.com/extensions/
+				//livereload: true // Install and enable a Browser Plugin first: http://livereload.com/extensions
 			}
 		},
 
-		// 1. Sass
+		// Sass
 		sass: {
 			dist: {
 				files: {
@@ -42,33 +38,23 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		
-		// 2. Less
-		less: {
-			dist: {
-				files: {
-					'css/main.min.css': 'main.less',
-					//'css/editor-style.min.css': 'editor-style.less'
-				}
-			}
-		},
 
-		// PostCSS: sourcemaps, autoprefix, minify
+		// PostCSS: Source maps, Autoprefix, Minify
 		postcss: {
 			options: {
-			  map: {
-				  inline: false, // save all sourcemaps as separate files...
-				  annotation: 'css/' // ...to the specified directory
-			  },
+				map: {
+					inline: false, // Save all Source maps as separate files...
+					annotation: 'css/' // ...to the specified directory
+				},
 
-			  processors: [
-				require('pixrem')(), // add fallbacks for rem units
-				require('autoprefixer')({ browsers: 'last 2 versions' }), // add vendor prefixes
-				require('cssnano')() // minify the result
-			  ]
+				processors: [
+					require('pixrem')(), // Add fallbacks for rem units
+					require('autoprefixer')({ browsers: 'last 2 versions' }), // Add vendor prefixes
+					require('cssnano')() // Minify the result
+				]
 			},
 			dist: {
-			  src: 'css/*.min.css'
+				src: 'css/*.min.css'
 			}
 		},
 		
@@ -98,7 +84,7 @@ module.exports = function (grunt) {
 			]
 		},
 		
-		// Uglify to concat, minify, and make source maps
+		// Uglify to concat, minify, and make Source maps
 		uglify: {
 			main: {
 				options: {
@@ -115,8 +101,11 @@ module.exports = function (grunt) {
 		},
 
 	});
+
+	// Set base directory to "/assets": https://gruntjs.com/api/grunt.file#grunt.file.setbase
+	grunt.file.setBase('assets');
 	
-	// register task
-	grunt.registerTask('default', ['watch', 'sass', 'less', 'postcss', 'imagemin', 'uglify']);
+	// Register the tasks
+	grunt.registerTask('default', ['watch', 'sass', 'postcss', 'imagemin', 'uglify']);
 
 };

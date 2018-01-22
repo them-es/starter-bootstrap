@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = '1.4.5';
+$theme_version = '2.0';
 
 	/**
 	 * Include Theme Customizer
@@ -14,19 +14,8 @@ $theme_version = '1.4.5';
 
 
 	/**
-	 * Include Meta Boxes to Page-Edit: class/style
-	 *
-	 * @since v1.0
-	 */
-	$theme_metaboxes = get_template_directory() . '/inc/metaboxes.php';
-	if ( is_readable( $theme_metaboxes ) ) {
-		require_once $theme_metaboxes;
-	}
-
-
-	/**
 	 * Include Support for wordpress.com-specific functions.
-	 *
+	 * 
 	 * @since v1.0
 	 */
 	$theme_wordpresscom = get_template_directory() . '/inc/wordpresscom.php';
@@ -82,21 +71,6 @@ $theme_version = '1.4.5';
 
 
 	/**
-	 * Add title tag if < 4.1: https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1
-	 *
-	 * @since v1.0
-	 */
-	if ( ! function_exists( '_wp_render_title_tag' ) ) :
-		function themes_starter_render_title() {
-		?>
-			<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
-		}
-		add_action( 'wp_head', 'themes_starter_render_title' );
-	endif;
-
-
-	/**
 	 * Add new User fields to Userprofile
 	 *
 	 * @since v1.0
@@ -126,7 +100,7 @@ $theme_version = '1.4.5';
 	function is_blog() {
 		global $post;
 		$posttype = get_post_type( $post );
-		return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( 'post' === $posttype ) ) ? true : false ;
+		return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( 'post' === $posttype) ) ? true : false ;
 	}
 
 
@@ -183,7 +157,7 @@ $theme_version = '1.4.5';
 
 	if ( ! function_exists( 'themes_starter_content_nav' ) ) :
 		/**
-		 * Display a navigation to next/previous pages when applicable: http://getbootstrap.com/components/#pagination-pager
+		 * Display a navigation to next/previous pages when applicable
 		 *
 		 * @since v1.0
 		 */
@@ -191,11 +165,10 @@ $theme_version = '1.4.5';
 			global $wp_query;
 
 			if ( $wp_query->max_num_pages > 1 ) : ?>
-				<div class="clearfix"></div>
-				<ul id="<?php echo $nav_id; ?>" class="pager col-lg-12">
-					<li><?php next_posts_link( '<span aria-hidden="true">&larr;</span> ' . __( 'Older posts', 'my-theme' ) ); ?></li>
-					<li><?php previous_posts_link( __( 'Newer posts', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></li>
-				</ul><!-- /.pager -->
+				<div id="<?php echo $nav_id; ?>" class="d-flex mb-4 justify-content-between">
+					<div><?php next_posts_link( '<span aria-hidden="true">&larr;</span> ' . __( 'Older posts', 'my-theme' ) ); ?></div>
+					<div><?php previous_posts_link( __( 'Newer posts', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></div>
+				</div><!-- /.d-flex -->
 			<?php
 			else :
 				echo '<div class="clearfix"></div>';
@@ -204,12 +177,25 @@ $theme_version = '1.4.5';
 
 		// Add Class
 		function posts_link_attributes() {
-			return 'class="btn btn-default"';
+			return 'class="btn btn-secondary"';
 		}
 		add_filter( 'next_posts_link_attributes', 'posts_link_attributes' );
 		add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
 
 	endif; // content navigation
+
+
+	/**
+	 * Modify Next/Previous Post output
+	 *
+	 * @since v2.0
+	 */
+	function post_link_attributes( $output ) {
+		$class = 'class="btn btn-outline-secondary"';
+		return str_replace( '<a href=', '<a ' . $class . ' href=', $output );
+	}
+	add_filter( 'next_post_link', 'post_link_attributes' );
+	add_filter( 'previous_post_link', 'post_link_attributes' );
 
 
 	/**
@@ -254,7 +240,7 @@ $theme_version = '1.4.5';
 	if ( ! function_exists( 'themes_starter_article_posted_on' ) ) :
 		/**
 		 * "Theme posted on" pattern
-		 *
+		 * 
 		 * @since v1.0
 		 */
 		function themes_starter_article_posted_on() {
@@ -285,11 +271,11 @@ $theme_version = '1.4.5';
 
 		$output = '<div class="row">';
 			$output .= '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">';
-			$output .= '<h4 class="col-lg-12 alert alert-warning">' . __( 'This content is password protected. To view it please enter your password below.', 'my-theme' ) . '</h4>';
-				$output .= '<div class="col-lg-6 col-md-6">';
+			$output .= '<h4 class="col-md-12 alert alert-warning">' . __( 'This content is password protected. To view it please enter your password below.', 'my-theme' ) . '</h4>';
+				$output .= '<div class="col-md-6">';
 					$output .= '<div class="input-group">';
 						$output .= '<input type="password" name="post_password" id="' . $label . '" placeholder="' . __( 'Password', 'my-theme' ) . '" class="form-control" />';
-						$output .= '<span class="input-group-btn"><input type="submit" name="submit" class="btn btn-default" value="' . esc_attr( __( 'Submit', 'my-theme' ) ) . '" /></span>';
+						$output .= '<div class="input-group-append"><input type="submit" name="submit" class="btn btn-primary" value="' . esc_attr( __( 'Submit', 'my-theme' ) ) . '" /></div>';
 					$output .= '</div><!-- /.input-group -->';
 				$output .= '</div><!-- /.col -->';
 			$output .= '</form>';
@@ -306,7 +292,7 @@ $theme_version = '1.4.5';
 		 * @since v1.0
 		 */
 		function themes_starter_replace_reply_link_class( $class ) {
-			$class = str_replace( "class='comment-reply-link", "class='btn btn-default", $class );
+			$class = str_replace( "class='comment-reply-link", "class='btn btn-outline-secondary", $class );
 			return $class;
 		}
 		add_filter( 'comment_reply_link', 'themes_starter_replace_reply_link_class' );
@@ -350,7 +336,7 @@ $theme_version = '1.4.5';
 										get_comment_time( 'c' ),
 										/* translators: 1: date, 2: time */
 										//sprintf( __( '%1$s - %2$s', 'my-theme' ), get_comment_time( $theme_dateformat ), get_comment_time( $theme_timeformat ) )
-										sprintf( __( '%1$s ago', 'my-theme' ), human_time_diff( get_comment_time('U'), current_time('timestamp') ) )
+										sprintf( __( '%1$s ago', 'my-theme' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
 									)
 								);
 							?>
@@ -399,9 +385,9 @@ $theme_version = '1.4.5';
 			$req = get_option( 'require_name_email' );
 			$aria_req = ( $req ? " aria-required='true' required" : '' );
 			$fields = array(
-				'author' => '<div class="form-group"><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
+				'author' => '<div class="form-group"><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
 							'<input type="text" id="author" name="author" class="form-control" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></div>',
-				'email'  => '<div class="form-group"><label for="email">' . __( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
+				'email'  => '<div class="form-group"><label for="email">' . __( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
 							'<input type="email" id="email" name="email" class="form-control" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></div>',
 				'url'    => '',
 			);
@@ -418,7 +404,7 @@ $theme_version = '1.4.5';
 				'comment_notes_after'  => '<p class="small comment-notes">' . __( 'Your Email address will not be published.', 'my-theme' ) . '</p>',
 				'id_form'              => 'commentform',
 				'id_submit'            => 'submit',
-				'class_submit'         => 'btn btn-default',
+				'class_submit'         => 'btn btn-primary',
 				'name_submit'          => 'submit',
 				'title_reply'          => '',
 				'title_reply_to'       => __( 'Leave a Reply to %s', 'my-theme' ),
@@ -449,10 +435,15 @@ $theme_version = '1.4.5';
 		) );
 	}
 
-	// Custom Nav Walker: wp_bootstrap_navwalker()
+	// Custom Nav Walker: wp_bootstrap4_navwalker()
 	$custom_walker = get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 	if ( is_readable( $custom_walker ) ) {
 		require_once $custom_walker;
+	}
+
+	$custom_walker_footer = get_template_directory() . '/inc/wp_bootstrap_navwalker_footer.php';
+	if ( is_readable( $custom_walker_footer ) ) {
+		require_once $custom_walker_footer;
 	}
 
 
@@ -466,15 +457,16 @@ $theme_version = '1.4.5';
 
 		// 1. Styles
 		wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', false, $theme_version, 'all' );
-		// wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css', false, $theme_version, 'all' );
-		wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.min.css', false, $theme_version, 'all' ); // main(.less/.scss): Compiled Framework source + custom styles
+		// wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.min.css', false, $theme_version, 'all' );
+		wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.min.css', false, $theme_version, 'all' ); // main.scss: Compiled Framework source + custom styles
+		
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'rtl', get_template_directory_uri() . '/css/rtl.min.css', false, $theme_version, 'all' );
+			wp_enqueue_style( 'rtl', get_template_directory_uri() . '/assets/css/rtl.min.css', false, $theme_version, 'all' );
 		}
 
 		// 2. Scripts
-		wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), $theme_version, true );
-		wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/js/main.min.js', false, $theme_version, true );
+		wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), $theme_version, true );
+		wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.min.js', false, $theme_version, true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -482,29 +474,4 @@ $theme_version = '1.4.5';
 	}
 	add_action( 'wp_enqueue_scripts', 'themes_starter_scripts_loader' );
 
-
-	/**
-	 * Javascript Workarounds for old IE versions
-	 *
-	 * @since v1.0
-	 */
-	function themes_starter_add_ie_html5_shims() {
-		echo '
-		<!-- IE Compatibility shims -->
-		<!--[if lt IE 9]>
-			<script src="' . get_template_directory_uri() . '/bower_components/html5shiv/dist/html5shiv.min.js"></script>
-			<script src="' . get_template_directory_uri() . '/bower_components/respond/dest/respond.min.js"></script>
-		<![endif]-->';
-		echo '
-		<!--[if lte IE 9]>
-			<script src="' . get_template_directory_uri() . '/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
-			<script>
-				(function ($) {
-					$("input, textarea").placeholder();
-					$("input[autofocus]").focus();
-				}(jQuery));
-			</script>
-		<![endif]-->';
-	}
-	add_action( 'wp_footer', 'themes_starter_add_ie_html5_shims', 99 );
 ?>

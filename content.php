@@ -16,7 +16,7 @@
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		<?php endif; ?>
 		
-		<?php if ( 'post' === get_post_type() ) : ?>
+		<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php themes_starter_article_posted_on(); ?>
 			</div><!-- /.entry-meta -->
@@ -81,7 +81,7 @@
 			</span>
 		<?php endif; // End if comments_open() ?>
 		
-		<a href="<?php echo get_the_permalink(); ?>" class="btn btn-default"><?php _e( 'more', 'my-theme' ); ?></a>
+		<a href="<?php echo get_the_permalink(); ?>" class="btn btn-secondary"><?php _e( 'more', 'my-theme' ); ?></a>
 		
 		<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- /.entry-meta -->

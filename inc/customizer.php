@@ -51,8 +51,9 @@ function themes_starter_customize( $wp_customize ) {
 		'label'         => __( 'Navbar Scheme', 'my-theme' ),
 		'section'       => 'theme_header_section',
 		'choices' => array(
-			'default'   => __( 'Default', 'my-theme' ),
-			'inverse'   => __( 'Inverse', 'my-theme' ),
+			'navbar-light bg-light'   => __( 'Default', 'my-theme' ),
+			'navbar-dark bg-dark'   => __( 'Dark', 'my-theme' ),
+			'navbar-dark bg-primary'   => __( 'Primary', 'my-theme' ),
 		),
 		'settings'   => 'navbar_scheme',
 		'priority'   => 1,

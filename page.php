@@ -8,24 +8,23 @@
 	get_header();
 
 	$id = get_the_ID();
-
-	// Add class via custom field (optional)
-	$class = sanitize_text_field( get_post_meta( $id, '_class', true ) );// get custom meta-value
-	$style = sanitize_text_field( get_post_meta( $id, '_style', true ) );// get custom meta-value
 ?>
 
 	<div class="row">
 		
-		<div class="col-lg-8 col-lg-push-4 col-md-8 col-md-push-4 col-sm-12">
+		<div class="col-lg-8 order-lg-2 col-md-8 order-md-2 col-sm-12">
 			<?php the_post(); ?>
 			
-			<div id="post-<?php the_ID(); ?>" <?php post_class( 'content' . ( ! empty( $class ) ? ' ' . $class : '' ) ); ?><?php if ( ! empty( $style ) ) : echo ' style="' . $style . '"'; endif; ?>>
+			<div id="post-<?php the_ID(); ?>" <?php post_class( 'content' ); ?>>
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 				
 				<?php
 					the_content();
 					
-					wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'my-theme' ) . '&after=</div>');
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . __( 'Pages:', 'my-theme' ),
+						'after'  => '</div>',
+					) );
 					edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' );
 				?>
 			</div><!-- /#post-<?php the_ID(); ?> -->

@@ -8,7 +8,7 @@
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		
-		<?php if ( 'post' === get_post_type() ) : ?>
+		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php themes_starter_article_posted_on(); ?>
 		</div><!-- /.entry-meta -->
@@ -23,6 +23,7 @@
 		?>
 		
 		<?php the_content(); ?>
+		
 		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'my-theme' ) . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- /.entry-content -->
 	

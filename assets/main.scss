@@ -1,0 +1,261 @@
+// Compile "main.scss" as "css/main.min.css"
+
+
+/**
+ * Add custom Bootstrap styles
+ */
+
+// Bootstrap 4 Customization options: https://getbootstrap.com/docs/4.0/getting-started/theming/#sass-options
+/*
+// Options
+$enable-rounded:            true !default;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;
+
+$spacer:                    1rem !default;
+
+// Grayscale vars
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+// Color vars
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+// Fonts
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:   Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+*/
+
+
+/**
+ * Import Bootstrap source
+ */
+
+ @import "../node_modules/bootstrap/scss/bootstrap";
+
+
+/**
+ * General
+ */
+
+img {
+	max-width: 100% !important;
+	height: auto;
+	vertical-align: middle;
+}
+
+
+/**
+ * Wordpress customization
+ */
+
+
+/* If WP-Adminbar is visible */
+body.admin-bar {
+	
+	#header.fixed-top {
+		top: 32px;
+	}
+	
+	.edit-link a {
+		color: #FFF !important;
+		font-weight: normal !important;
+		text-decoration: none !important;
+		
+		&::before {
+			content: '\270E';
+			display: inline-block;
+			margin-right: 5px;
+		}
+		
+	}
+}
+
+/* WordPress Embeds */
+
+.post-thumbnail,
+.wp-video,
+.embed-responsive {
+	margin: 5px 0;
+	width: 100% !important;
+}
+
+
+/* Header */
+
+.navbar-brand {
+	
+	img {
+		height: 40px;
+	}
+	
+}
+
+.navbar-static-top {
+	margin-bottom: $grid-gutter-width;
+}
+
+
+/* Main */
+
+#main {
+	margin-top: $spacer;
+}
+
+
+/* Footer */
+
+#footer {
+	background-color: #FFF;
+
+	p {
+		margin-top: 10px;
+	}
+
+	.menu-item {
+		&.active,
+		&.current-menu-item,
+		&.current_page_item {
+			a {
+				color: $link-hover-color;
+			}
+		}
+	}
+	
+}
+
+
+/* Sidebar */
+
+.widget-area {
+	
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	
+}
+
+
+/* Author */
+
+.author-avatar {
+	
+	.avatar {
+		width: 64px;
+		height: auto;
+	}
+}
+
+.author-info {
+	margin: 40px 0;
+
+	h2, h3 {
+		margin-top: 0;
+	}
+	
+}
+
+
+/* Posts */
+
+.sticky {
+	.card {
+		background-color: $gray-100;
+	}
+}
+
+.entry-meta {
+	font-size: small;
+	margin-top: ($grid-gutter-width/2);
+}
+
+.single {
+	.entry-content,
+	.post-navigation,
+	#comments-title {
+		margin: $grid-gutter-width 0;
+	}
+}
+
+#comments {
+	margin-top: $grid-gutter-width;
+}
+
+.comment-meta {
+	height: 40px;
+}
+
+.comment-reply-title {
+	margin: $grid-gutter-width 0 ($grid-gutter-width/2)-gutter-width;
+}
+
+.commentlist {
+	list-style: none;
+	margin: 0 auto;
+	width: 68.9%;
+		
+	> li.comment {
+		margin: 0 0 1.625em;
+		padding: 1.625em;
+		position: relative;
+	}
+
+	.children {
+		list-style: none;
+		margin-top: 20px;
+
+		> li.comment {
+			border-top: 1px solid $gray-300;
+			padding-top: 10px;
+			position: relative;
+		}
+	}
+
+	.avatar {
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+		box-shadow: 0 1px 2px $gray-600;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		left: -102px;
+	}
+	
+}
+
+
+/**
+ * Responsive Design using "mixins/_breakpoints.scss"
+ */
+
+@media (max-width: breakpoint-max(sm)) {
+	
+	#sidebar {
+		margin-top: 60px;
+	}
+	
+}

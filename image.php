@@ -9,11 +9,10 @@
 
 <div class="container">
 	<div class="row">
-		
-		<div class="col-lg-12">
+		<div class="col-md-12">
 			<p class="lead">
 				<?php
-					echo nl2br( get_post_field('post_content', $page_id) );// = Page content
+					echo nl2br( get_post_field( 'post_content', $page_id ) );// = Page content
 
 					edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>', $page_id );
 				?>
@@ -44,7 +43,7 @@
 							
 							<div class="entry-attachment">
 								<?php
-									echo wp_get_attachment_image( get_the_ID(), 'large', false, array( 'class' => 'img-responsive' ) );
+									echo wp_get_attachment_image( get_the_ID(), 'large', false, array( 'class' => 'img-fluid' ) );
 								?>
 								
 								<?php if ( has_excerpt() ) : ?>
@@ -87,15 +86,14 @@
 				?>
 				
 				<?php
-					endwhile;
-				endif;
-				wp_reset_postdata(); // end of the loop.
+						endwhile;
+					endif;
+					wp_reset_postdata(); // end of the loop.
 				?>
 				
 			<?php themes_starter_content_nav( 'nav-below' ); ?>
 
 		</div><!-- /.col -->
-		
 	</div><!-- /.row -->
 
 	<?php get_sidebar(); ?>

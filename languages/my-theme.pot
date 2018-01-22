@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: them.es Starter Theme v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-15 10:13+0000\n"
-"POT-Revision-Date: Tue Apr 12 2016 16:07:25 GMT+0200 (CEST)\n"
+"POT-Creation-Date: 2017-11-15 10:09+0000\n"
+"POT-Revision-Date: Tue Apr 12 2016 16:05:52 GMT+0200 (CEST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: them.es <themes@klicc.at>\n"
 "Language-Team: \n"
@@ -28,19 +28,19 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Loco-Target-Locale: de_DE"
 
-#: functions.php:140
+#: functions.php:129
 msgid "Page "
 msgstr ""
 
-#: functions.php:196
+#: functions.php:186
 msgid "Older posts"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:187
 msgid "Newer posts"
 msgstr ""
 
-#: functions.php:263
+#: functions.php:254
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" "
@@ -50,93 +50,93 @@ msgid ""
 "title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
-#: functions.php:269
+#: functions.php:260
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: functions.php:288
+#: functions.php:279
 msgid ""
 "This content is password protected. To view it please enter your password "
 "below."
 msgstr ""
 
-#: functions.php:291
+#: functions.php:282
 msgid "Password"
 msgstr ""
 
-#: functions.php:292
+#: functions.php:283
 msgid "Submit"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:320
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:329 functions.php:358 content-single.php:55 index.php:19
-#: page-full.php:25 content.php:82 footer.php:42 page.php:29 sidebar.php:18
+#: functions.php:320 functions.php:349 content-single.php:56 index.php:19
+#: page-full.php:24 content.php:82 footer.php:43 page.php:28 sidebar.php:18
 #: image.php:18 image.php:72
 msgid "Edit"
 msgstr ""
 
 #. translators: 1: comment author, 2: date and time
-#: functions.php:346
+#: functions.php:337
 #, php-format
 msgid "%1$s, %2$s"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: functions.php:353
+#: functions.php:344
 #, php-format
 msgid "%1$s ago"
 msgstr ""
 
-#: functions.php:362
+#: functions.php:353
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:371
+#: functions.php:362
 msgid "Reply"
 msgstr ""
 
-#: functions.php:402
+#: functions.php:393
 msgid "Name"
 msgstr ""
 
-#: functions.php:404
+#: functions.php:395
 msgid "Email"
 msgstr ""
 
-#: functions.php:412 content-index.php:26
+#: functions.php:403
 msgid "Comment"
 msgstr ""
 
-#: functions.php:414
+#: functions.php:405
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: functions.php:416
+#: functions.php:407
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: functions.php:418
+#: functions.php:409
 msgid "Your Email address will not be published."
 msgstr ""
 
-#: functions.php:424
+#: functions.php:415
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: functions.php:425
+#: functions.php:416
 msgid "Cancel reply"
 msgstr ""
 
-#: functions.php:426
+#: functions.php:417
 msgid "Post Comment"
 msgstr ""
 
@@ -145,17 +145,17 @@ msgstr ""
 msgid "Category Archives: %s"
 msgstr ""
 
-#: content-single.php:26 content-index.php:51 page-full.php:24 content.php:33
-#: page.php:28 image.php:61
+#: content-single.php:27 content-index.php:39 page-full.php:21 content.php:33
+#: page.php:25 image.php:61
 msgid "Pages:"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: content-single.php:33 content-single.php:36 content.php:43 content.php:54
+#: content-single.php:34 content-single.php:37 content.php:43 content.php:54
 msgid ", "
 msgstr ""
 
-#: content-single.php:38
+#: content-single.php:39
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>. "
@@ -163,14 +163,14 @@ msgid ""
 "permalink</a>."
 msgstr ""
 
-#: content-single.php:40
+#: content-single.php:41
 #, php-format
 msgid ""
 "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
 "href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 
-#: content-single.php:42
+#: content-single.php:43
 #, php-format
 msgid ""
 "This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
@@ -186,16 +186,19 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: content-index.php:11 content.php:12 content.php:16 sidebar.php:41
+#: content-index.php:9 content.php:12 content.php:16 sidebar.php:44
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content-index.php:24
-msgid "Comments"
-msgstr ""
+#: content-index.php:18
+#, php-format
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] ""
+msgstr[1] ""
 
-#: content-index.php:55 content.php:80 sidebar.php:60
+#: content-index.php:43 content.php:80 sidebar.php:62
 msgid "more"
 msgstr ""
 
@@ -232,7 +235,7 @@ msgstr ""
 msgid "Blog Archives"
 msgstr ""
 
-#: content-none.php:9 search.php:48
+#: content-none.php:9 search.php:23
 msgid "Nothing Found"
 msgstr ""
 
@@ -313,17 +316,21 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:51
+#: search.php:26
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: header.php:21
+#: header.php:20
 msgid "Skip to main content"
 msgstr ""
 
-#: header.php:65 header.php:67 searchform.php:7 searchform.php:11
+#: header.php:40
+msgid "Toggle navigation"
+msgstr ""
+
+#: header.php:58 header.php:59 searchform.php:7 searchform.php:11
 #: searchform.php:13
 msgid "Search"
 msgstr ""
@@ -333,15 +340,15 @@ msgstr ""
 msgid "About %s"
 msgstr ""
 
-#: author-bio.php:19
+#: author-bio.php:23
 msgid "Website"
 msgstr ""
 
-#: single.php:36
+#: single.php:38
 msgid "Previous Post"
 msgstr ""
 
-#: single.php:37
+#: single.php:39
 msgid "Next Post"
 msgstr ""
 
@@ -349,7 +356,7 @@ msgstr ""
 msgid "Page (Default)"
 msgstr ""
 
-#: author.php:24
+#: author.php:23
 #, php-format
 msgid "Author Archives: %s"
 msgstr ""
@@ -358,7 +365,7 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: sidebar.php:53
+#: sidebar.php:55
 msgid "Categories"
 msgstr ""
 
@@ -398,39 +405,35 @@ msgid "Default"
 msgstr ""
 
 #: inc/customizer.php:55
-msgid "Inverse"
+msgid "Dark"
 msgstr ""
 
-#: inc/customizer.php:68
+#: inc/customizer.php:56
+msgid "Primary"
+msgstr ""
+
+#: inc/customizer.php:69
 msgid "Navbar"
 msgstr ""
 
-#: inc/customizer.php:71
+#: inc/customizer.php:72
 msgid "Static"
 msgstr ""
 
-#: inc/customizer.php:72
+#: inc/customizer.php:73
 msgid "Fixed to top"
 msgstr ""
 
-#: inc/customizer.php:73
+#: inc/customizer.php:74
 msgid "Fixed to bottom"
 msgstr ""
 
-#: inc/customizer.php:86
+#: inc/customizer.php:87
 msgid "Show Searchfield?"
 msgstr ""
 
-#: inc/metaboxes.php:39
-msgid "class"
-msgstr ""
-
-#: inc/metaboxes.php:48
-msgid "style"
-msgstr ""
-
 #. Name of the theme
-msgid "them.es Starter Theme"
+msgid "them.es Starter Theme (Bootstrap 4)"
 msgstr ""
 
 #. Description of the theme

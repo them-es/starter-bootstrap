@@ -8,30 +8,31 @@ If you want to see it in action or want to download a customized Theme for free,
 ## What's included?
 * WordPress Theme
 * Bootstrap Framework
-* LESS/SASS Source files
+* SASS Source files
 * Grunt configuration
-* Bower configuration to keep required libraries updated
+* ~~Bower configuration to keep required libraries updated~~ NPM configuration to keep the required build libraries updated and to add new libraries
 * Customization API
 * 2 Menus
-* Custom WordPress Nav Walker class
 * Demo Content
 
 
 ## Compatible with CSS Preprocessors
-You can use [LESS](http://lesscss.org/) or [SASS](http://sass-lang.com/) to create your main stylesheet which includes all the required Bootstrap styles.
+You can use [SASS](http://sass-lang.com) to create your main stylesheet which includes all the required styles.
 
-**`main.less`** or **`main.scss`** needs to be compiled as **`/css/main.css`**
+**`/assets/main.scss`** needs to be compiled as **`/assets/css/main.min.css`**
 
 
 ## Grunt Task Automation
-This Theme comes with a built in Task Automation. LESS/SASS files will be complied if changed, vendor prefixes will be added automatically if required and files will be minified.
+This Theme comes with a built in Task Automation. SASS files will be complied if changed, vendor prefixes will be added automatically if required and files will be minified.
 
 * Prerequisites: [Node.js](https://nodejs.org) (NPM) needs to be installed on your system
-* Open the **Project directory** in Terminal and install the required modules from packages.json
+* Open the **Project directory** `/` in Terminal and install the required Node.js dependencies: Grunt, SASS-Compiler, Autoprefixer, etc.
+* `$ npm install`
+* Open the **Build directory** in Terminal and install the required Node.js dependencies: Bootstrap, etc.
 * `$ npm install`
 * Run Grunt
 * `$ grunt watch`
-* Modify `main.less` or `main.scss`
+* Modify `/main.scss` and `/js/main.js`
 
 
 ## Free Add-ons Plugin
@@ -41,7 +42,6 @@ We are running a Sister project which brings useful **WordPress Add-ons** to The
 ## Technology
 
 * [Bootstrap](https://github.com/twbs/bootstrap), [MIT licence](https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* [LESS](https://github.com/less/less.js), [Apache license](https://github.com/less/less.js/blob/master/LICENSE)
 * [SASS](https://github.com/sass/sass), [MIT licence](https://github.com/sass/sass/blob/stable/MIT-LICENSE)
 * [Grunt](https://github.com/gruntjs/grunt), [MIT licence](https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT)
 * [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker), [GPLv2+](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)

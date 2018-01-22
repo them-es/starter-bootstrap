@@ -11,39 +11,20 @@
 ?>
 
 	<div class="row">
-	
-		<div class="col-lg-12">
+		
+		<div class="col-md-12">
 			<?php
-				echo nl2br( apply_filters( 'the_content', get_post_field( 'post_content', $page_id ) ) );// = echo content from Bloghome
+				echo nl2br( apply_filters( 'the_content', get_post_field( 'post_content', $page_id ) ) ); // = echo content from Bloghome
 
 				edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>', $page_id );
 			?>
-		</div>
-		
-		<?php themes_starter_content_nav( 'nav-above' ); ?>
+		</div><!-- /.col -->
 
-		<?php
-			$count = 1;
-
-			if ( have_posts() ) :
-				while ( have_posts() ) :
-					the_post();
-
-					get_template_part( 'content', 'index' ); // Post format: content-index.php!
-					comments_template( '', false );
-
-					if ( 0 === $count % 2 ) :
-						echo '<div class="clearfix"></div>'; // Clearfix after 2 posts.
-					endif;
-
-					$count++;
-
-				endwhile;
-			endif;
-			wp_reset_postdata(); // end of the loop.
-		?>
-
-		<?php themes_starter_content_nav( 'nav-below' ); ?>
+		<div class="col-md-12">
+			<?php
+				get_template_part( 'archive', 'loop' );
+			?>
+		</div><!-- /.col -->
 		
 	</div><!-- /.row -->
 

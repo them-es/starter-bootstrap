@@ -11,10 +11,14 @@
 		endif;
 	?>
 
-		<div id="footer">
-			<hr>
+	</main><!-- /#main -->
+
+	<footer id="footer">
+		<div class="container">
 			<div class="row">
-				<p class="col-lg-6 col-md-6">&copy; <?php echo date( 'Y' ); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
+				<div class="col-md-6">
+					<p>&copy; <?php echo date( 'Y' ); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
+				</div>
 				
 				<?php
 					if ( has_nav_menu( 'footer-menu' ) ) : // see function register_nav_menus() in functions.php
@@ -26,16 +30,17 @@
 						wp_nav_menu( array(
 							'theme_location'  => 'footer-menu',
 							'container'       => 'nav',
-							'container_class' => 'col-lg-6 col-md-6',
+							'container_class' => 'col-md-6',
 							'fallback_cb'     => '',
-							'items_wrap'      => '<ul class="menu nav nav-tabs">%3$s</ul>',
-							'walker'          => '',
+							'items_wrap'      => '<ul class="menu nav justify-content-end">%3$s</ul>',
+							//'fallback_cb'    => 'WP_Bootstrap4_Navwalker_Footer::fallback',
+							'walker'          => new WP_Bootstrap4_Navwalker_Footer(),
 						) );
 					endif;
 				?>
 
 				<?php if ( is_active_sidebar( 'third_widget_area' ) ) : ?>
-					<div class="pull-right">
+					<div class="col-md-12">
 						<?php dynamic_sidebar( 'third_widget_area' ); ?>
 
 						<?php if ( current_user_can( 'manage_options' ) ) : ?>
@@ -44,9 +49,8 @@
 					</div>
 				<?php endif; ?>
 			</div><!-- /.row -->
-		</div><!-- /#footer -->
-
-	</div><!-- /#main -->
+		</div><!-- /.container -->
+	</footer><!-- /#footer -->
 	
 </div><!-- /#wrapper -->
 

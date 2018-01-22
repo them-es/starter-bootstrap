@@ -1,28 +1,33 @@
 {
   "name": "themes-starter",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "license": "GPL-2.0",
-  "description": "A WordPress Starter Theme built with Bootstrap.",
+  "description": "A WordPress Starter Theme built with Bootstrap 4.",
   "homepage": "http://them.es",
   "author": "them.es",
   "repository": {
     "type": "git",
     "url": "git://github.com/them-es/themes-starter.git"
   },
+  "scripts": {
+    "watch": "grunt watch"
+  },
   "dependencies": {},
   "devDependencies": {
-    "grunt": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-less": "*",
-    "grunt-sass": "*",
-    "grunt-postcss": "*",
-    "pixrem": "*",
+    "bootstrap": ">=4.0.0",
+    "jquery": ">=3.0.0",
+    "popper.js": "^1.11.0",
     "autoprefixer": "*",
     "cssnano": "*",
+    "grunt": "*",
     "grunt-browser-sync": "*",
     "grunt-contrib-imagemin": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-uglify": "*",
-    "load-grunt-tasks": "*"
+    "grunt-contrib-watch": "*",
+    "grunt-postcss": "*",
+    "grunt-sass": "*",
+    "load-grunt-tasks": "*",
+    "pixrem": "*"
   }
 }
