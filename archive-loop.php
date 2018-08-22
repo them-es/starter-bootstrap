@@ -24,6 +24,6 @@
 
 		wp_reset_postdata(); // end of the loop.
 	?>
-</div><!-- /.card-columns -->
+</div><!-- /.row -->
 
 <?php themes_starter_content_nav( 'nav-below' ); ?>

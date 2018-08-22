@@ -28,7 +28,7 @@
 					<?php
 						$header_logo = get_theme_mod( 'header_logo' ); // get custom meta-value
 
-						if ( isset( $header_logo ) && ! empty( $header_logo ) ) :
+						if ( ! empty( $header_logo ) ) :
 					?>
 						<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 					<?php
@@ -54,7 +54,7 @@
 						) );
 					?>
 					
-					<?php if ( isset( $search_enabled ) && '1' === $search_enabled ) : ?>
+					<?php if ( '1' === $search_enabled ) : ?>
 						<form class="form-inline search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 							<input type="text" id="s" name="s" class="form-control mr-sm-2" placeholder="<?php _e( 'Search', 'my-theme' ); ?>...">
 							<button type="submit" id="searchsubmit" name="submit" class="btn btn-outline-secondary my-2 my-sm-0"><?php _e( 'Search', 'my-theme' ); ?></button>
@@ -65,7 +65,7 @@
 		</nav><!-- /#header -->
 	</header>
 	
-	<main id="main" class="container"<?php if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' style="padding-top: 100px;"'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' style="padding-bottom: 90px;"'; endif; ?>>
+	<main id="main" class="container"<?php if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' style="padding-top: 100px;"'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' style="padding-bottom: 100px;"'; endif; ?>>
 		
 		<?php
 			// If Single or Archive (Category, Tag, Author or a Date based page)
