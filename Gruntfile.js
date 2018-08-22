@@ -1,4 +1,5 @@
-/*global module:false, require:false */
+const sass = require('node-sass');
+const postcss = require('postcss');
 
 module.exports = function (grunt) {
 	"use strict";
@@ -35,6 +36,10 @@ module.exports = function (grunt) {
 
 		// 1. Sass
 		sass: {
+			options: {
+				implementation: sass,
+				sourceMap: true
+			},
 			dist: {
 				files: {
 					'css/main.min.css': 'main.scss',
@@ -53,22 +58,21 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// PostCSS: sourcemaps, autoprefix, minify
+		// PostCSS: Source maps, Autoprefix, Minify
 		postcss: {
 			options: {
-			  map: {
-				  inline: false, // save all sourcemaps as separate files...
-				  annotation: 'css/' // ...to the specified directory
-			  },
-
-			  processors: [
-				require('pixrem')(), // add fallbacks for rem units
-				require('autoprefixer')({ browsers: 'last 2 versions' }), // add vendor prefixes
-				require('cssnano')() // minify the result
-			  ]
+				map: {
+					inline: false, // Save all Source maps as separate files...
+					annotation: 'css/' // ...to the specified directory
+				},
+				processors: [
+					require('pixrem')(), // Add fallbacks for rem units
+					require('autoprefixer')({ browsers: 'last 2 versions' }), // Add vendor prefixes
+					require('cssnano')() // Minify the result
+				]
 			},
 			dist: {
-			  src: 'css/*.min.css'
+				src: 'css/*.min.css'
 			}
 		},
 		
