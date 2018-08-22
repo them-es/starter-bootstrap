@@ -1,4 +1,5 @@
-/*global module:false, require:false */
+const sass = require('node-sass');
+const postcss = require('postcss');
 
 module.exports = function (grunt) {
 	'use strict';
@@ -31,6 +32,10 @@ module.exports = function (grunt) {
 
 		// Sass
 		sass: {
+			options: {
+				implementation: sass,
+				sourceMap: true
+			},
 			dist: {
 				files: {
 					'css/main.min.css': 'main.scss',
@@ -46,7 +51,6 @@ module.exports = function (grunt) {
 					inline: false, // Save all Source maps as separate files...
 					annotation: 'css/' // ...to the specified directory
 				},
-
 				processors: [
 					require('pixrem')(), // Add fallbacks for rem units
 					require('autoprefixer')({ browsers: 'last 2 versions' }), // Add vendor prefixes
