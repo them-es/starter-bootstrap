@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = '1.5.0';
+$theme_version = '1.5.1';
 
 	/**
 	 * Include Theme Customizer
@@ -63,6 +63,15 @@ $theme_version = '1.5.0';
 			add_theme_support( 'html5', array(
 				'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 			) );
+
+			// Add support for Block Styles.
+			add_theme_support( 'wp-block-styles' );
+			// Add support for full and wide align images.
+			add_theme_support( 'align-wide' );
+			// Add support for editor styles.
+			add_theme_support( 'editor-styles' );
+			// Enqueue editor styles.
+			add_editor_style( 'style-editor.css' );
 
 			// Date/Time Format
 			$theme_dateformat = get_option( 'date_format' );
