@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git://github.com/them-es/themes-starter.git"
   },
+  "scripts": {
+    "watch": "grunt watch"
+  },
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.1.2",
