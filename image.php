@@ -10,20 +10,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<p class="lead">
-				<?php
-					echo nl2br( get_post_field( 'post_content', $page_id ) );// = Page content
-
-					edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>', $page_id );
-				?>
-			</p>
-
 			<?php themes_starter_content_nav( 'nav-above' ); ?>
 
 				<?php
 					if ( have_posts() ) :
 						while ( have_posts() ) :
-						the_post();
+							the_post();
 				?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -46,11 +38,17 @@
 									echo wp_get_attachment_image( get_the_ID(), 'large', false, array( 'class' => 'img-fluid' ) );
 								?>
 								
-								<?php if ( has_excerpt() ) : ?>
+								<?php
+									if ( has_excerpt() ) :
+								?>
 									<div class="entry-caption">
-										<?php the_excerpt(); ?>
+										<?php
+											the_excerpt();
+										?>
 									</div><!-- .entry-caption -->
-								<?php endif; ?>
+								<?php
+									endif;
+								?>
 								
 							</div><!-- .entry-attachment -->
 							

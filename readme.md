@@ -30,8 +30,8 @@ This Theme comes with a built in Task Automation. SASS files will be complied if
 * `$ npm install`
 * Open the **Build directory** in Terminal and install the required Node.js dependencies: Bootstrap, etc.
 * `$ npm install`
-* Run Grunt
-* `$ grunt watch`
+* Run the **`watch`** script
+* `$ npm run watch`
 * Modify `/main.scss` and `/js/main.js`
 
 
