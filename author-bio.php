@@ -18,36 +18,41 @@
 						if ( ! empty( get_the_author_meta( 'user_url' ) ) ) :
 							printf( '<a href="%s" class="www btn btn-default btn-sm">' . __( 'Website', 'my-theme' ) . '</a>', esc_url( get_the_author_meta( 'user_url' ) ) );
 						endif;
-					?>
-					<?php
+						
 						// Add new Profile fields for Users in functions.php
-						function social_profile_link( $link, $title ) {
-							echo ' <a href="' . esc_url( $link ) . '" class="btn btn-default btn-sm" title="' . $title . '">' . $title . '</a> ';
-						}
-
-						$facebook = get_the_author_meta( 'facebook_profile' );
-						if ( ! empty( $facebook ) ) {
-							social_profile_link( $facebook, 'Facebook' );
-						}
-						$twitter = get_the_author_meta( 'twitter_profile' );
-						if ( ! empty( $twitter ) ) {
-							social_profile_link( $twitter, 'Twitter' );
-						}
-						$google = get_the_author_meta( 'google_profile' );
-						if ( ! empty( $google ) ) {
-							social_profile_link( $google, 'Google+' );
-						}
-						$linkedin = get_the_author_meta( 'linkedin_profile' );
-						if ( ! empty( $linkedin ) ) {
-							social_profile_link( $linkedin, 'LinkedIn' );
-						}
-						$xing = get_the_author_meta( 'xing_profile' );
-						if ( ! empty( $xing ) ) {
-							social_profile_link( $xing, 'Xing' );
-						}
-						$github = get_the_author_meta( 'github_profile' );
-						if ( ! empty( $github ) ) {
-							social_profile_link( $github, 'GitHub' );
+						$fields = array(
+							array(
+								'meta' => 'facebook_profile',
+								'label' => 'Facebook',
+							),
+							array(
+								'meta' => 'twitter_profile',
+								'label' => 'Twitter',
+							),
+							array(
+								'meta' => 'google_profile',
+								'label' => 'Google+',
+							),
+							array(
+								'meta' => 'linkedin_profile',
+								'label' => 'LinkedIn',
+							),
+							array(
+								'meta' => 'xing_profile',
+								'label' => 'Xing',
+							),
+							array(
+								'meta' => 'github_profile',
+								'label' => 'GitHub',
+							),
+						);
+				
+						foreach ( $fields as $key => $data ) {
+							$link = get_the_author_meta( esc_attr( $data['meta'] ) );
+							if ( ! empty( $link ) ) {
+								$label = esc_html( $data['label'] );
+								echo ' <a href="' . esc_url( $link ) . '" class="btn btn-default btn-sm" title="' . $label . '">' . $label . '</a> ';
+							}
 						}
 					?>
 				</p>
