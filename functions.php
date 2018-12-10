@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = '2.1.0';
+$theme_version = '2.1.1';
 
 	/**
 	 * Include Theme Customizer
@@ -131,14 +131,14 @@ $theme_version = '2.1.0';
 	 *
 	 * @since v1.0
 	 */
-	function themes_starter_filter_media_comment_status( $open, $post_id ) {
+	function themes_starter_filter_media_comment_status( $open, $post_id = null ) {
 		$media_post = get_post( $post_id );
 		if ( 'attachment' === $media_post->post_type ) {
 			return false;
 		}
 		return $open;
 	}
-	add_filter( 'comments_open', 'themes_starter_filter_media_comment_status', 10 , 2 );
+	add_filter( 'comments_open', 'themes_starter_filter_media_comment_status', 10, 2 );
 
 
 	/**
@@ -147,7 +147,7 @@ $theme_version = '2.1.0';
 	 * @since v1.0
 	 */
 	function themes_starter_custom_edit_post_link( $output ) {
-		$output = str_replace( 'class="post-edit-link"', 'class="post-edit-link badge badge-info"', $output );
+		$output = str_replace( 'class="post-edit-link"', 'class="post-edit-link badge badge-secondary"', $output );
 		return $output;
 	}
 	add_filter( 'edit_post_link', 'themes_starter_custom_edit_post_link' );
@@ -158,7 +158,7 @@ $theme_version = '2.1.0';
 	 *
 	 * @since v1.0
 	 */
-	function themes_starter_oembed_filter( $html, $url, $attr, $post_id ) {
+	function themes_starter_oembed_filter( $html ) {
 		$return = '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
 		return $return;
 	}
@@ -302,8 +302,8 @@ $theme_version = '2.1.0';
 		 * @since v1.0
 		 */
 		function themes_starter_replace_reply_link_class( $class ) {
-			$class = str_replace( "class='comment-reply-link", "class='btn btn-outline-secondary", $class );
-			return $class;
+			$output = str_replace( "class='comment-reply-link", "class='btn btn-outline-secondary", $class );
+			return $output;
 		}
 		add_filter( 'comment_reply_link', 'themes_starter_replace_reply_link_class' );
 
@@ -486,5 +486,3 @@ $theme_version = '2.1.0';
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'themes_starter_scripts_loader' );
-
-?>

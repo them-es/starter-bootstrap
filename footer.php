@@ -44,7 +44,7 @@
 						<?php dynamic_sidebar( 'third_widget_area' ); ?>
 
 						<?php if ( current_user_can( 'manage_options' ) ) : ?>
-							<p class="edit-link"><a href="<?php echo admin_url( 'widgets.php' ); ?>" class="badge badge-info"><?php _e( 'Edit', 'my-theme' ); ?></a></p><!-- Show Edit Widget link -->
+							<p class="edit-link"><a href="<?php echo admin_url( 'widgets.php' ); ?>" class="badge badge-secondary"><?php _e( 'Edit', 'my-theme' ); ?></a></p><!-- Show Edit Widget link -->
 						<?php endif; ?>
 					</div>
 				<?php endif; ?>

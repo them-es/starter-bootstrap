@@ -27,6 +27,8 @@
 		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'my-theme' ) . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- /.entry-content -->
 	
+	<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
+
 	<footer class="entry-meta">
 		<hr>
 		<?php
@@ -53,7 +55,6 @@
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
 			);
 		?>
-		<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
 		
 		<hr>
 		

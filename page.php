@@ -6,8 +6,6 @@
  */
 
 	get_header();
-
-	$id = get_the_ID();
 ?>
 
 	<div class="row">
