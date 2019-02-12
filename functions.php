@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = '1.5.1';
+$theme_version = '1.5.2';
 
 	/**
 	 * Include Theme Customizer
@@ -115,7 +115,6 @@ $theme_version = '1.5.1';
 			// Add new fields
 			$fields['facebook_profile'] = 'Facebook URL';
 			$fields['twitter_profile'] = 'Twitter URL';
-			$fields['google_profile'] = 'Google+ URL';
 			$fields['linkedin_profile'] = 'LinkedIn URL';
 			$fields['xing_profile'] = 'Xing URL';
 			$fields['github_profile'] = 'GitHub URL';
@@ -157,14 +156,14 @@ $theme_version = '1.5.1';
 	 *
 	 * @since v1.0
 	 */
-	function themes_starter_filter_media_comment_status( $open, $post_id ) {
+	function themes_starter_filter_media_comment_status( $open, $post_id = null ) {
 		$media_post = get_post( $post_id );
 		if ( 'attachment' === $media_post->post_type ) {
 			return false;
 		}
 		return $open;
 	}
-	add_filter( 'comments_open', 'themes_starter_filter_media_comment_status', 10 , 2 );
+	add_filter( 'comments_open', 'themes_starter_filter_media_comment_status', 10, 2 );
 
 
 	/**
@@ -184,9 +183,9 @@ $theme_version = '1.5.1';
 	 *
 	 * @since v1.0
 	 */
-	function themes_starter_oembed_filter( $html, $url, $attr, $post_id ) {
-		$return = '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
-		return $return;
+	function themes_starter_oembed_filter( $html ) {
+		$output = '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
+		return $output;
 	}
 	add_filter( 'embed_oembed_html', 'themes_starter_oembed_filter', 10, 4 );
 
@@ -316,8 +315,8 @@ $theme_version = '1.5.1';
 		 * @since v1.0
 		 */
 		function themes_starter_replace_reply_link_class( $class ) {
-			$class = str_replace( "class='comment-reply-link", "class='btn btn-default", $class );
-			return $class;
+			$output = str_replace( "class='comment-reply-link", "class='comment-reply-link btn btn-default", $class );
+			return $output;
 		}
 		add_filter( 'comment_reply_link', 'themes_starter_replace_reply_link_class' );
 
@@ -517,4 +516,3 @@ $theme_version = '1.5.1';
 		<![endif]-->';
 	}
 	add_action( 'wp_footer', 'themes_starter_add_ie_html5_shims', 99 );
-?>
