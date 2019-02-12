@@ -9,7 +9,7 @@
 	<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :
-			the_post();
+				the_post();
 		?>
 		
 		<?php
@@ -36,6 +36,8 @@
 			<li><?php previous_post_link( '%link', '<span aria-hidden="true">&larr;</span> ' . __( 'Previous Post', 'my-theme' ) ); ?></li>
 			<li><?php next_post_link( '%link', __( 'Next Post', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></li>
 		</ul><!-- /.pager -->
-	<?php endif; ?>
+	<?php
+		endif;
+	?>
 
 <?php get_footer(); ?>
