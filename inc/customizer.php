@@ -29,7 +29,7 @@ function themes_starter_customize( $wp_customize ) {
  * Section: Page Layout
  */
 	// Header Logo
-	$wp_customize->add_setting('header_logo', array(
+	$wp_customize->add_setting( 'header_logo', array(
 		'default'           => '',
 		'sanitize_callback' => 'esc_url_raw',
 	));

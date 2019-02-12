@@ -89,7 +89,6 @@ $theme_version = '2.1.1';
 			// Add new fields
 			$fields['facebook_profile'] = 'Facebook URL';
 			$fields['twitter_profile'] = 'Twitter URL';
-			$fields['google_profile'] = 'Google+ URL';
 			$fields['linkedin_profile'] = 'LinkedIn URL';
 			$fields['xing_profile'] = 'Xing URL';
 			$fields['github_profile'] = 'GitHub URL';
@@ -302,7 +301,7 @@ $theme_version = '2.1.1';
 		 * @since v1.0
 		 */
 		function themes_starter_replace_reply_link_class( $class ) {
-			$output = str_replace( "class='comment-reply-link", "class='btn btn-outline-secondary", $class );
+			$output = str_replace( "class='comment-reply-link", "class='comment-reply-link btn btn-outline-secondary", $class );
 			return $output;
 		}
 		add_filter( 'comment_reply_link', 'themes_starter_replace_reply_link_class' );
