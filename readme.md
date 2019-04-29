@@ -29,8 +29,8 @@ This Theme comes with a built in Task Automation. LESS/SASS files will be compli
 * Prerequisites: [Node.js](https://nodejs.org) (NPM) needs to be installed on your system
 * Open the **Project directory** in Terminal and install the required modules from packages.json
 * `$ npm install`
-* Run Grunt
-* `$ grunt watch`
+* Run the **`watch`** script
+* `$ npm run watch`
 * Modify `main.less` or `main.scss`
 
 
@@ -43,7 +43,7 @@ We are running a Sister project which brings useful **WordPress Add-ons** to The
 * [Bootstrap](https://github.com/twbs/bootstrap), [MIT licence](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 * [LESS](https://github.com/less/less.js), [Apache license](https://github.com/less/less.js/blob/master/LICENSE)
 * [SASS](https://github.com/sass/sass), [MIT licence](https://github.com/sass/sass/blob/stable/MIT-LICENSE)
-* [Grunt](https://github.com/gruntjs/grunt), [MIT licence](https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT)
+* [Grunt](https://github.com/gruntjs/grunt), [MIT licence](https://github.com/gruntjs/grunt/blob/master/LICENSE)
 * [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker), [GPLv2+](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
 
 
