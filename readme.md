@@ -9,8 +9,8 @@ If you want to see it in action or want to download a customized Theme for free,
 * WordPress Theme
 * Bootstrap Framework
 * SASS Source files
-* Grunt configuration
-* ~~Bower configuration to keep required libraries updated~~ NPM configuration to keep the required build libraries updated and to add new libraries
+* gulp + webpack configuration
+* NPM configuration to keep the required build libraries updated and to add new libraries
 * Customization API
 * 2 Menus
 * Demo Content
@@ -22,28 +22,23 @@ You can use [SASS](http://sass-lang.com) to create your main stylesheet which in
 **`/assets/main.scss`** needs to be compiled as **`/assets/css/main.min.css`**
 
 
-## Grunt Task Automation
+## Task Automation
 This Theme comes with a built in Task Automation. SASS files will be complied if changed, vendor prefixes will be added automatically if required and files will be minified.
 
 * Prerequisites: [Node.js](https://nodejs.org) (NPM) needs to be installed on your system
-* Open the **Project directory** `/` in Terminal and install the required Node.js dependencies: Grunt, SASS-Compiler, Autoprefixer, etc.
-* `$ npm install`
-* Open the **Build directory** in Terminal and install the required Node.js dependencies: Bootstrap, etc.
+* Open the **Project directory** `/` in Terminal and install the required Node.js dependencies: gulp, SASS-Compiler, Autoprefixer, etc.
 * `$ npm install`
 * Run the **`watch`** script
 * `$ npm run watch`
-* Modify `/main.scss` and `/js/main.js`
-
-
-## Free Add-ons Plugin
-We are running a Sister project which brings useful **WordPress Add-ons** to Themes built with Bootstrap. For more information, have a look at [https://wordpress.org/plugins/themes-plus](https://wordpress.org/plugins/themes-plus) or [https://github.com/them-es/themes-plus](https://github.com/them-es/themes-plus)
+* Modify `/assets/main.scss` and `/assets/main.js`
 
 
 ## Technology
 
 * [Bootstrap](https://github.com/twbs/bootstrap), [MIT licence](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 * [SASS](https://github.com/sass/sass), [MIT licence](https://github.com/sass/sass/blob/stable/MIT-LICENSE)
-* [Grunt](https://github.com/gruntjs/grunt), [MIT licence](https://github.com/gruntjs/grunt/blob/master/LICENSE)
+* [gulp](https://github.com/gulpjs/gulp), [MIT licence](https://github.com/gulpjs/gulp/blob/master/LICENSE)
+* [webpack](https://github.com/webpack/webpack), [MIT licence](https://github.com/webpack/webpack/blob/master/LICENSE)
 * [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker), [GPLv2+](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
 
 
