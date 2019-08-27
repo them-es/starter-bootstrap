@@ -11,11 +11,11 @@ import 'bootstrap';
 	});
 	
 	// Focus Search if Searchform is empty
-	$('.search-form').on('submit', function (event) {
-		var search = document.getElementById('s');
-		if (search.value === '') {
+	$('.search-form').on('submit', function (e) {
+		var search = $('#s');
+		if (search.val().length < 1) {
+			e.preventDefault();
 			search.focus();
-			return false;
 		}
 	});
 
