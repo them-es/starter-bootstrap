@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = '2.3.0';
+$theme_version = '2.3.1';
 
 /**
  * Include Theme Customizer

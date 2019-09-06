@@ -215,7 +215,7 @@ body.admin-bar {
 }
 
 .comment-reply-title {
-	margin: $grid-gutter-width 0 ($grid-gutter-width/2)-gutter-width;
+	margin: $grid-gutter-width 0 ($grid-gutter-width/2);
 }
 
 .commentlist {
@@ -231,11 +231,11 @@ body.admin-bar {
 
 	.children {
 		list-style: none;
-		margin-top: 20px;
+		margin-top: $grid-gutter-width;
 
 		> li.comment {
 			border-top: 1px solid $gray-300;
-			padding-top: 10px;
+			padding-top: $grid-gutter-width;
 			position: relative;
 		}
 	}
