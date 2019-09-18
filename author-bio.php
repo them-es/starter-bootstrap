@@ -64,6 +64,4 @@
 		</div><!-- /.row -->
 	</div><!-- /.author-info -->
 
-	<hr>
-
 <?php endif; ?>
