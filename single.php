@@ -40,7 +40,7 @@
 				if ( $prev_post ) {
 					$prev_title = get_the_title( $prev_post->ID );
 			?>
-				<div>
+				<div class="pr-3">
 					<a class="previous-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?php echo esc_attr( $prev_title ); ?>">
 						<span class="arrow">&larr;</span>
 						<span class="title"><?php echo wp_kses_post( $prev_title ); ?></span>
@@ -51,10 +51,10 @@
 				if ( $next_post ) {
 					$next_title = get_the_title( $next_post->ID );
 			?>
-				<div>
+				<div class="pl-3">
 					<a class="next-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr( $next_title ); ?>">
-						<span class="arrow">&rarr;</span>
 						<span class="title"><?php echo wp_kses_post( $next_title ); ?></span>
+						<span class="arrow">&rarr;</span>
 					</a>
 				</div>
 			<?php
