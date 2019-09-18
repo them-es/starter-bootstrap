@@ -220,19 +220,6 @@ endif; // content navigation
 
 
 /**
- * Modify Next/Previous Post output
- *
- * @since v2.0
- */
-function post_link_attributes( $output ) {
-	$class = 'class="btn btn-outline-secondary"';
-	return str_replace( '<a href=', '<a ' . $class . ' href=', $output );
-}
-add_filter( 'next_post_link', 'post_link_attributes' );
-add_filter( 'previous_post_link', 'post_link_attributes' );
-
-
-/**
  * Init Widget areas in Sidebar
  *
  * @since v1.0
