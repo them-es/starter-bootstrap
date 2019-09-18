@@ -1,6 +1,6 @@
 <?php
 
-$theme_version = '2.3.1';
+$theme_version = '2.3.2';
 
 /**
  * Include Theme Customizer
@@ -169,6 +169,12 @@ function themes_starter_custom_edit_post_link( $output ) {
 	return $output;
 }
 add_filter( 'edit_post_link', 'themes_starter_custom_edit_post_link' );
+
+function themes_starter_custom_edit_comment_link( $output ) {
+	$output = str_replace( 'class="comment-edit-link"', 'class="comment-edit-link badge badge-secondary"', $output );
+	return $output;
+}
+add_filter( 'edit_comment_link', 'themes_starter_custom_edit_comment_link' );
 
 
 /**
