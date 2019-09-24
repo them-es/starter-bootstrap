@@ -141,10 +141,8 @@ body.admin-bar {
 	}
 
 	.menu-item {
-		&.active,
-		&.current-menu-item,
-		&.current_page_item {
-			a {
+		a {
+			&[aria-current="page"] {
 				color: $link-hover-color;
 			}
 		}
@@ -178,7 +176,8 @@ body.admin-bar {
 .author-info {
 	margin: 40px 0;
 
-	h2, h3 {
+	h2,
+	h3 {
 		margin-top: 0;
 	}
 	

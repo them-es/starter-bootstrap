@@ -16,15 +16,16 @@ if ( ! class_exists( 'WP_Bootstrap4_Navwalker_Footer' ) ) {
 		public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 			$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-			$class_names = $value = '';
-
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+			$atts = array();
 
 			if ( $depth === 0 ) {
 				$classes[] = 'nav-item'; // First level
 			}
-			if ( preg_grep( "/^current/", $classes ) ) {
+			if ( in_array( 'current-menu-item', $classes, true ) ) {
 				$classes[] = 'active';
+				$atts['aria-current'] = 'page';
 			}
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
@@ -35,7 +36,6 @@ if ( ! class_exists( 'WP_Bootstrap4_Navwalker_Footer' ) ) {
 
 			$output .= $indent . '<li' . $value . $class_names . '>';
 
-			$atts = array();
 			$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
 			$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
 			$atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';

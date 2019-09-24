@@ -79,8 +79,8 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			} elseif ( 0 === strcasecmp( $item->attr_title, 'disabled' ) ) {
 				$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 			} else {
-				$value       = '';
-				$class_names = $value;
+				$atts        = array();
+				
 				$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
 				if ( $depth === 0 ) {
 					$classes[] = 'nav-item'; // First level
@@ -92,12 +92,12 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				}
 				if ( in_array( 'current-menu-item', $classes, true ) ) {
 					$class_names .= ' active';
+					$atts['aria-current'] = 'page';
 				}
 				$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 				$id          = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 				$id          = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 				$output     .= $indent . '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $value . $class_names . '>';
-				$atts        = array();
 
 				if ( empty( $item->attr_title ) ) {
 					$atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : '';
