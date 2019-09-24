@@ -34,7 +34,7 @@ if ( ! class_exists( 'WP_Bootstrap4_Navwalker_Footer' ) ) {
 			$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-			$output .= $indent . '<li' . $value . $class_names . '>';
+			$output .= $indent . '<li' . $class_names . '>';
 
 			$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
 			$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
