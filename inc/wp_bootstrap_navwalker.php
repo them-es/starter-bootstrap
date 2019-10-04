@@ -116,7 +116,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				} else {
 					$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 					if ( $depth > 0 ) {
-						$atts['class']	= 'dropdown-item'; // Dropdown item
+						$atts['class']	= 'dropdown-item' . ( in_array( 'current-menu-item', $classes, true ) ? ' active' : '' ); // Dropdown item
 					} else {
 						$atts['class']	= 'nav-link'; // First level
 					}

@@ -58,7 +58,7 @@
 					
 					<?php if ( '1' === $search_enabled ) : ?>
 						<form class="form-inline search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<input type="text" id="s" name="s" class="form-control mr-sm-2" placeholder="<?php _e( 'Search', 'my-theme' ); ?>...">
+							<input type="text" id="s" name="s" class="form-control mr-sm-2" placeholder="<?php _e( 'Search', 'my-theme' ); ?>..." title="<?php echo esc_attr( __( 'Search', 'my-theme' ) ); ?>" />
 							<button type="submit" id="searchsubmit" name="submit" class="btn btn-outline-secondary my-2 my-sm-0"><?php _e( 'Search', 'my-theme' ); ?></button>
 						</form>
 					<?php endif; ?>
