@@ -11,10 +11,9 @@
 ?>
 
 	<div class="row">
-		
 		<div class="col-md-12">
 			<?php
-				echo nl2br( apply_filters( 'the_content', get_post_field( 'post_content', $page_id ) ) ); // = echo content from Bloghome
+				echo apply_filters( 'the_content', get_post_field( 'post_content', $page_id ) );
 
 				edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>', $page_id );
 			?>
@@ -25,7 +24,6 @@
 				get_template_part( 'archive', 'loop' );
 			?>
 		</div><!-- /.col -->
-		
 	</div><!-- /.row -->
 
 <?php get_footer(); ?>

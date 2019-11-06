@@ -50,7 +50,13 @@ if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'html5', array(
-			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'script',
+			'style',
 		) );
 
 		// Add support for Block Styles.

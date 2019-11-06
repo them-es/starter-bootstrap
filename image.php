@@ -80,6 +80,7 @@
 					the_post_navigation(
 						array(
 							'prev_text' => _x( 'Published in %title', 'Parent post link', 'my-theme' ),
+							'aria_label' => __( 'Parent post', 'my-theme' ),
 						)
 					);
 				?>

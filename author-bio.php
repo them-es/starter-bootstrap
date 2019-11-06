@@ -17,7 +17,7 @@
 				<div class="author-description">
 					<?php the_author_meta( 'description' ); ?>
 				</div>
-				<p class="author-links">
+				<div class="author-links">
 					<?php
 						if ( ! empty( get_the_author_meta( 'user_url' ) ) ) :
 							printf( '<a href="%s" class="www btn btn-secondary btn-sm">' . __( 'Website', 'my-theme' ) . '</a>', esc_url( get_the_author_meta( 'user_url' ) ) );
@@ -32,10 +32,6 @@
 							array(
 								'meta' => 'twitter_profile',
 								'label' => 'Twitter',
-							),
-							array(
-								'meta' => 'google_profile',
-								'label' => 'Google+',
 							),
 							array(
 								'meta' => 'linkedin_profile',
@@ -59,7 +55,7 @@
 							}
 						}
 					?>
-				</p>
+				</div>
 			</div><!-- /.author-description -->
 		</div><!-- /.row -->
 	</div><!-- /.author-info -->

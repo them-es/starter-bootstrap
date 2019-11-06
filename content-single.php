@@ -8,11 +8,15 @@
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php themes_starter_article_posted_on(); ?>
-		</div><!-- /.entry-meta -->
-		<?php endif; ?>
+		<?php
+			if ( 'post' == get_post_type() ) :
+		?>
+			<div class="entry-meta">
+				<?php themes_starter_article_posted_on(); ?>
+			</div><!-- /.entry-meta -->
+		<?php
+			endif;
+		?>
 	</header><!-- /.entry-header -->
 	
 	<div class="entry-content">
@@ -37,13 +41,13 @@
 			
 			/* translators: used between list items, there is a space after the comma */
 			$tag_list = get_the_tag_list( '', __( ', ', 'my-theme' ) );
-			if ( '' !== $tag_list ) {
+			if ( '' !== $tag_list ) :
 				$utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'my-theme' );
-			} elseif ( '' !== $category_list ) {
+			elseif ( '' !== $category_list ) :
 				$utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'my-theme' );
-			} else {
+			else :
 				$utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'my-theme' );
-			}
+			endif;
 			
 			printf(
 				$utility_text,
