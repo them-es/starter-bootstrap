@@ -184,6 +184,25 @@ body.admin-bar {
 }
 
 
+/* Blocks */
+
+.alignfull,
+.alignwide {
+	position: relative;
+	left: 50%;
+	right: 50%;
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+.alignwide {
+	padding-right: $grid-gutter-width/2;
+	padding-left: $grid-gutter-width/2;
+}
+
+
 /* Posts */
 
 .sticky {
@@ -194,7 +213,7 @@ body.admin-bar {
 
 .entry-meta {
 	font-size: small;
-	margin-top: ($grid-gutter-width/2);
+	margin-top: $grid-gutter-width/2;
 }
 
 .single {
@@ -214,7 +233,7 @@ body.admin-bar {
 }
 
 .comment-reply-title {
-	margin: $grid-gutter-width 0 ($grid-gutter-width/2);
+	margin: $grid-gutter-width 0 $grid-gutter-width/2;
 }
 
 .commentlist {
@@ -257,10 +276,21 @@ body.admin-bar {
  * Responsive Design using "mixins/_breakpoints.scss"
  */
 
+@media (min-width: breakpoint-min(xl)) {
+	
+	.alignwide {
+		width: 80vw;
+		max-width: 80vw;
+		margin-left: -40vw;
+		margin-right: -40vw;
+	}
+
+}
+
 @media (max-width: breakpoint-max(sm)) {
 	
 	#sidebar {
 		margin-top: 60px;
 	}
-	
+
 }
