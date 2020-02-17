@@ -1,9 +1,8 @@
 === them.es Starter ===
 Contributors: them.es
 Tags: light, dark, responsive-layout, featured-images, flexible-header, microformats, post-formats, rtl-language-support, theme-options, translation-ready, accessibility-ready
-Requires at least: 4.9
-Tested up to: 5.3
-Stable tag: 2.3.0
+Stable tag: 2.3
+Tested up to: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

@@ -19,7 +19,6 @@
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-/* Check if Class Exists. */
 if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 	/**
 	 * WP_Bootstrap_Navwalker class.
@@ -82,7 +81,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$atts        = array();
 				
 				$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
-				if ( $depth === 0 ) {
+				if ( 0 === $depth ) {
 					$classes[] = 'nav-item'; // First level
 				}
 				$classes[]   = 'menu-item-' . $item->ID;
@@ -95,8 +94,10 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 					$atts['aria-current'] = 'page';
 				}
 				$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+				
 				$id          = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 				$id          = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
 				$output     .= $indent . '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
 
 				if ( empty( $item->attr_title ) ) {
@@ -228,4 +229,4 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			}
 		}
 	}
-} // End if().
+}
