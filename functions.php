@@ -1,7 +1,5 @@
 <?php
 
-$theme_version = wp_get_theme()->get( 'Version' );
-
 /**
  * Include Theme Customizer
  *
@@ -113,10 +111,10 @@ if ( ! function_exists( 'themes_starter_add_user_fields' ) ) :
 	function themes_starter_add_user_fields( $fields ) {
 		// Add new fields
 		$fields['facebook_profile'] = 'Facebook URL';
-		$fields['twitter_profile'] = 'Twitter URL';
+		$fields['twitter_profile']  = 'Twitter URL';
 		$fields['linkedin_profile'] = 'LinkedIn URL';
-		$fields['xing_profile'] = 'Xing URL';
-		$fields['github_profile'] = 'GitHub URL';
+		$fields['xing_profile']     = 'Xing URL';
+		$fields['github_profile']   = 'GitHub URL';
 
 		return $fields;
 	}
@@ -342,14 +340,14 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 
 		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
-			case 'pingback' :
-			case 'trackback' :
+			case 'pingback':
+			case 'trackback':
 	?>
 		<li class="post pingback">
 			<p><?php _e( 'Pingback:', 'my-theme' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 				break;
-			default :
+			default:
 	?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment">
@@ -411,16 +409,16 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 			$post_id = get_the_ID();
 		}
 
-		$commenter = wp_get_current_commenter();
-		$user = wp_get_current_user();
+		$commenter     = wp_get_current_commenter();
+		$user          = wp_get_current_user();
 		$user_identity = $user->exists() ? $user->display_name : '';
 
 		$args = wp_parse_args( $args );
 
-		$req = get_option( 'require_name_email' );
+		$req      = get_option( 'require_name_email' );
 		$aria_req = ( $req ? " aria-required='true' required" : '' );
 		$consent  = ( empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"' );
-		$fields = array(
+		$fields   = array(
 			'author'  => '<div class="form-group"><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
 						'<input type="text" id="author" name="author" class="form-control" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></div>',
 			'email'   => '<div class="form-group"><label for="email">' . __( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
@@ -492,7 +490,7 @@ if ( is_readable( $custom_walker_footer ) ) {
  * @since v1.0
  */
 function themes_starter_scripts_loader() {
-	global $theme_version;
+	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// 1. Styles
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', false, $theme_version, 'all' );

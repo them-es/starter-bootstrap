@@ -184,25 +184,6 @@ body.admin-bar {
 }
 
 
-/* Blocks */
-
-.alignfull,
-.alignwide {
-	position: relative;
-	left: 50%;
-	right: 50%;
-	width: 100vw;
-	max-width: 100vw;
-	margin-left: -50vw;
-	margin-right: -50vw;
-}
-
-.alignwide {
-	padding-right: $grid-gutter-width/2;
-	padding-left: $grid-gutter-width/2;
-}
-
-
 /* Posts */
 
 .sticky {
@@ -272,20 +253,53 @@ body.admin-bar {
 }
 
 
+/* WordPress Blocks */
+
+// Buttons
+
+.wp-block-button {
+	&.is-style-outline {
+		.wp-block-button__link {
+			@extend .btn;
+			@extend .btn-outline-primary;
+		}
+	}
+
+	&.btn-lg {
+		.wp-block-button__link {
+			@extend .btn-lg;
+		}
+	}
+	&.btn-sm {
+		.wp-block-button__link {
+			@extend .btn-sm;
+		}
+	}
+
+	.wp-block-button__link {
+		@extend .btn;
+		@extend .btn-primary;
+		text-decoration: none;
+	}
+}
+
+// Table
+
+.wp-block-table {
+	td,
+	th {
+		border: inherit;
+	}
+
+	table {
+		@extend .table;
+	}
+}
+
+
 /**
  * Responsive Design using "mixins/_breakpoints.scss"
  */
-
-@media (min-width: breakpoint-min(xl)) {
-	
-	.alignwide {
-		width: 80vw;
-		max-width: 80vw;
-		margin-left: -40vw;
-		margin-right: -40vw;
-	}
-
-}
 
 @media (max-width: breakpoint-max(sm)) {
 	
