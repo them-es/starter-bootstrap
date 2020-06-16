@@ -1,5 +1,5 @@
-const path = require( 'path' );
-const webpack = require( 'webpack' );
+const path = require( 'path' ),
+	webpack = require( 'webpack' );
 
 module.exports = {
 	context: path.resolve( __dirname, 'assets' ),
