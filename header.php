@@ -9,10 +9,10 @@
 </head>
 
 <?php
-	$navbar_scheme = get_theme_mod( 'navbar_scheme', 'navbar-light bg-light' ); // get custom meta-value
+	$navbar_scheme   = get_theme_mod( 'navbar_scheme', 'navbar-light bg-light' ); // get custom meta-value
 	$navbar_position = get_theme_mod( 'navbar_position', 'static' ); // get custom meta-value
 
-	$search_enabled = get_theme_mod( 'search_enabled', '1' ); // get custom meta-value
+	$search_enabled  = get_theme_mod( 'search_enabled', '1' ); // get custom meta-value
 ?>
 
 <body <?php body_class(); ?>>
@@ -49,11 +49,11 @@
 						/** Loading WordPress Custom Menu (theme_location) **/
 						wp_nav_menu(
 							array(
-								'theme_location'  => 'main-menu',
-								'container'       => '',
-								'menu_class'      => 'navbar-nav',
-								'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-								'walker'          => new WP_Bootstrap_Navwalker(),
+								'theme_location' => 'main-menu',
+								'container'      => '',
+								'menu_class'     => 'navbar-nav',
+								'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+								'walker'         => new WP_Bootstrap_Navwalker(),
 							)
 						);
 					?>

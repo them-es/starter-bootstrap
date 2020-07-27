@@ -23,7 +23,7 @@ if ( ! class_exists( 'WP_Bootstrap4_Navwalker_Footer' ) ) {
 			if ( $depth === 0 ) {
 				$classes[] = 'nav-item'; // First level
 			}
-			if ( in_array( 'current-menu-item', $classes, true ) ) {
+			if ( preg_grep( '/^current/', $classes ) ) {
 				$classes[] = 'active';
 				$atts['aria-current'] = 'page';
 			}

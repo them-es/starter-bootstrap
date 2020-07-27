@@ -29,8 +29,7 @@
 					if ( has_post_thumbnail() ) :
 						echo '<div class="post-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'large' ) . '</div>';
 					endif;
-				?>
-				<?php
+
 					if ( is_search() ) :
 						the_excerpt();
 					else :

@@ -89,7 +89,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				if ( $args->has_children ) {
 					$class_names .= ' dropdown';
 				}
-				if ( in_array( 'current-menu-item', $classes, true ) ) {
+				if ( preg_grep( '/^current/', $classes ) ) {
 					$class_names .= ' active';
 					$atts['aria-current'] = 'page';
 				}

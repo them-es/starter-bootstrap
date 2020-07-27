@@ -66,10 +66,6 @@ if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
-		// Date/Time Format
-		$theme_dateformat = get_option( 'date_format' );
-		$theme_timeformat = 'H:i';
-
 		// Default Attachment Display Settings
 		update_option( 'image_default_align', 'none' );
 		update_option( 'image_default_link_type', 'none' );
@@ -276,13 +272,11 @@ if ( ! function_exists( 'themes_starter_article_posted_on' ) ) :
 	 * @since v1.0
 	 */
 	function themes_starter_article_posted_on() {
-		global $theme_dateformat, $theme_timeformat;
-
 		printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author-meta vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'my-theme' ),
 			esc_url( get_the_permalink() ),
-			esc_attr( get_the_date( $theme_dateformat ) . ' - ' . get_the_time( $theme_timeformat ) ),
+			esc_attr( get_the_date() . ' - ' . get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date( $theme_dateformat ) . ' - ' . get_the_time( $theme_timeformat ) ),
+			esc_html( get_the_date() . ' - ' . get_the_time() ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( __( 'View all posts by %s', 'my-theme' ), get_the_author() ) ),
 			get_the_author()
@@ -336,8 +330,6 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 	 * @since v1.0
 	 */
 	function themes_starter_comment( $comment, $args, $depth ) {
-		global $theme_dateformat, $theme_timeformat;
-
 		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
 			case 'pingback':
@@ -364,7 +356,6 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 									esc_url( get_comment_link( $comment->comment_ID ) ),
 									get_comment_time( 'c' ),
 									/* translators: 1: date, 2: time */
-									//sprintf( __( '%1$s - %2$s', 'my-theme' ), get_comment_time( $theme_dateformat ), get_comment_time( $theme_timeformat ) )
 									sprintf( __( '%1$s ago', 'my-theme' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
 								)
 							);
