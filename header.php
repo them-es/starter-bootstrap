@@ -26,7 +26,7 @@
 	<header>
 		<nav id="header" class="navbar navbar-expand-md <?php echo $navbar_scheme; if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>">
 			<div class="container">
-				<a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php
 						$header_logo = get_theme_mod( 'header_logo' ); // get custom meta-value
 
@@ -56,14 +56,16 @@
 								'walker'         => new WP_Bootstrap_Navwalker(),
 							)
 						);
+
+						if ( '1' === $search_enabled ) :
 					?>
-					
-					<?php if ( '1' === $search_enabled ) : ?>
-						<form class="form-inline search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<input type="text" id="s" name="s" class="form-control mr-sm-2" placeholder="<?php _e( 'Search', 'my-theme' ); ?>" title="<?php echo esc_attr( __( 'Search', 'my-theme' ) ); ?>" />
-							<button type="submit" id="searchsubmit" name="submit" class="btn btn-outline-secondary my-2 my-sm-0"><?php _e( 'Search', 'my-theme' ); ?></button>
-						</form>
-					<?php endif; ?>
+							<form class="form-inline search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+								<input type="text" id="s" name="s" class="form-control mr-sm-2" placeholder="<?php _e( 'Search', 'my-theme' ); ?>" title="<?php echo esc_attr( __( 'Search', 'my-theme' ) ); ?>" />
+								<button type="submit" id="searchsubmit" name="submit" class="btn btn-outline-secondary my-2 my-sm-0"><?php _e( 'Search', 'my-theme' ); ?></button>
+							</form>
+					<?php
+						endif;
+					?>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container -->
 		</nav><!-- /#header -->

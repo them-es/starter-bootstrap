@@ -24,11 +24,11 @@
 			if ( has_post_thumbnail() ) :
 				echo '<div class="post-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'large' ) . '</div>';
 			endif;
+
+			the_content();
+
+			wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'my-theme' ) . '</span>', 'after' => '</div>' ) );
 		?>
-		
-		<?php the_content(); ?>
-		
-		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'my-theme' ) . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- /.entry-content -->
 	
 	<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
