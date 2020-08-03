@@ -44,7 +44,10 @@ function build_js() {
 		)
 		.pipe(
 			gulp.dest( paths.scripts.dest )
-		);
+		)
+		/*.pipe(
+			server.stream() // Browser Reload
+		)*/;
 }
 
 
@@ -82,7 +85,10 @@ function build_css() {
 		)
 		.pipe(
 			gulp.dest( paths.styles.dest )
-		);
+		)
+		/*.pipe(
+			server.stream() // Browser Reload
+		)*/;
 }
 
 /**
