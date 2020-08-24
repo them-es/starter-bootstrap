@@ -1,4 +1,4 @@
-// Compile "main.scss" as "css/main.min.css"
+// Compile "main.scss" as "css/main.css"
 
 
 /**
@@ -334,6 +334,16 @@ body.admin-bar {
 
 	table {
 		@extend .table;
+	}
+}
+
+// Image, Media and Text
+
+.wp-block-image,
+.wp-block-media-text__media {
+	img,
+	video {
+		height: auto;
 	}
 }
 

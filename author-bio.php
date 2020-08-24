@@ -26,23 +26,23 @@
 						// Add new Profile fields for Users in functions.php
 						$fields = array(
 							array(
-								'meta' => 'facebook_profile',
+								'meta'  => 'facebook_profile',
 								'label' => 'Facebook',
 							),
 							array(
-								'meta' => 'twitter_profile',
+								'meta'  => 'twitter_profile',
 								'label' => 'Twitter',
 							),
 							array(
-								'meta' => 'linkedin_profile',
+								'meta'  => 'linkedin_profile',
 								'label' => 'LinkedIn',
 							),
 							array(
-								'meta' => 'xing_profile',
+								'meta'  => 'xing_profile',
 								'label' => 'Xing',
 							),
 							array(
-								'meta' => 'github_profile',
+								'meta'  => 'github_profile',
 								'label' => 'GitHub',
 							),
 						);
