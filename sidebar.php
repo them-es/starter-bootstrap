@@ -17,7 +17,7 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 			<?php if ( current_user_can( 'manage_options' ) ) : ?>
 				<span class="edit-link"><a href="<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>" class="badge badge-secondary"><?php _e( 'Edit', 'my-theme' ); ?></a></span><!-- Show Edit Widget link -->
 			<?php endif; ?>
-		</div><!-- .widget-area -->
+		</div><!-- /.widget-area -->
 		
 	<?php endif; ?>
 

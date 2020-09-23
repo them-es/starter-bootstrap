@@ -56,7 +56,7 @@
 						}
 					?>
 				</div>
-			</div><!-- /.author-description -->
+			</div><!-- /.col -->
 		</div><!-- /.row -->
 	</div><!-- /.author-info -->
 

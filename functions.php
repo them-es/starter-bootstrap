@@ -216,7 +216,6 @@ if ( ! function_exists( 'themes_starter_content_nav' ) ) :
 	}
 	add_filter( 'next_posts_link_attributes', 'posts_link_attributes' );
 	add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
-
 endif;
 
 
@@ -281,7 +280,6 @@ if ( ! function_exists( 'themes_starter_article_posted_on' ) ) :
 			esc_attr( sprintf( __( 'View all posts by %s', 'my-theme' ), get_the_author() ) ),
 			get_the_author()
 		);
-
 	}
 endif;
 
@@ -359,9 +357,7 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 									sprintf( __( '%1$s ago', 'my-theme' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
 								)
 							);
-						?>
 
-						<?php
 							edit_comment_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' );
 						?>
 					</div><!-- .comment-author .vcard -->
@@ -370,7 +366,6 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 						<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'my-theme' ); ?></em>
 						<br />
 					<?php endif; ?>
-
 				</footer>
 
 				<div class="comment-content"><?php comment_text(); ?></div>
@@ -379,13 +374,11 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 					<?php
 						comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'my-theme' ) . ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
 					?>
-				</div><!-- .reply -->
-			</article><!-- #comment-## -->
-
+				</div><!-- /.reply -->
+			</article><!-- /#comment-## -->
 		<?php
 				break;
 		endswitch;
-
 	}
 
 	/**

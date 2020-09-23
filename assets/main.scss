@@ -113,7 +113,6 @@ img {
 
 /* If WP-Adminbar is visible */
 body.admin-bar {
-	
 	#header.fixed-top {
 		top: 32px;
 	}
@@ -128,7 +127,6 @@ body.admin-bar {
 			display: inline-block;
 			margin-right: 5px;
 		}
-		
 	}
 }
 
@@ -153,11 +151,9 @@ body.admin-bar {
 /* Header */
 
 .navbar-brand {
-	
 	img {
 		height: 40px;
 	}
-	
 }
 
 .navbar-static-top {
@@ -188,26 +184,22 @@ body.admin-bar {
 			}
 		}
 	}
-	
 }
 
 
 /* Sidebar */
 
 .widget-area {
-	
 	ul {
 		list-style: none;
 		padding: 0;
 	}
-	
 }
 
 
 /* Author */
 
 .author-avatar {
-	
 	.avatar {
 		width: 64px;
 		height: auto;
@@ -221,7 +213,6 @@ body.admin-bar {
 	h3 {
 		margin-top: 0;
 	}
-	
 }
 
 

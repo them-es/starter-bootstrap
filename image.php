@@ -4,9 +4,8 @@
  *
  */
 
-	get_header();
+get_header();
 ?>
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -15,9 +14,7 @@
 					while ( have_posts() ) :
 						the_post();
 			?>
-
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 					<div id="image-navigation" class="d-flex mb-4 justify-content-between">
 						<div><?php previous_image_link( false, '<span aria-hidden="true">&larr;</span> ' . __( 'Previous image', 'my-theme' ) ); ?></div>
 						<div><?php next_image_link( false, __( 'Next image', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></div>
@@ -28,13 +25,10 @@
 					</header><!-- /.entry-header -->
 					
 					<div class="entry-content">
-						
 						<div class="entry-attachment">
 							<?php
 								echo wp_get_attachment_image( get_the_ID(), 'large', false, array( 'class' => 'img-fluid' ) );
-							?>
-							
-							<?php
+
 								if ( has_excerpt() ) :
 							?>
 								<div class="entry-caption">
@@ -45,9 +39,7 @@
 							<?php
 								endif;
 							?>
-							
 						</div><!-- /.entry-attachment -->
-						
 						<?php
 							the_content();
 
@@ -67,7 +59,6 @@
 					<footer class="entry-footer">
 						<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
 					</footer><!-- /.entry-footer -->
-					
 				</article><!-- /#post-## -->
 				
 				<?php
@@ -75,7 +66,7 @@
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
-					
+
 					// Parent post navigation
 					the_post_navigation(
 						array(
@@ -83,9 +74,7 @@
 							'aria_label' => __( 'Parent post', 'my-theme' ),
 						)
 					);
-				?>
-			
-			<?php
+
 					endwhile;
 				endif;
 				wp_reset_postdata(); // end of the loop.
@@ -94,5 +83,5 @@
 	</div><!-- /.row -->
 
 </div><!-- /.container -->
-
-<?php get_footer(); ?>
+<?php
+get_footer();

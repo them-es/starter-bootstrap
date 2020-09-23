@@ -3,7 +3,7 @@
  * The template for displaying search forms
  */
 ?>
-<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+<form class="search-form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<!--label for="s" class="assistive-text"><?php _e( 'Search', 'my-theme' ); ?></label-->
 	<div class="row">
 		<div class="col-md-6">
