@@ -9,10 +9,10 @@
 </head>
 
 <?php
-	$navbar_scheme   = get_theme_mod( 'navbar_scheme', 'navbar-light bg-light' ); // get custom meta-value
-	$navbar_position = get_theme_mod( 'navbar_position', 'static' ); // get custom meta-value
+	$navbar_scheme   = get_theme_mod( 'navbar_scheme', 'navbar-light bg-light' ); // Get custom meta-value
+	$navbar_position = get_theme_mod( 'navbar_position', 'static' ); // Get custom meta-value
 
-	$search_enabled  = get_theme_mod( 'search_enabled', '1' ); // get custom meta-value
+	$search_enabled  = get_theme_mod( 'search_enabled', '1' ); // Get custom meta-value
 ?>
 
 <body <?php body_class(); ?>>
@@ -28,7 +28,7 @@
 			<div class="container">
 				<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php
-						$header_logo = get_theme_mod( 'header_logo' ); // get custom meta-value
+						$header_logo = get_theme_mod( 'header_logo' ); // Get custom meta-value
 
 						if ( ! empty( $header_logo ) ) :
 					?>

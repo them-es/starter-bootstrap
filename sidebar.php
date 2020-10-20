@@ -6,23 +6,26 @@
 if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() ) :
 
 ?>
-
 <div id="sidebar" class="col-md-4 order-md-first col-sm-12 oder-sm-last">
-	
-	<?php if ( is_active_sidebar( 'primary_widget_area' ) ) : ?>
-
+	<?php
+		if ( is_active_sidebar( 'primary_widget_area' ) ) :
+	?>
 		<div id="widget-area" class="widget-area" role="complementary">
-			<?php dynamic_sidebar( 'primary_widget_area' ); ?>
+			<?php
+				dynamic_sidebar( 'primary_widget_area' );
 
-			<?php if ( current_user_can( 'manage_options' ) ) : ?>
+				if ( current_user_can( 'manage_options' ) ) :
+			?>
 				<span class="edit-link"><a href="<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>" class="badge badge-secondary"><?php _e( 'Edit', 'my-theme' ); ?></a></span><!-- Show Edit Widget link -->
-			<?php endif; ?>
+			<?php
+				endif;
+			?>
 		</div><!-- /.widget-area -->
-		
-	<?php endif; ?>
+	<?php
+		endif;
 
-	<?php if ( is_archive() || is_single() ) : ?>
-		
+		if ( is_archive() || is_single() ) :
+	?>
 		<div class="bg-faded sidebar-nav">
 			<div id="primary-two" class="widget-area">
 				<?php
@@ -37,11 +40,11 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 									// Show monthly archive and link to months
 									$month = get_the_date( 'F, Y' );
 									if ( $month !== $month_check ) :
-										$output .= '<a href="' . esc_url( get_month_link( get_the_date( 'Y' ), get_the_date( 'm' ) ) ) . '" title="' . get_the_date( 'F, Y' ) . '">' . $month . '</a>';
+										$output .= '<a href="' . esc_url( get_month_link( get_the_date( 'Y' ), get_the_date( 'm' ) ) ) . '" title="' . esc_attr( get_the_date( 'F, Y' ) ) . '">' . esc_html( $month ) . '</a>';
 									endif;
 									$month_check = $month;
 
-								$output .= '<h4><a href="' . esc_url( get_the_permalink() ) . '" title="' . sprintf( __( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark">' . get_the_title() . '</a></h4>';
+								$output .= '<h4><a href="' . esc_url( get_the_permalink() ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ) ) . '" rel="bookmark">' . esc_html( get_the_title() ) . '</a></h4>';
 								$output .= '</li>';
 							endwhile;
 						endif;
@@ -51,7 +54,7 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 					echo $output;
 				?>
 				<br />
-				<ul>
+				<ul class="categories">
 					<li><h3><?php _e( 'Categories', 'my-theme' ); ?></h3></li>
 					<?php
 						wp_list_categories( '&title_li=' );
@@ -66,9 +69,10 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 				</ul>
 			</div><!-- /#primary-two -->
 		</div>
-	
-	<?php endif; ?>
-	
+	<?php
+		endif;
+	?>
 </div><!-- /#sidebar -->
-
-<?php endif; ?>
+<?php
+	endif;
+?>
