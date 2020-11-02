@@ -35,12 +35,9 @@ function build_js() {
 		.pipe(
 			webpackStream({
 				config: require( './webpack.config.js' )
-			},
-			compiler, function ( err, stats ) {
-				if ( err ) {
-					fancylog( err )
-				}
-			})
+				},
+				compiler
+			)
 		)
 		.pipe(
 			gulp.dest( paths.scripts.dest )
