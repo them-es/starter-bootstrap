@@ -55,6 +55,7 @@ if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
 			'caption',
 			'script',
 			'style',
+			'navigation-widgets',
 		) );
 
 		// Add support for Block Styles.
@@ -129,18 +130,6 @@ function is_blog() {
 	$posttype = get_post_type( $post );
 
 	return ( ( is_archive() || is_author() || is_category() || is_home() || is_single() || ( is_tag() && ( 'post' === $posttype ) ) ) ? true : false );
-}
-
-
-/**
- * Get the page number
- *
- * @since v1.0
- */
-function get_page_number() {
-	if ( get_query_var( 'paged' ) ) {
-		print ' | ' . __( 'Page ' , 'my-theme') . get_query_var( 'paged' );
-	}
 }
 
 
