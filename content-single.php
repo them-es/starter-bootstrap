@@ -56,7 +56,7 @@
 				esc_url( get_the_permalink() ),
 				the_title_attribute( 'echo=0' ),
 				get_the_author(),
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
+				esc_url( get_author_posts_url( (int) get_the_author_meta( 'ID' ) ) )
 			);
 		?>
 		

@@ -16,8 +16,8 @@ get_header();
 			?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div id="image-navigation" class="d-flex mb-4 justify-content-between">
-						<div><?php previous_image_link( false, '<span aria-hidden="true">&larr;</span> ' . __( 'Previous image', 'my-theme' ) ); ?></div>
-						<div><?php next_image_link( false, __( 'Next image', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></div>
+						<div><?php previous_image_link( 'large', '<span aria-hidden="true">&larr;</span> ' . __( 'Previous image', 'my-theme' ) ); ?></div>
+						<div><?php next_image_link( 'large', __( 'Next image', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></div>
 					</div><!-- /.d-flex -->
 					
 					<header class="entry-header">
