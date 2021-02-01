@@ -40,10 +40,10 @@ if ( ! isset( $content_width ) ) {
 if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
 	function themes_starter_setup_theme() {
 
-		// Make theme available for translation: Translations can be filed in the /languages/ directory
+		// Make theme available for translation: Translations can be filed in the /languages/ directory.
 		load_theme_textdomain( 'my-theme', get_template_directory() . '/languages' );
 
-		// Theme Support
+		// Theme Support.
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
@@ -67,12 +67,12 @@ if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
-		// Default Attachment Display Settings
+		// Default Attachment Display Settings.
 		update_option( 'image_default_align', 'none' );
 		update_option( 'image_default_link_type', 'none' );
 		update_option( 'image_default_size', 'large' );
 
-		// Custom CSS-Styles of Wordpress Gallery
+		// Custom CSS-Styles of Wordpress Gallery.
 		add_filter( 'use_default_gallery_style', '__return_false' );
 
 	}
@@ -106,7 +106,7 @@ endif;
  */
 if ( ! function_exists( 'themes_starter_add_user_fields' ) ) :
 	function themes_starter_add_user_fields( $fields ) {
-		// Add new fields
+		// Add new fields.
 		$fields['facebook_profile'] = 'Facebook URL';
 		$fields['twitter_profile']  = 'Twitter URL';
 		$fields['linkedin_profile'] = 'LinkedIn URL';
@@ -199,7 +199,7 @@ if ( ! function_exists( 'themes_starter_content_nav' ) ) :
 		endif;
 	}
 
-	// Add Class
+	// Add Class.
 	function posts_link_attributes() {
 		return 'class="btn btn-secondary btn-lg"';
 	}
@@ -214,7 +214,7 @@ endif;
  * @since v1.0
  */
 function themes_starter_widgets_init() {
-	// Area 1
+	// Area 1.
 	register_sidebar(
 		array(
 			'name'          => 'Primary Widget Area (Sidebar)',
@@ -226,7 +226,7 @@ function themes_starter_widgets_init() {
 		)
 	);
 
-	// Area 2
+	// Area 2.
 	register_sidebar(
 		array(
 			'name'          => 'Secondary Widget Area (Header Navigation)',
@@ -238,7 +238,7 @@ function themes_starter_widgets_init() {
 		)
 	);
 
-	// Area 3
+	// Area 3.
 	register_sidebar(
 		array(
 			'name'          => 'Third Widget Area (Footer)',
@@ -465,15 +465,15 @@ if ( is_readable( $custom_walker_footer ) ) {
 function themes_starter_scripts_loader() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	// 1. Styles
+	// 1. Styles.
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), $theme_version, 'all' );
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), $theme_version, 'all' ); // main.scss: Compiled Framework source + custom styles
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.css', array(), $theme_version, 'all' ); // main.scss: Compiled Framework source + custom styles.
 
 	if ( is_rtl() ) {
 		wp_enqueue_style( 'rtl', get_template_directory_uri() . '/assets/css/rtl.css', array(), $theme_version, 'all' );
 	}
 
-	// 2. Scripts
+	// 2. Scripts.
 	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.bundle.js', array( 'jquery' ), $theme_version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

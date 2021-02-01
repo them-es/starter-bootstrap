@@ -10,7 +10,7 @@ import 'bootstrap';
 		var search = $( '#s' );
 		if ( search.val().length < 1 ) {
 			e.preventDefault();
-			search.focus();
+			search.trigger( 'focus' );
 		}
 	} );
 

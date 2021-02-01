@@ -31,36 +31,29 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		 * Start Level.
 		 *
 		 * @see Walker::start_lvl()
-		 * @since 3.0.0
+		 * @since 1.0.0
 		 *
-		 * @access public
-		 * @param mixed $output Passed by reference. Used to append additional content.
-		 * @param int   $depth (default: 0) Depth of page. Used for padding.
-		 * @param array $args (default: array()) Arguments.
-		 * @return void
+		 * @param string   $output Used to append additional content (passed by reference).
+		 * @param int      $depth  Depth of menu item. Used for padding.
+		 * @param stdClass $args   An object of wp_nav_menu() arguments.
 		 */
-		public function start_lvl( &$output, $depth = 0, $args = array() ) {
-			$indent  = str_repeat( "\t", $depth );
-			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\" >\n";
+		public function start_lvl( &$output, $depth = 0, $args = null ) {
+			$output .= '<ul role="menu" class="dropdown-menu">';
 		}
 
 		/**
 		 * Start El.
 		 *
 		 * @see Walker::start_el()
-		 * @since 3.0.0
+		 * @since 1.0.0
 		 *
-		 * @access public
-		 * @param mixed $output Passed by reference. Used to append additional content.
-		 * @param mixed $item Menu item data object.
-		 * @param int   $depth (default: 0) Depth of menu item. Used for padding.
-		 * @param array $args (default: array()) Arguments.
-		 * @param int   $id (default: 0) Menu item ID.
-		 * @return void
+		 * @param string   $output Used to append additional content (passed by reference).
+		 * @param WP_Post  $item   Menu item data object.
+		 * @param int      $depth  Depth of menu item. Used for padding.
+		 * @param stdClass $args   An object of wp_nav_menu() arguments.
+		 * @param int      $id     Current item ID.
 		 */
-		public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-			$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-
+		public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
 			/**
 			 * Dividers, Headers or Disabled
 			 * =============================
@@ -70,19 +63,19 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			 * a 0 if the strings are equal.
 			 */
 			if ( 0 === strcasecmp( $item->attr_title, 'divider' ) && 1 === $depth ) {
-				$output .= $indent . '<li role="presentation" class="divider">';
+				$output .= '<li role="presentation" class="divider">';
 			} elseif ( 0 === strcasecmp( $item->title, 'divider' ) && 1 === $depth ) {
-				$output .= $indent . '<li role="presentation" class="divider">';
+				$output .= '<li role="presentation" class="divider">';
 			} elseif ( 0 === strcasecmp( $item->attr_title, 'dropdown-header' ) && 1 === $depth ) {
-				$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
+				$output .= '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
 			} elseif ( 0 === strcasecmp( $item->attr_title, 'disabled' ) ) {
-				$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
+				$output .= '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 			} else {
 				$atts        = array();
-				
+
 				$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
 				if ( 0 === $depth ) {
-					$classes[] = 'nav-item'; // First level
+					$classes[] = 'nav-item'; // First level.
 				}
 				$classes[]   = 'menu-item-' . $item->ID;
 				$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
@@ -94,11 +87,11 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 					$atts['aria-current'] = 'page';
 				}
 				$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-				
+
 				$id          = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 				$id          = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-				$output     .= $indent . '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
+				$output     .= '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
 
 				if ( empty( $item->attr_title ) ) {
 					$atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : '';
@@ -117,9 +110,9 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				} else {
 					$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 					if ( $depth > 0 ) {
-						$atts['class']	= 'dropdown-item' . ( in_array( 'current-menu-item', $classes, true ) ? ' active' : '' ); // Dropdown item
+						$atts['class']     = 'dropdown-item' . ( in_array( 'current-menu-item', $classes, true ) ? ' active' : '' ); // Dropdown item.
 					} else {
-						$atts['class']	= 'nav-link'; // First level
+						$atts['class']     = 'nav-link'; // First level.
 					}
 				}
 				$atts       = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
@@ -153,7 +146,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
 				$item_output .= $args->after;
 				$output      .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-			} // End if().
+			}
 		}
 
 		/**
@@ -168,22 +161,22 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		 * @see Walker::start_el()
 		 * @since 2.5.0
 		 *
-		 * @access public
-		 * @param mixed $element Data object.
-		 * @param mixed $children_elements List of elements to continue traversing.
-		 * @param mixed $max_depth Max depth to traverse.
-		 * @param mixed $depth Depth of current element.
-		 * @param mixed $args Arguments.
-		 * @param mixed $output Passed by reference. Used to append additional content.
-		 * @return null Null on failure with no changes to parameters.
+		 * @param object $element           Data object.
+		 * @param array  $children_elements List of elements to continue traversing (passed by reference).
+		 * @param int    $max_depth         Max depth to traverse.
+		 * @param int    $depth             Depth of current element.
+		 * @param array  $args              An array of arguments.
+		 * @param string $output            Used to append additional content (passed by reference).
 		 */
 		public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
 			if ( ! $element ) {
-				return; }
+				return;
+			}
 			$id_field = $this->db_fields['id'];
 			// Display this element.
 			if ( is_object( $args[0] ) ) {
-				$args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] ); }
+				$args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+			}
 			parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
 		}
 
@@ -199,33 +192,25 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		 */
 		public static function fallback( $args ) {
 			if ( current_user_can( 'edit_theme_options' ) ) {
-
-				/* Get Arguments. */
 				$container       = $args['container'];
 				$container_id    = $args['container_id'];
 				$container_class = $args['container_class'];
 				$menu_class      = $args['menu_class'];
 				$menu_id         = $args['menu_id'];
 
+				$output = '';
+
 				if ( $container ) {
-					echo '<' . esc_attr( $container );
-					if ( $container_id ) {
-						echo ' id="' . esc_attr( $container_id ) . '"';
-					}
-					if ( $container_class ) {
-						echo ' class="' . esc_attr( $container_class ) . '"'; }
-					echo '>';
+					$output .= '<' . esc_attr( $container ) . ( $container_id ? ' id="' . esc_attr( $container_id ) . '"' : '' ) . ( $container_class ? ' class="' . esc_attr( $container_class ) . '"' : '' ) . '>';
 				}
-				echo '<ul';
-				if ( $menu_id ) {
-					echo ' id="' . esc_attr( $menu_id ) . '"'; }
-				if ( $menu_class ) {
-					echo ' class="' . esc_attr( $menu_class ) . '"'; }
-				echo '>';
-				echo '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_html( __( 'Add a menu', 'my-theme' ) ) . '</a></li>';
-				echo '</ul>';
+				$output .= '<ul' . ( $menu_id ? ' id="' . esc_attr( $menu_id ) . '"' : '' ) . ( $menu_class ? ' class="' . esc_attr( $menu_class ) . '"' : '' ) . '>';
+					$output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_html( __( 'Add a menu', 'my-theme' ) ) . '</a></li>';
+				$output .= '</ul>';
 				if ( $container ) {
-					echo '</' . esc_attr( $container ) . '>'; }
+					$output .= '</' . esc_attr( $container ) . '>';
+				}
+
+				echo $output;
 			}
 		}
 	}
