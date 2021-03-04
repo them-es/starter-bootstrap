@@ -20,10 +20,10 @@ if ( have_posts() ) :
 	get_template_part( 'archive', 'loop' );
 
 else :
-	// 404
+	// 404.
 	get_template_part( 'content', 'none' );
 endif;
 
-wp_reset_postdata(); // end of the loop.
+wp_reset_postdata(); // End of the loop.
 
 get_footer();

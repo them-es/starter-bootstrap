@@ -7,7 +7,7 @@
 
 get_header();
 
-$search_enabled = get_theme_mod( 'search_enabled', '1' ); // Get custom meta-value
+$search_enabled = get_theme_mod( 'search_enabled', '1' ); // Get custom meta-value.
 ?>
 <div id="post-0" class="content error404 not-found">
 	<h1 class="entry-title"><?php _e( 'Not found', 'my-theme' ); ?></h1>

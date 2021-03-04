@@ -154,14 +154,12 @@ add_filter( 'comments_open', 'themes_starter_filter_media_comment_status', 10, 2
  * @since v1.0
  */
 function themes_starter_custom_edit_post_link( $output ) {
-	$output = str_replace( 'class="post-edit-link"', 'class="post-edit-link badge badge-secondary"', $output );
-	return $output;
+	return str_replace( 'class="post-edit-link"', 'class="post-edit-link badge badge-secondary"', $output );
 }
 add_filter( 'edit_post_link', 'themes_starter_custom_edit_post_link' );
 
 function themes_starter_custom_edit_comment_link( $output ) {
-	$output = str_replace( 'class="comment-edit-link"', 'class="comment-edit-link badge badge-secondary"', $output );
-	return $output;
+	return str_replace( 'class="comment-edit-link"', 'class="comment-edit-link badge badge-secondary"', $output );
 }
 add_filter( 'edit_comment_link', 'themes_starter_custom_edit_comment_link' );
 
@@ -172,8 +170,7 @@ add_filter( 'edit_comment_link', 'themes_starter_custom_edit_comment_link' );
  * @since v1.0
  */
 function themes_starter_oembed_filter( $html ) {
-	$return = '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
-	return $return;
+	return '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
 }
 add_filter( 'embed_oembed_html', 'themes_starter_oembed_filter', 10, 4 );
 
@@ -189,7 +186,7 @@ if ( ! function_exists( 'themes_starter_content_nav' ) ) :
 
 		if ( $wp_query->max_num_pages > 1 ) :
 	?>
-			<div id="<?php echo $nav_id; ?>" class="d-flex mb-4 justify-content-between">
+			<div id="<?php echo esc_attr( $nav_id ); ?>" class="d-flex mb-4 justify-content-between">
 				<div><?php next_posts_link( '<span aria-hidden="true">&larr;</span> ' . __( 'Older posts', 'my-theme' ) ); ?></div>
 				<div><?php previous_posts_link( __( 'Newer posts', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></div>
 			</div><!-- /.d-flex -->
@@ -287,7 +284,7 @@ function themes_starter_password_form() {
 		$output .= '<h4 class="col-md-12 alert alert-warning">' . __( 'This content is password protected. To view it please enter your password below.', 'my-theme' ) . '</h4>';
 			$output .= '<div class="col-md-6">';
 				$output .= '<div class="input-group">';
-					$output .= '<input type="password" name="post_password" id="' . $label . '" placeholder="' . __( 'Password', 'my-theme' ) . '" class="form-control" />';
+					$output .= '<input type="password" name="post_password" id="' . esc_attr( $label ) . '" placeholder="' . __( 'Password', 'my-theme' ) . '" class="form-control" />';
 					$output .= '<div class="input-group-append"><input type="submit" name="submit" class="btn btn-primary" value="' . esc_attr( __( 'Submit', 'my-theme' ) ) . '" /></div>';
 				$output .= '</div><!-- /.input-group -->';
 			$output .= '</div><!-- /.col -->';
@@ -305,8 +302,7 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 	 * @since v1.0
 	 */
 	function themes_starter_replace_reply_link_class( $class ) {
-		$output = str_replace( "class='comment-reply-link", "class='comment-reply-link btn btn-outline-secondary", $class );
-		return $output;
+		return str_replace( "class='comment-reply-link", "class='comment-reply-link btn btn-outline-secondary", $class );
 	}
 	add_filter( 'comment_reply_link', 'themes_starter_replace_reply_link_class' );
 
@@ -401,9 +397,8 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 							'<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.', 'my-theme' ) . '</label></p>',
 		);
 
-		$fields = apply_filters( 'comment_form_default_fields', $fields );
 		$defaults = array(
-			'fields'               => $fields,
+			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field'        => '<div class="form-group"><textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . __( 'Comment', 'my-theme' ) . ( $req ? '*' : '' ) . '"></textarea></div>',
 			/** This filter is documented in wp-includes/link-template.php */
 			'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'my-theme' ), wp_login_url( apply_filters( 'the_permalink', get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
@@ -445,7 +440,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	);
 }
 
-// Custom Nav Walker: wp_bootstrap4_navwalker()
+// Custom Nav Walker: wp_bootstrap4_navwalker().
 $custom_walker = get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 if ( is_readable( $custom_walker ) ) {
 	require_once $custom_walker;

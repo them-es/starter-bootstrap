@@ -48,7 +48,7 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 								$output .= '</li>';
 							endwhile;
 						endif;
-						wp_reset_postdata(); // end of the loop.
+						wp_reset_postdata(); // End of the loop.
 					$output .= '</ul>';
 
 					echo $output;

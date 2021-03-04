@@ -18,7 +18,7 @@ if ( have_posts() ) :
 	endwhile;
 endif;
 
-wp_reset_postdata(); // end of the loop.
+wp_reset_postdata(); //  loop.
 
 $count_posts = wp_count_posts();
 

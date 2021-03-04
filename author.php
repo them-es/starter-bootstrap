@@ -18,7 +18,7 @@ if ( have_posts() ) :
 	<header class="page-header">
 		<h1 class="page-title author">
 			<?php
-				printf( __( 'Author Archives: %s', 'my-theme' ), '<span class="vcard">' . get_the_author() . '</span>' );
+				printf( __( 'Author Archives: %s', 'my-theme' ), '<span class="vcard">' . esc_html( get_the_author() ) . '</span>' );
 			?>
 		</h1>
 	</header>
@@ -34,10 +34,10 @@ if ( have_posts() ) :
 
 	get_template_part( 'archive', 'loop' );
 else :
-	// 404
+	// 404.
 	get_template_part( 'content', 'none' );
 endif;
 
-wp_reset_postdata(); // end of the loop.
+wp_reset_postdata(); // End of the loop.
 
 get_footer();
