@@ -8,9 +8,9 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="input-group">
-				<input type="text" name="s" id="s" class="form-control" placeholder="<?php _e( 'Search', 'my-theme' ); ?>" />
+				<input type="text" name="s" class="form-control" placeholder="<?php _e( 'Search', 'my-theme' ); ?>" />
 				<div class="input-group-append">
-					<button type="submit" class="btn btn-secondary" name="submit" id="searchsubmit"><?php _e( 'Search', 'my-theme' ); ?></button>
+					<button type="submit" class="btn btn-secondary" name="submit"><?php _e( 'Search', 'my-theme' ); ?></button>
 				</div><!-- /.input-group-append -->
 			</div><!-- /.input-group -->
 		</div><!-- /.col -->

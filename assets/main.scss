@@ -150,6 +150,12 @@ body.admin-bar {
 
 /* Header */
 
+#header {
+	.search-form {
+		min-width: 250px;
+	}
+}
+
 .navbar-brand {
 	img {
 		height: 40px;
