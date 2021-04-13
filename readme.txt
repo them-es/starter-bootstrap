@@ -1,7 +1,7 @@
 === them.es Starter ===
 Contributors: them.es
 Tags: light, dark, responsive-layout, featured-images, flexible-header, microformats, post-formats, rtl-language-support, theme-options, translation-ready, accessibility-ready
-Stable tag: 2.4.2
+Stable tag: 2.4.4
 Tested up to: 5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,7 +24,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 You can change the settings of your site easily.
 
 1. In your admin panel, go to Appearance -> Customize.
-4. Now you will see the Customizer
-5. You can now change your color scheme by selecting one of the predefined ones. Choose a color scheme you want from Base Color Scheme dropdown. You can preview the change in the Customizer.
-6. Should you wish to create your own color scheme or modify an existing one, you can by selecting the colors for each area listed.
-7. Once you are happy with your color changes you can click save and your changes will be reflected on your live site.
+2. Now you will see the Customizer
+3. You can now change your color scheme by selecting one of the predefined ones. Choose a color scheme you want from Base Color Scheme dropdown. You can preview the change in the Customizer.
+4. Should you wish to create your own color scheme or modify an existing one, you can by selecting the colors for each area listed.
+5. Once you are happy with your color changes you can click save and your changes will be reflected on your live site.

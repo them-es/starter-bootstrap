@@ -2,7 +2,7 @@
 
 **them.es Starter** is a WordPress Starter Theme built with Bootstrap. Please note that the Source files are only recommended for WordPress Developers who are searching for a simple, solid, proved and tested **Bootstrap Starter Theme** to build upon. **_Don't_ expect a ready-to-use WordPress Theme!**
 
-If you want to see it in action or want to download a customized Theme for free, check out [http://them.es/starter](http://them.es/starter)
+If you want to see it in action or want to download a customized Theme for free, check out [https://them.es/starter-bootstrap](https://them.es/starter-bootstrap)
 
 
 ## What's included?
@@ -38,6 +38,6 @@ This Theme comes with a built in gulp/webpack task automation. Sass files will b
 
 ## Copyright & License
 
-Code and Documentation &copy; [them.es](http://them.es)
+Code and Documentation &copy; [them.es](https://them.es)
 
-Code released under [GPLv2+](http://www.gnu.org/licenses/gpl-2.0.html)
+Code released under [GPLv2+](https://www.gnu.org/licenses/gpl-2.0.html)

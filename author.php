@@ -18,7 +18,7 @@ if ( have_posts() ) :
 	<header class="page-header">
 		<h1 class="page-title author">
 			<?php
-				printf( __( 'Author Archives: %s', 'my-theme' ), '<span class="vcard">' . esc_html( get_the_author() ) . '</span>' );
+				printf( esc_html__( 'Author Archives: %s', 'my-theme' ), get_the_author() );
 			?>
 		</h1>
 	</header>

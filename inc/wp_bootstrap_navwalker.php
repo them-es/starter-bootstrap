@@ -26,7 +26,6 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 	 * @extends Walker_Nav_Menu
 	 */
 	class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
-
 		/**
 		 * Start Level.
 		 *
@@ -204,7 +203,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 					$output .= '<' . esc_attr( $container ) . ( $container_id ? ' id="' . esc_attr( $container_id ) . '"' : '' ) . ( $container_class ? ' class="' . esc_attr( $container_class ) . '"' : '' ) . '>';
 				}
 				$output .= '<ul' . ( $menu_id ? ' id="' . esc_attr( $menu_id ) . '"' : '' ) . ( $menu_class ? ' class="' . esc_attr( $menu_class ) . '"' : '' ) . '>';
-					$output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_html( __( 'Add a menu', 'my-theme' ) ) . '</a></li>';
+					$output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_html__( 'Add a menu', 'my-theme' ) . '</a></li>';
 				$output .= '</ul>';
 				if ( $container ) {
 					$output .= '</' . esc_attr( $container ) . '>';

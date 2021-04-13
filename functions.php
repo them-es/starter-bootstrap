@@ -39,7 +39,6 @@ if ( ! isset( $content_width ) ) {
  */
 if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
 	function themes_starter_setup_theme() {
-
 		// Make theme available for translation: Translations can be filed in the /languages/ directory.
 		load_theme_textdomain( 'my-theme', get_template_directory() . '/languages' );
 
@@ -47,20 +46,23 @@ if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-			'script',
-			'style',
-			'navigation-widgets',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+				'script',
+				'style',
+				'navigation-widgets',
+			)
+		);
 
 		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
-		// Add support for full and wide align images.
+		// Add support for full and wide alignment.
 		add_theme_support( 'align-wide' );
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
@@ -77,6 +79,10 @@ if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
 
 	}
 	add_action( 'after_setup_theme', 'themes_starter_setup_theme' );
+
+	// Disable Block Directory: https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/filters/editor-filters.md#block-directory
+	remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
+	remove_action( 'enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory' );
 endif;
 
 
@@ -187,8 +193,8 @@ if ( ! function_exists( 'themes_starter_content_nav' ) ) :
 		if ( $wp_query->max_num_pages > 1 ) :
 	?>
 			<div id="<?php echo esc_attr( $nav_id ); ?>" class="d-flex mb-4 justify-content-between">
-				<div><?php next_posts_link( '<span aria-hidden="true">&larr;</span> ' . __( 'Older posts', 'my-theme' ) ); ?></div>
-				<div><?php previous_posts_link( __( 'Newer posts', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></div>
+				<div><?php next_posts_link( '<span aria-hidden="true">&larr;</span> ' . esc_html__( 'Older posts', 'my-theme' ) ); ?></div>
+				<div><?php previous_posts_link( esc_html__( 'Newer posts', 'my-theme' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></div>
 			</div><!-- /.d-flex -->
 	<?php
 		else :
@@ -257,13 +263,14 @@ if ( ! function_exists( 'themes_starter_article_posted_on' ) ) :
 	 * @since v1.0
 	 */
 	function themes_starter_article_posted_on() {
-		printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author-meta vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'my-theme' ),
+		printf(
+			__( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author-meta vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'my-theme' ),
 			esc_url( get_the_permalink() ),
 			esc_attr( get_the_date() . ' - ' . get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() . ' - ' . get_the_time() ),
 			esc_url( get_author_posts_url( (int) get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'my-theme' ), get_the_author() ) ),
+			sprintf( esc_attr__( 'View all posts by %s', 'my-theme' ), get_the_author() ),
 			get_the_author()
 		);
 	}
@@ -281,11 +288,11 @@ function themes_starter_password_form() {
 
 	$output = '<div class="row">';
 		$output .= '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">';
-		$output .= '<h4 class="col-md-12 alert alert-warning">' . __( 'This content is password protected. To view it please enter your password below.', 'my-theme' ) . '</h4>';
+		$output .= '<h4 class="col-md-12 alert alert-warning">' . esc_html__( 'This content is password protected. To view it please enter your password below.', 'my-theme' ) . '</h4>';
 			$output .= '<div class="col-md-6">';
 				$output .= '<div class="input-group">';
-					$output .= '<input type="password" name="post_password" id="' . esc_attr( $label ) . '" placeholder="' . __( 'Password', 'my-theme' ) . '" class="form-control" />';
-					$output .= '<div class="input-group-append"><input type="submit" name="submit" class="btn btn-primary" value="' . esc_attr( __( 'Submit', 'my-theme' ) ) . '" /></div>';
+					$output .= '<input type="password" name="post_password" id="' . esc_attr( $label ) . '" placeholder="' . esc_attr__( 'Password', 'my-theme' ) . '" class="form-control" />';
+					$output .= '<div class="input-group-append"><input type="submit" name="submit" class="btn btn-primary" value="' . esc_attr__( 'Submit', 'my-theme' ) . '" /></div>';
 				$output .= '</div><!-- /.input-group -->';
 			$output .= '</div><!-- /.col -->';
 		$output .= '</form>';
@@ -319,7 +326,7 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 			case 'trackback':
 	?>
 		<li class="post pingback">
-			<p><?php _e( 'Pingback:', 'my-theme' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?></p>
+			<p><?php esc_html_e( 'Pingback:', 'my-theme' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 				break;
 			default:
@@ -333,13 +340,14 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 							echo get_avatar( $comment, $avatar_size );
 
 							/* translators: 1: comment author, 2: date and time */
-							printf( __( '%1$s, %2$s', 'my-theme' ),
+							printf(
+								__( '%1$s, %2$s', 'my-theme' ),
 								sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
 								sprintf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 									esc_url( get_comment_link( $comment->comment_ID ) ),
 									get_comment_time( 'c' ),
 									/* translators: 1: date, 2: time */
-									sprintf( __( '%1$s ago', 'my-theme' ), human_time_diff( (int) get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
+									sprintf( esc_html__( '%1$s ago', 'my-theme' ), human_time_diff( (int) get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
 								)
 							);
 
@@ -348,7 +356,7 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 					</div><!-- .comment-author .vcard -->
 
 					<?php if ( '0' === $comment->comment_approved ) : ?>
-						<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'my-theme' ); ?></em>
+						<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'my-theme' ); ?></em>
 						<br />
 					<?php endif; ?>
 				</footer>
@@ -388,32 +396,32 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 		$aria_req = ( $req ? " aria-required='true' required" : '' );
 		$consent  = ( empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"' );
 		$fields   = array(
-			'author'  => '<div class="form-group"><label for="author">' . __( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
+			'author'  => '<div class="form-group"><label for="author">' . esc_html__( 'Name', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
 						'<input type="text" id="author" name="author" class="form-control" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /></div>',
-			'email'   => '<div class="form-group"><label for="email">' . __( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
+			'email'   => '<div class="form-group"><label for="email">' . esc_html__( 'Email', 'my-theme' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' . 
 						'<input type="email" id="email" name="email" class="form-control" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . ' /></div>',
 			'url'     => '',
 			'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /> ' .
-							'<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.', 'my-theme' ) . '</label></p>',
+							'<label for="wp-comment-cookies-consent">' . esc_html__( 'Save my name, email, and website in this browser for the next time I comment.', 'my-theme' ) . '</label></p>',
 		);
 
 		$defaults = array(
 			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-			'comment_field'        => '<div class="form-group"><textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . __( 'Comment', 'my-theme' ) . ( $req ? '*' : '' ) . '"></textarea></div>',
+			'comment_field'        => '<div class="form-group"><textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . esc_attr__( 'Comment', 'my-theme' ) . ( $req ? '*' : '' ) . '"></textarea></div>',
 			/** This filter is documented in wp-includes/link-template.php */
 			'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'my-theme' ), wp_login_url( apply_filters( 'the_permalink', get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
 			/** This filter is documented in wp-includes/link-template.php */
 			'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'my-theme' ), get_edit_user_link(), $user->display_name, wp_logout_url( apply_filters( 'the_permalink', get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
 			'comment_notes_before' => '',
-			'comment_notes_after'  => '<p class="small comment-notes">' . __( 'Your Email address will not be published.', 'my-theme' ) . '</p>',
+			'comment_notes_after'  => '<p class="small comment-notes">' . esc_html__( 'Your Email address will not be published.', 'my-theme' ) . '</p>',
 			'id_form'              => 'commentform',
 			'id_submit'            => 'submit',
 			'class_submit'         => 'btn btn-primary',
 			'name_submit'          => 'submit',
 			'title_reply'          => '',
-			'title_reply_to'       => __( 'Leave a Reply to %s', 'my-theme' ),
-			'cancel_reply_link'    => __( 'Cancel reply', 'my-theme' ),
-			'label_submit'         => __( 'Post Comment', 'my-theme' ),
+			'title_reply_to'       => esc_html__( 'Leave a Reply to %s', 'my-theme' ),
+			'cancel_reply_link'    => esc_html__( 'Cancel reply', 'my-theme' ),
+			'label_submit'         => esc_html__( 'Post Comment', 'my-theme' ),
 			'submit_button'        => '<input type="submit" id="%2$s" name="%1$s" class="%3$s" value="%4$s" />',
 			'submit_field'         => '<div class="form-submit">%1$s %2$s</div>',
 			'format'               => 'html5',

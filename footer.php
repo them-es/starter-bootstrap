@@ -17,7 +17,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<p><?php printf( __( '&copy; %1$s %2$s. All rights reserved.', 'my-theme' ), esc_attr( date_i18n( 'Y' ) ), esc_attr( get_bloginfo( 'name', 'display' ) ) ); ?></p>
+						<p><?php printf( esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'my-theme' ), date_i18n( 'Y' ), get_bloginfo( 'name', 'display' ) ); ?></p>
 					</div>
 
 					<?php
@@ -45,10 +45,10 @@
 						<div class="col-md-12">
 							<?php
 								dynamic_sidebar( 'third_widget_area' );
-								
+
 								if ( current_user_can( 'manage_options' ) ) :
 							?>
-								<span class="edit-link"><a href="<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>" class="badge badge-secondary"><?php _e( 'Edit', 'my-theme' ); ?></a></span><!-- Show Edit Widget link -->
+								<span class="edit-link"><a href="<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>" class="badge badge-secondary"><?php esc_html_e( 'Edit', 'my-theme' ); ?></a></span><!-- Show Edit Widget link -->
 							<?php
 								endif;
 							?>

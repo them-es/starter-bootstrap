@@ -7,9 +7,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'col-sm-6' ); ?>>
 	<div class="card mb-4">
 		<header class="card-body">
-			<h2 class="card-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-
-			<?php if ( 'post' === get_post_type() ) : ?>
+			<h2 class="card-title">
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+			</h2>
+			<?php
+				if ( 'post' === get_post_type() ) :
+			?>
 				<div class="card-text entry-meta">
 					<?php
 						themes_starter_article_posted_on();
@@ -20,9 +23,10 @@
 						endif;
 					?>
 				</div><!-- /.entry-meta -->
-			<?php endif; ?>
+			<?php
+				endif;
+			?>
 		</header>
-
 		<div class="card-body">
 			<div class="card-text entry-content">
 				<?php
@@ -36,11 +40,10 @@
 						the_content();
 					endif;
 				?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'my-theme' ) . '</span>', 'after' => '</div>' ) ); ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'my-theme' ) . '</span>', 'after' => '</div>' ) ); ?>
 			</div><!-- /.card-text -->
-
 			<footer class="entry-meta">
-				<a href="<?php echo get_the_permalink(); ?>" class="btn btn-outline-secondary"><?php _e( 'more', 'my-theme' ); ?></a>
+				<a href="<?php echo get_the_permalink(); ?>" class="btn btn-outline-secondary"><?php esc_html_e( 'more', 'my-theme' ); ?></a>
 			</footer><!-- /.entry-meta -->
 		</div><!-- /.card-body -->
 	</div><!-- /.col -->
