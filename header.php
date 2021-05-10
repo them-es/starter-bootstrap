@@ -59,7 +59,7 @@
 					?>
 							<form class="form-inline search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<div class="input-group">
-									<input type="text" name="s" class="form-control" placeholder="<?php _e( 'Search', 'my-theme' ); ?>" title="<?php esc_attr_e( 'Search', 'my-theme' ); ?>" />
+									<input type="text" name="s" class="form-control" placeholder="<?php esc_attr_e( 'Search', 'my-theme' ); ?>" title="<?php esc_attr_e( 'Search', 'my-theme' ); ?>" />
 									<div class="input-group-append">
 										<button type="submit" name="submit" class="btn btn-outline-secondary"><?php esc_html_e( 'Search', 'my-theme' ); ?></button>
 									</div>
