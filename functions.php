@@ -176,7 +176,7 @@ add_filter( 'edit_comment_link', 'themes_starter_custom_edit_comment_link' );
  * @since v1.0
  */
 function themes_starter_oembed_filter( $html ) {
-	return '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
+	return '<div class="ratio ratio-16x9">' . $html . '</div>';
 }
 add_filter( 'embed_oembed_html', 'themes_starter_oembed_filter', 10, 4 );
 
@@ -477,7 +477,7 @@ function themes_starter_scripts_loader() {
 	}
 
 	// 2. Scripts.
-	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.bundle.js', array( 'jquery' ), $theme_version, true );
+	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.bundle.js', array(), $theme_version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

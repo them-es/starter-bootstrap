@@ -18,7 +18,7 @@
 
 <?php wp_body_open(); ?>
 
-<a href="#main" class="sr-only sr-only-focusable"><?php esc_html_e( 'Skip to main content', 'my-theme' ); ?></a>
+<a href="#main" class="visually-hidden-focusable"><?php esc_html_e( 'Skip to main content', 'my-theme' ); ?></a>
 
 <div id="wrapper">
 	<header>
@@ -38,7 +38,7 @@
 					?>
 				</a>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'my-theme' ); ?>">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'my-theme' ); ?>">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
@@ -49,7 +49,7 @@
 							array(
 								'theme_location' => 'main-menu',
 								'container'      => '',
-								'menu_class'     => 'navbar-nav mr-auto',
+								'menu_class'     => 'navbar-nav me-auto',
 								'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
 								'walker'         => new WP_Bootstrap_Navwalker(),
 							)
@@ -57,12 +57,10 @@
 
 						if ( '1' === $search_enabled ) :
 					?>
-							<form class="form-inline search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<form class="search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<div class="input-group">
-									<input type="text" name="s" class="form-control" placeholder="<?php _e( 'Search', 'my-theme' ); ?>" title="<?php esc_attr_e( 'Search', 'my-theme' ); ?>" />
-									<div class="input-group-append">
-										<button type="submit" name="submit" class="btn btn-outline-secondary"><?php esc_html_e( 'Search', 'my-theme' ); ?></button>
-									</div>
+									<input type="text" name="s" class="form-control" placeholder="<?php esc_attr_e( 'Search', 'my-theme' ); ?>" title="<?php esc_attr_e( 'Search', 'my-theme' ); ?>" />
+									<button type="submit" name="submit" class="btn btn-outline-secondary"><?php esc_html_e( 'Search', 'my-theme' ); ?></button>
 								</div>
 							</form>
 					<?php

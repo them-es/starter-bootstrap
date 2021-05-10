@@ -3,6 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Implement Theme Customizer additions and adjustments.
  * https://codex.wordpress.org/Theme_Customization_API
  *
  * How do I "output" custom theme modification settings? https://developer.wordpress.org/reference/functions/get_theme_mod
@@ -11,12 +12,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * "sanitize_callback": https://codex.wordpress.org/Data_Validation
  */
-
-/**
- * Implement Theme Customizer additions and adjustments.
- */
 function themes_starter_customize( $wp_customize ) {
-
 	/**
 	 * Initialize sections
 	 */

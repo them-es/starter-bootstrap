@@ -1,8 +1,8 @@
 {
   "name": "themes-starter",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "license": "GPL-2.0",
-  "description": "A WordPress Starter Theme built with Bootstrap 4.",
+  "description": "A WordPress Starter Theme built with Bootstrap 5.",
   "homepage": "http://them.es",
   "author": "them.es",
   "repository": {
@@ -17,10 +17,10 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "bootstrap": ">=4.1.0",
-    "browser-sync": "^2.2.0",
+    "bootstrap": "^5.0.0",
+    "@popperjs/core": "^2.0.0",
     "jquery": ">=3.3.0",
-    "popper.js": "^1.14.0",
+    "browser-sync": "^2.2.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
