@@ -1,61 +1,5 @@
 // Compile "main.scss" as "css/main.css"
 
-
-/**
- * Add custom Bootstrap styles
- */
-
-// Bootstrap 4 Customization options: https://getbootstrap.com/docs/4.0/getting-started/theming/#sass-options
-/*
-// Options
-$enable-caret:                true !default;
-$enable-rounded:              true !default;
-$enable-shadows:              false !default;
-$enable-gradients:            false !default;
-$enable-transitions:          true !default;
-$enable-reduced-motion:       true !default;
-$enable-smooth-scroll:        true !default;
-$enable-grid-classes:         true !default;
-$enable-button-pointers:      true !default;
-$enable-rfs:                  true !default;
-$enable-validation-icons:     true !default;
-$enable-negative-margins:     false !default;
-$enable-deprecation-messages: true !default;
-$enable-important-utilities:  true !default;
-
-$spacer:                    1rem !default;
-
-// Grayscale vars
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-
-// Color vars
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
-
-// Fonts
-$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:       $font-family-sans-serif !default;
-*/
-
-
 /**
  * Import Bootstrap sources
  */
@@ -64,6 +8,59 @@ $font-family-base:       $font-family-sans-serif !default;
 
 // Required: Configuration
 @import "../node_modules/bootstrap/scss/functions";
+
+// Default variable overrides: https://getbootstrap.com/docs/5.0/customize/sass
+
+// Options
+$enable-caret: true;
+$enable-rounded: true;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-reduced-motion: true;
+$enable-smooth-scroll: true;
+$enable-grid-classes: true;
+$enable-button-pointers: true;
+$enable-rfs: true;
+$enable-validation-icons: true;
+$enable-negative-margins: false;
+$enable-deprecation-messages: true;
+$enable-important-utilities: true;
+
+$spacer: 1rem;
+
+// Grayscale vars
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// Color vars
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+
+// Fonts
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+	"Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+
+$link-decoration: none;
+
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/utilities";
@@ -105,7 +102,6 @@ $font-family-base:       $font-family-sans-serif !default;
 // Utilities
 @import "../node_modules/bootstrap/scss/utilities/api";
 
-
 /**
  * General
  */
@@ -114,25 +110,23 @@ img {
 	vertical-align: middle;
 }
 
-
 /**
  * WordPress customization
  */
-
 
 /* If WP-Adminbar is visible */
 body.admin-bar {
 	#header.fixed-top {
 		top: 32px;
 	}
-	
+
 	.edit-link a {
-		color: #FFF !important;
+		color: #fff !important;
 		font-weight: normal !important;
 		text-decoration: none !important;
-		
+
 		&::before {
-			content: '\270E';
+			content: "\270E";
 			display: inline-block;
 			margin-right: 5px;
 		}
@@ -156,7 +150,6 @@ body.admin-bar {
 	}
 }
 
-
 /* Header */
 
 #header {
@@ -175,18 +168,16 @@ body.admin-bar {
 	margin-bottom: $grid-gutter-width;
 }
 
-
 /* Main */
 
 #main {
 	margin-top: $spacer;
 }
 
-
 /* Footer */
 
 #footer {
-	background-color: #FFF;
+	background-color: #fff;
 
 	p {
 		margin-top: 10px;
@@ -201,7 +192,6 @@ body.admin-bar {
 	}
 }
 
-
 /* Sidebar */
 
 .widget-area {
@@ -210,7 +200,6 @@ body.admin-bar {
 		padding: 0;
 	}
 }
-
 
 /* Author */
 
@@ -229,7 +218,6 @@ body.admin-bar {
 		margin-top: 0;
 	}
 }
-
 
 /* Posts */
 
@@ -268,7 +256,7 @@ body.admin-bar {
 	list-style: none;
 	margin: 0 auto;
 	width: 68.9%;
-		
+
 	> li.comment {
 		margin: 0 0 1.625em;
 		padding: 1.625em;
@@ -296,9 +284,7 @@ body.admin-bar {
 		top: 0;
 		left: -102px;
 	}
-	
 }
-
 
 /* WordPress Blocks */
 
@@ -353,15 +339,12 @@ body.admin-bar {
 	}
 }
 
-
 /**
  * Responsive Design using "mixins/_breakpoints.scss"
  */
 
 @media (max-width: breakpoint-max(sm)) {
-	
 	#sidebar {
 		margin-top: 60px;
 	}
-
 }
