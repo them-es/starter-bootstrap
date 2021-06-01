@@ -9,9 +9,9 @@
  * Class Name: WP_Bootstrap_Navwalker
  * Plugin Name: WP Bootstrap Navwalker
  * Plugin URI:  https://github.com/wp-bootstrap/wp-bootstrap-navwalker
- * Description: A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
+ * Description: A custom WordPress nav walker class to implement the Bootstrap 5 navigation style in a custom theme using the WordPress built in menu manager.
  * Author: Edward McIntyre - @twittem, WP Bootstrap, William Patton - @pattonwebz
- * Version: 3.0.0
+ * Version: 3.0.1
  * Author URI: https://github.com/wp-bootstrap
  * GitHub Plugin URI: https://github.com/wp-bootstrap/wp-bootstrap-navwalker
  * GitHub Branch: master
@@ -82,7 +82,6 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 					$class_names .= ' dropdown';
 				}
 				if ( preg_grep( '/^current/', $classes ) ) {
-					$class_names .= ' active';
 					$atts['aria-current'] = 'page';
 				}
 				$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
@@ -109,9 +108,12 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				} else {
 					$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 					if ( $depth > 0 ) {
-						$atts['class']     = 'dropdown-item' . ( in_array( 'current-menu-item', $classes, true ) ? ' active' : '' ); // Dropdown item.
+						$atts['class'] = 'dropdown-item'; // Dropdown item.
 					} else {
-						$atts['class']     = 'nav-link'; // First level.
+						$atts['class'] = 'nav-link'; // First level.
+					}
+					if ( in_array( 'current-menu-item', $classes ) ) {
+						$atts['class'] .= ' active';
 					}
 				}
 				$atts       = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );

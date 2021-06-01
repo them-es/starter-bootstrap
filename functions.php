@@ -155,7 +155,7 @@ add_filter( 'comments_open', 'themes_starter_filter_media_comment_status', 10, 2
 
 
 /**
- * Style Edit buttons as badges: http://getbootstrap.com/components/#badges
+ * Style Edit buttons as badges: https://getbootstrap.com/docs/5.0/components/badge
  *
  * @since v1.0
  */
@@ -171,7 +171,7 @@ add_filter( 'edit_comment_link', 'themes_starter_custom_edit_comment_link' );
 
 
 /**
- * Responsive oEmbed filter: http://getbootstrap.com/components/#responsive-embed
+ * Responsive oEmbed filter: https://getbootstrap.com/docs/5.0/helpers/ratio
  *
  * @since v1.0
  */

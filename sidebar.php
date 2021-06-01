@@ -43,7 +43,7 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 									endif;
 									$month_check = $month;
 
-								$output .= '<h4><a href="' . esc_url( get_the_permalink() ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ) ) . '" rel="bookmark">' . esc_html( get_the_title() ) . '</a></h4>';
+								$output .= '<h4><a href="' . esc_url( get_the_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark">' . apply_filters( 'the_title', get_the_title() ) . '</a></h4>';
 								$output .= '</li>';
 							endwhile;
 						endif;
