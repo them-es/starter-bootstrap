@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Page (Full width)
- * Description: Page template full width
+ * Description: Page template full width.
  *
  */
 
@@ -22,7 +22,7 @@ the_post();
 	?>
 </div><!-- /#post-<?php the_ID(); ?> -->
 <?php
-	// If comments are open or we have at least one comment, load up the comment template
+	// If comments are open or we have at least one comment, load up the comment template.
 	if ( comments_open() || get_comments_number() ) :
 		comments_template();
 	endif;

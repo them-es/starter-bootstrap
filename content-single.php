@@ -1,6 +1,7 @@
 <?php
 /**
- * The template for displaying content in the single.php template
+ * The template for displaying content in the single.php template.
+ *
  */
 ?>
 

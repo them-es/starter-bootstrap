@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying search forms
+ * The template for displaying search forms.
  */
 ?>
 <form class="search-form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying content in the index.php template
+ * The template for displaying content in the index.php template.
  */
 ?>
 

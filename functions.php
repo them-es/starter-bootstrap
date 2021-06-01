@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Include Theme Customizer
+ * Include Theme Customizer.
  *
  * @since v1.0
  */
@@ -23,7 +23,7 @@ if ( is_readable( $theme_wordpresscom ) ) {
 
 
 /**
- * Set the content width based on the theme's design and stylesheet
+ * Set the content width based on the theme's design and stylesheet.
  *
  * @since v1.0
  */
@@ -33,7 +33,7 @@ if ( ! isset( $content_width ) ) {
 
 
 /**
- * General Theme Settings
+ * General Theme Settings.
  *
  * @since v1.0
  */
@@ -106,7 +106,7 @@ endif;
 
 
 /**
- * Add new User fields to Userprofile
+ * Add new User fields to Userprofile.
  *
  * @since v1.0
  */
@@ -126,7 +126,7 @@ endif;
 
 
 /**
- * Test if a page is a blog page
+ * Test if a page is a blog page.
  * if ( is_blog() ) { ... }
  *
  * @since v1.0
@@ -183,7 +183,7 @@ add_filter( 'embed_oembed_html', 'themes_starter_oembed_filter', 10, 4 );
 
 if ( ! function_exists( 'themes_starter_content_nav' ) ) :
 	/**
-	 * Display a navigation to next/previous pages when applicable
+	 * Display a navigation to next/previous pages when applicable.
 	 *
 	 * @since v1.0
 	 */
@@ -212,7 +212,7 @@ endif;
 
 
 /**
- * Init Widget areas in Sidebar
+ * Init Widget areas in Sidebar.
  *
  * @since v1.0
  */
@@ -258,7 +258,7 @@ add_action( 'widgets_init', 'themes_starter_widgets_init' );
 
 if ( ! function_exists( 'themes_starter_article_posted_on' ) ) :
 	/**
-	 * "Theme posted on" pattern
+	 * "Theme posted on" pattern.
 	 *
 	 * @since v1.0
 	 */
@@ -278,7 +278,7 @@ endif;
 
 
 /**
- * Template for Password protected post form
+ * Template for Password protected post form.
  *
  * @since v1.0
  */
@@ -304,7 +304,7 @@ add_filter( 'the_password_form', 'themes_starter_password_form' );
 
 if ( ! function_exists( 'themes_starter_comment' ) ) :
 	/**
-	 * Style Reply link
+	 * Style Reply link.
 	 *
 	 * @since v1.0
 	 */
@@ -375,7 +375,7 @@ if ( ! function_exists( 'themes_starter_comment' ) ) :
 	}
 
 	/**
-	 * Custom Comment form
+	 * Custom Comment form.
 	 *
 	 * @since v1.0
 	 * @since v1.1: Added 'submit_button' and 'submit_field'
@@ -444,7 +444,7 @@ endif;
 
 
 /**
- * Nav menus
+ * Nav menus.
  *
  * @since v1.0
  */
@@ -457,7 +457,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	);
 }
 
-// Custom Nav Walker: wp_bootstrap4_navwalker().
+// Custom Nav Walker: wp_bootstrap_navwalker().
 $custom_walker = get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 if ( is_readable( $custom_walker ) ) {
 	require_once $custom_walker;
@@ -470,7 +470,7 @@ if ( is_readable( $custom_walker_footer ) ) {
 
 
 /**
- * Loading All CSS Stylesheets and Javascript Files
+ * Loading All CSS Stylesheets and Javascript Files.
  *
  * @since v1.0
  */

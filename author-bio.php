@@ -1,6 +1,6 @@
 <?php
 /**
- * Author description
+ * Author description.
  */
 
 if ( get_the_author_meta( 'description' ) ) :

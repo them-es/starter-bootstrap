@@ -1,5 +1,5 @@
 			<?php
-				// If Single or Archive (Category, Tag, Author or a Date based page)
+				// If Single or Archive (Category, Tag, Author or a Date based page).
 				if ( is_single() || is_archive() ) :
 			?>
 					</div><!-- /.col -->
@@ -21,7 +21,7 @@
 					</div>
 
 					<?php
-						if ( has_nav_menu( 'footer-menu' ) ) : // see function register_nav_menus() in functions.php
+						if ( has_nav_menu( 'footer-menu' ) ) : // See function register_nav_menus() in functions.php
 							/*
 								Loading WordPress Custom Menu (theme_location) ... remove <div> <ul> containers and show only <li> items!!!
 								Menu name taken from functions.php!!! ... register_nav_menu( 'footer-menu', 'Footer Menu' );

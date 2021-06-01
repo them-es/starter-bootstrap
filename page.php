@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Page (Default)
- * Description: Page template with Sidebar on the left side
+ * Description: Page template with Sidebar on the left side.
  *
  */
 
