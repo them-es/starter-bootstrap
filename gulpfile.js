@@ -55,7 +55,7 @@ function build_js() {
  */
 
 function build_css() {
-	const sass = require( 'gulp-sass' ),
+	const sass = require( 'gulp-sass' )(require('sass')),
 		postcss = require( 'gulp-postcss' ),
 		sourcemaps = require( 'gulp-sourcemaps' ),
 		autoprefixer = require( 'autoprefixer' ),
