@@ -2,7 +2,7 @@ const gulp = require( 'gulp' ),
 	fancylog = require( 'fancy-log' ),
 	browserSync = require( 'browser-sync' ),
 	server = browserSync.create(),
-	dev_url = 'http://localhost/starter-material';
+	dev_url = 'http://localhost/starter-bootstrap';
 
 
 /**
@@ -33,7 +33,7 @@ function build_js() {
 	
 	return gulp.src( paths.scripts.src )
 		.pipe(
-			webpackStream({
+			webpackStream( {
 				config: require( './webpack.config.js' )
 				},
 				compiler
@@ -55,7 +55,7 @@ function build_js() {
  */
 
 function build_css() {
-	const sass = require( 'gulp-sass' )(require('sass')),
+	const sass = require( 'gulp-sass' )( require( 'sass' ) ),
 		postcss = require( 'gulp-postcss' ),
 		sourcemaps = require( 'gulp-sourcemaps' ),
 		autoprefixer = require( 'autoprefixer' ),
@@ -75,7 +75,7 @@ function build_css() {
 				.on( 'error', sass.logError )
 		)
 		.pipe(
-			postcss(plugins)
+			postcss( plugins )
 		)
 		.pipe(
 			sourcemaps.write( './' )
@@ -94,7 +94,7 @@ function build_css() {
  * $ gulp watch
  */
 
-gulp.task('watch',
+gulp.task( 'watch',
 	function () {
 		// Modify "dev_url" constant and uncomment "server.init()" to use browser sync
 		/*server.init({
