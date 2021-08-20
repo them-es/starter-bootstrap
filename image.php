@@ -54,7 +54,7 @@ get_header();
 						?>
 					</div><!-- /.entry-content -->
 					<footer class="entry-footer">
-						<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( esc_html__( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
 					</footer><!-- /.entry-footer -->
 				</article><!-- /#post-## -->
 
@@ -67,8 +67,8 @@ get_header();
 					// Parent post navigation.
 					the_post_navigation(
 						array(
-							'prev_text' => _x( 'Published in %title', 'Parent post link', 'my-theme' ),
-							'aria_label' => __( 'Parent post', 'my-theme' ),
+							'prev_text'  => esc_html_x( 'Published in %title', 'Parent post link', 'my-theme' ),
+							'aria_label' => esc_html__( 'Parent post', 'my-theme' ),
 						)
 					);
 

@@ -6,11 +6,10 @@
 
 //@import "../node_modules/bootstrap/scss/bootstrap";
 
-// Required: Configuration
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/functions";
 
-// Default variable overrides: https://getbootstrap.com/docs/5.0/customize/sass
-
+// 2. Include any default variable overrides here: https://getbootstrap.com/docs/5.0/customize/sass
 // Options
 $enable-caret: true;
 $enable-rounded: true;
@@ -53,21 +52,20 @@ $teal: #20c997;
 $cyan: #0dcaf0;
 
 // Fonts
-$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-	"Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base: $font-family-sans-serif;
 
 $link-decoration: none;
 
+// 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/utilities";
-
-// Optional: Uncomment all components that are not needed to reduce the filesize
-// Layout & components
 @import "../node_modules/bootstrap/scss/root";
+
+// 4. Include any optional Bootstrap CSS as needed: Uncomment all components that are not needed to reduce the filesize
+@import "../node_modules/bootstrap/scss/utilities";
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/images";
@@ -97,10 +95,11 @@ $link-decoration: none;
 @import "../node_modules/bootstrap/scss/carousel";
 @import "../node_modules/bootstrap/scss/spinners";
 @import "../node_modules/bootstrap/scss/offcanvas";
-// Helpers
 @import "../node_modules/bootstrap/scss/helpers";
-// Utilities
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utililies.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
+
 
 /**
  * General
@@ -109,6 +108,7 @@ $link-decoration: none;
 img {
 	vertical-align: middle;
 }
+
 
 /**
  * WordPress customization
@@ -126,7 +126,7 @@ body.admin-bar {
 		text-decoration: none !important;
 
 		&::before {
-			content: "\270E";
+			content: '\270E';
 			display: inline-block;
 			margin-right: 5px;
 		}
@@ -185,7 +185,7 @@ body.admin-bar {
 
 	.menu-item {
 		a {
-			&[aria-current="page"] {
+			&[aria-current='page'] {
 				color: $link-hover-color;
 			}
 		}
@@ -229,7 +229,7 @@ body.admin-bar {
 
 .entry-meta {
 	font-size: small;
-	margin-top: $grid-gutter-width/2;
+	margin-top: ($grid-gutter-width * .5);
 }
 
 .single {
@@ -249,7 +249,7 @@ body.admin-bar {
 }
 
 .comment-reply-title {
-	margin: $grid-gutter-width 0 $grid-gutter-width/2;
+	margin: $grid-gutter-width 0 ($grid-gutter-width * .5);
 }
 
 .commentlist {
@@ -338,6 +338,7 @@ body.admin-bar {
 		height: auto;
 	}
 }
+
 
 /**
  * Responsive Design using "mixins/_breakpoints.scss"
