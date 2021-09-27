@@ -21,15 +21,16 @@
     "jquery": "^3.6.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.0",
+    "browser-sync": "^2.27.5",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-postcss": "^9.0.0",
-    "sass": "^1.37.0",
-    "autoprefixer": "^10.3.1",
-    "cssnano": "^5.0.7",
-    "webpack": "^5.47.1",
-    "webpack-stream": "^6.1.2"
+    "gulp-postcss": "^9.0.1",
+    "postcss": "^8.3.8",
+    "sass": "^1.42.1",
+    "autoprefixer": "^10.3.6",
+    "cssnano": "^5.0.8",
+    "webpack": "^5.54.0",
+    "webpack-stream": "^7.0.0"
   }
 }
