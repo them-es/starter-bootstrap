@@ -2,3 +2,6 @@
  * them.es Theme Editor Styles
  */
 
+body {
+	font-family: inherit !important;
+}
