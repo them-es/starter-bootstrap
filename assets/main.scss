@@ -105,6 +105,33 @@ $link-decoration: none;
  * General
  */
 
+body {
+	&.page-template-page-full {
+		#main {
+			max-width: 100%;
+		}
+	}
+
+	/* If WP-Adminbar is visible */
+	&.admin-bar {
+		#header.fixed-top {
+			top: var(--wp-admin--admin-bar--height);
+		}
+
+		.edit-link a {
+			color: #fff !important;
+			font-weight: normal !important;
+			text-decoration: none !important;
+
+			&::before {
+				content: '\270E';
+				display: inline-block;
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
 img {
 	vertical-align: middle;
 }
@@ -113,25 +140,6 @@ img {
 /**
  * WordPress customization
  */
-
-/* If WP-Adminbar is visible */
-body.admin-bar {
-	#header.fixed-top {
-		top: var(--wp-admin--admin-bar--height);
-	}
-
-	.edit-link a {
-		color: #fff !important;
-		font-weight: normal !important;
-		text-decoration: none !important;
-
-		&::before {
-			content: '\270E';
-			display: inline-block;
-			margin-right: 5px;
-		}
-	}
-}
 
 /* WordPress Embeds */
 
