@@ -16,8 +16,8 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "bootstrap": "^5.1.3",
-    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.2.0",
+    "@popperjs/core": "^2.11.5",
     "jquery": "^3.6.0"
   },
   "devDependencies": {

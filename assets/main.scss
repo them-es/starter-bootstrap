@@ -2,14 +2,16 @@
 
 /**
  * Import Bootstrap sources
+ * https://getbootstrap.com/docs/5.2/customize/sass
  */
 
-//@import "../node_modules/bootstrap/scss/bootstrap";
+// @import "../node_modules/bootstrap/scss/bootstrap"; // Include all of Bootstrap
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/functions";
 
-// 2. Include any default variable overrides here: https://getbootstrap.com/docs/5.0/customize/sass
+// 2. Include any default variable overrides here
+
 // Options
 $enable-caret: true;
 $enable-rounded: true;
@@ -61,10 +63,15 @@ $link-decoration: none;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
 
-// 4. Include any optional Bootstrap CSS as needed: Uncomment all components that are not needed to reduce the filesize
+// 6. Optionally include any other parts as needed: Uncomment components to reduce the filesize
 @import "../node_modules/bootstrap/scss/utilities";
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
@@ -97,7 +104,7 @@ $link-decoration: none;
 @import "../node_modules/bootstrap/scss/offcanvas";
 @import "../node_modules/bootstrap/scss/helpers";
 
-// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utililies.scss`
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 
