@@ -10,7 +10,8 @@ module.exports = {
 		path: path.resolve( __dirname, 'assets/js' ),
 		filename: '[name].bundle.js',
 	},
-	externals: {
+	// Uncomment if jQuery support is needed
+	/*externals: {
 		jquery: 'jQuery'
 	},
 	plugins: [
@@ -19,7 +20,7 @@ module.exports = {
 			jQuery: 'jquery',
 			'window.jQuery': 'jquery',
 		} ),
-	],
+	],*/
 	devtool: 'source-map',
 	watch: true,
 };
