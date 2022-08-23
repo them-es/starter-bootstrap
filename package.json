@@ -17,20 +17,20 @@
   ],
   "dependencies": {
     "bootstrap": "^5.2.0",
-    "@popperjs/core": "^2.11.5",
+    "@popperjs/core": "^2.11.6",
     "jquery": "^3.6.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.5",
+    "autoprefixer": "^10.4.8",
+    "browser-sync": "^2.27.10",
+    "cssnano": "^5.1.13",
     "gulp": "^4.0.2",
-    "gulp-sass": "^5.0.0",
-    "gulp-sourcemaps": "^3.0.0",
     "gulp-postcss": "^9.0.1",
-    "postcss": "^8.3.8",
-    "sass": "^1.42.1",
-    "autoprefixer": "^10.3.6",
-    "cssnano": "^5.0.8",
-    "webpack": "^5.54.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.4.16",
+    "sass": "^1.54.5",
+    "webpack": "^5.74.0",
     "webpack-stream": "^7.0.0"
   }
 }
