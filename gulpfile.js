@@ -1,8 +1,7 @@
 const gulp = require( 'gulp' ),
-	fancylog = require( 'fancy-log' ),
 	browserSync = require( 'browser-sync' ),
 	server = browserSync.create(),
-	dev_url = 'http://localhost/starter-bootstrap';
+	localHost = 'http://localhost/starter-bootstrap';
 
 
 /**
@@ -12,11 +11,11 @@ const gulp = require( 'gulp' ),
 var paths = {
 	styles: {
 		src: './assets/*.scss',
-		dest: './assets/css'
+		dest: './assets/dist'
 	},
 	scripts: {
 		src: './assets/*.js',
-		dest: './assets/js'
+		dest: './assets/dist'
 	}
 };
 
@@ -71,7 +70,9 @@ function build_css() {
 			sourcemaps.init()
 		)
 		.pipe(
-			sass()
+			sass( {
+				includePaths: [ './node_modules' ]
+			} )
 				.on( 'error', sass.logError )
 		)
 		.pipe(
@@ -96,9 +97,9 @@ function build_css() {
 
 gulp.task( 'watch',
 	function () {
-		// Modify "dev_url" constant and uncomment "server.init()" to use browser sync
+		// Modify "localHost" constant and uncomment "server.init()" to use browser sync
 		/*server.init({
-			proxy: dev_url,
+			proxy: localHost,
 		} );*/
 
 		gulp.watch( paths.scripts.src, build_js );
