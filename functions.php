@@ -12,17 +12,6 @@ if ( is_readable( $theme_customizer ) ) {
 
 
 /**
- * Include Support for wordpress.com-specific functions.
- * 
- * @since v1.0
- */
-$theme_wordpresscom = __DIR__ . '/inc/wordpresscom.php';
-if ( is_readable( $theme_wordpresscom ) ) {
-	require_once $theme_wordpresscom;
-}
-
-
-/**
  * Set the content width based on the theme's design and stylesheet.
  *
  * @since v1.0
