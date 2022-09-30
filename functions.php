@@ -12,16 +12,6 @@ if ( is_readable( $theme_customizer ) ) {
 
 
 /**
- * Set the content width based on the theme's design and stylesheet.
- *
- * @since v1.0
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 800;
-}
-
-
-/**
  * General Theme Settings.
  *
  * @since v1.0
@@ -30,6 +20,16 @@ if ( ! function_exists( 'themes_starter_setup_theme' ) ) :
 	function themes_starter_setup_theme() {
 		// Make theme available for translation: Translations can be filed in the /languages/ directory.
 		load_theme_textdomain( 'my-theme', __DIR__ . '/languages' );
+
+		/**
+		 * Set the content width based on the theme's design and stylesheet.
+		 *
+		 * @since v1.0
+		 */
+		global $content_width;
+		if ( ! isset( $content_width ) ) {
+			$content_width = 800;
+		}
 
 		// Theme Support.
 		add_theme_support( 'title-tag' );
