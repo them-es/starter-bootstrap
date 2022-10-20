@@ -148,12 +148,12 @@ add_filter( 'comments_open', 'themes_starter_filter_media_comment_status', 10, 2
  * @since v1.0
  */
 function themes_starter_custom_edit_post_link( $output ) {
-	return str_replace( 'class="post-edit-link"', 'class="post-edit-link badge badge-secondary"', $output );
+	return str_replace( 'class="post-edit-link"', 'class="post-edit-link badge bg-secondary"', $output );
 }
 add_filter( 'edit_post_link', 'themes_starter_custom_edit_post_link' );
 
 function themes_starter_custom_edit_comment_link( $output ) {
-	return str_replace( 'class="comment-edit-link"', 'class="comment-edit-link badge badge-secondary"', $output );
+	return str_replace( 'class="comment-edit-link"', 'class="comment-edit-link badge bg-secondary"', $output );
 }
 add_filter( 'edit_comment_link', 'themes_starter_custom_edit_comment_link' );
 
