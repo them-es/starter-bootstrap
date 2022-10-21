@@ -19,7 +19,7 @@
 
 						$num_comments = get_comments_number();
 						if ( comments_open() && $num_comments >= 1 ) :
-							echo ' <a href="' . get_comments_link() . '" class="badge badge-pill badge-secondary float-end" title="' . esc_attr( sprintf( _n( '%s Comment', '%s Comments', $num_comments, 'my-theme' ), $num_comments ) ) . '">' . $num_comments . '</a>';
+							echo ' <a href="' . get_comments_link() . '" class="badge badge-pill bg-secondary float-end" title="' . esc_attr( sprintf( _n( '%s Comment', '%s Comments', $num_comments, 'my-theme' ), $num_comments ) ) . '">' . $num_comments . '</a>';
 						endif;
 					?>
 				</div><!-- /.entry-meta -->
