@@ -314,7 +314,13 @@ if ( ! function_exists( 'themes_starter_comment' ) ) {
 			case 'trackback':
 	?>
 		<li class="post pingback">
-			<p><?php esc_html_e( 'Pingback:', 'my-theme' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( esc_html__( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?></p>
+			<p>
+				<?php
+					esc_html_e( 'Pingback:', 'my-theme' );
+					comment_author_link();
+					edit_comment_link( esc_html__( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' );
+				?>
+			</p>
 	<?php
 				break;
 			default:
@@ -327,14 +333,14 @@ if ( ! function_exists( 'themes_starter_comment' ) ) {
 							$avatar_size = ( '0' !== $comment->comment_parent ? 68 : 136 );
 							echo get_avatar( $comment, $avatar_size );
 
-							/* translators: 1: comment author, 2: date and time */
+							/* Translators: 1: Comment author, 2: Date and time */
 							printf(
 								wp_kses_post( __( '%1$s, %2$s', 'my-theme' ) ),
 								sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
 								sprintf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 									esc_url( get_comment_link( $comment->comment_ID ) ),
 									get_comment_time( 'c' ),
-									/* translators: 1: date, 2: time */
+									/* Translators: 1: Date, 2: Time */
 									sprintf( esc_html__( '%1$s ago', 'my-theme' ), human_time_diff( (int) get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
 								)
 							);
@@ -344,7 +350,9 @@ if ( ! function_exists( 'themes_starter_comment' ) ) {
 					</div><!-- .comment-author .vcard -->
 
 					<?php if ( '0' === $comment->comment_approved ) { ?>
-						<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'my-theme' ); ?></em>
+						<em class="comment-awaiting-moderation">
+							<?php esc_html_e( 'Your comment is awaiting moderation.', 'my-theme' ); ?>
+						</em>
 						<br />
 					<?php } ?>
 				</footer>
@@ -415,9 +423,9 @@ if ( ! function_exists( 'themes_starter_comment' ) ) {
 											<label for="comment">' . esc_html__( 'Comment', 'my-theme' ) . '</label>
 										</div>',
 			/** This filter is documented in wp-includes/link-template.php */
-			'must_log_in'          => '<p class="must-log-in">' . sprintf( wp_kses_post( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'my-theme' ) ), wp_login_url( apply_filters( 'the_permalink', get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
+			'must_log_in'          => '<p class="must-log-in">' . sprintf( wp_kses_post( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'my-theme' ) ), wp_login_url( esc_url( get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
 			/** This filter is documented in wp-includes/link-template.php */
-			'logged_in_as'         => '<p class="logged-in-as">' . sprintf( wp_kses_post( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'my-theme' ) ), get_edit_user_link(), $user->display_name, wp_logout_url( apply_filters( 'the_permalink', get_the_permalink( get_the_ID() ) ) ) ) . '</p>',
+			'logged_in_as'         => '<p class="logged-in-as">' . sprintf( wp_kses_post( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'my-theme' ) ), get_edit_user_link(), $user->display_name, wp_logout_url( apply_filters( 'the_permalink', esc_url( get_the_permalink( get_the_ID() ) ) ) ) ) . '</p>',
 			'comment_notes_before' => '<p class="small comment-notes">' . esc_html__( 'Your Email address will not be published.', 'my-theme' ) . '</p>',
 			'comment_notes_after'  => '',
 			'id_form'              => 'commentform',

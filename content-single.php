@@ -55,7 +55,7 @@
 				$category_list,
 				$tag_list,
 				esc_url( get_the_permalink() ),
-				the_title_attribute( 'echo=0' ),
+				the_title_attribute( array( 'echo' => false ) ),
 				get_the_author(),
 				esc_url( get_author_posts_url( (int) get_the_author_meta( 'ID' ) ) )
 			);

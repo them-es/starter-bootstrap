@@ -12,7 +12,7 @@
 		?>
 			<hgroup>
 				<h2 class="entry-title">
-					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'my-theme' ), the_title_attribute( array( 'echo' => false ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 				</h2>
 				<h3 class="entry-format"><?php esc_html_e( 'Featured', 'my-theme' ); ?></h3>
 			</hgroup>
@@ -20,7 +20,7 @@
 			else :
 		?>
 			<h2 class="entry-title">
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'my-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'my-theme' ), the_title_attribute( array( 'echo' => false ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h2>
 		<?php
 			endif;
@@ -108,7 +108,7 @@
 			endif;
 		?>
 
-		<a href="<?php echo get_the_permalink(); ?>" class="btn btn-secondary"><?php esc_html_e( 'more', 'my-theme' ); ?></a>
+		<a href="<?php the_permalink(); ?>" class="btn btn-secondary"><?php esc_html_e( 'more', 'my-theme' ); ?></a>
 
 		<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- /.entry-meta -->
