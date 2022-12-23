@@ -11,6 +11,10 @@ defined( 'ABSPATH' ) || exit;
  * or: echo get_theme_mod( 'copyright_info', 'Default (c) Copyright Info if nothing provided' );
  *
  * "sanitize_callback": https://codex.wordpress.org/Data_Validation
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ *
+ * @return void
  */
 function themes_starter_customize( $wp_customize ) {
 	/**
@@ -118,9 +122,10 @@ function themes_starter_customize( $wp_customize ) {
 }
 add_action( 'customize_register', 'themes_starter_customize' );
 
-
 /**
  * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
+ *
+ * @return void
  */
 function themes_starter_customize_preview_js() {
 	wp_enqueue_script( 'customizer', get_template_directory_uri() . '/inc/customizer.js', array( 'jquery' ), null, true );

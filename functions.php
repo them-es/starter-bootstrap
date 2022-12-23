@@ -10,13 +10,14 @@ if ( is_readable( $theme_customizer ) ) {
 	require_once $theme_customizer;
 }
 
-
-/**
- * General Theme Settings.
- *
- * @since v1.0
- */
 if ( ! function_exists( 'themes_starter_setup_theme' ) ) {
+	/**
+	 * General Theme Settings.
+	 *
+	 * @since v1.0
+	 *
+	 * @return void
+	 */
 	function themes_starter_setup_theme() {
 		// Make theme available for translation: Translations can be filed in the /languages/ directory.
 		load_theme_textdomain( 'my-theme', __DIR__ . '/languages' );
@@ -53,17 +54,17 @@ if ( ! function_exists( 'themes_starter_setup_theme' ) ) {
 		add_theme_support( 'wp-block-styles' );
 		// Add support for full and wide alignment.
 		add_theme_support( 'align-wide' );
-		// Add support for editor styles.
+		// Add support for Editor Styles.
 		add_theme_support( 'editor-styles' );
-		// Enqueue editor styles.
+		// Enqueue Editor Styles.
 		add_editor_style( 'style-editor.css' );
 
-		// Default Attachment Display Settings.
+		// Default attachment display settings.
 		update_option( 'image_default_align', 'none' );
 		update_option( 'image_default_link_type', 'none' );
 		update_option( 'image_default_size', 'large' );
 
-		// Custom CSS-Styles of Wordpress Gallery.
+		// Custom CSS styles of WorPress gallery.
 		add_filter( 'use_default_gallery_style', '__return_false' );
 	}
 	add_action( 'after_setup_theme', 'themes_starter_setup_theme' );
@@ -73,32 +74,32 @@ if ( ! function_exists( 'themes_starter_setup_theme' ) ) {
 	remove_action( 'enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory' );
 }
 
-
-/**
- * Fire the wp_body_open action.
- *
- * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
- *
- * @since v2.2
- */
 if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * Fire the wp_body_open action.
+	 *
+	 * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+	 *
+	 * @since v2.2
+	 *
+	 * @return void
+	 */
 	function wp_body_open() {
-		/**
-		 * Triggered after the opening <body> tag.
-		 *
-		 * @since v2.2
-		 */
 		do_action( 'wp_body_open' );
 	}
 }
 
-
-/**
- * Add new User fields to Userprofile.
- *
- * @since v1.0
- */
 if ( ! function_exists( 'themes_starter_add_user_fields' ) ) {
+	/**
+	 * Add new User fields to Userprofile:
+	 * get_user_meta( $user->ID, 'facebook_profile', true );
+	 *
+	 * @since v1.0
+	 *
+	 * @param array $fields User fields.
+	 *
+	 * @return array
+	 */
 	function themes_starter_add_user_fields( $fields ) {
 		// Add new fields.
 		$fields['facebook_profile'] = 'Facebook URL';
@@ -109,15 +110,16 @@ if ( ! function_exists( 'themes_starter_add_user_fields' ) ) {
 
 		return $fields;
 	}
-	add_filter( 'user_contactmethods', 'themes_starter_add_user_fields' ); // get_user_meta( $user->ID, 'facebook_profile', true );
+	add_filter( 'user_contactmethods', 'themes_starter_add_user_fields' );
 }
-
 
 /**
  * Test if a page is a blog page.
  * if ( is_blog() ) { ... }
  *
  * @since v1.0
+ *
+ * @return bool
  */
 function is_blog() {
 	global $post;
@@ -126,54 +128,74 @@ function is_blog() {
 	return ( ( is_archive() || is_author() || is_category() || is_home() || is_single() || ( is_tag() && ( 'post' === $posttype ) ) ) ? true : false );
 }
 
-
 /**
  * Disable comments for Media (Image-Post, Jetpack-Carousel, etc.)
  *
  * @since v1.0
+ *
+ * @param bool $open    Comments open/closed.
+ * @param int  $post_id Post ID.
+ *
+ * @return bool
  */
 function themes_starter_filter_media_comment_status( $open, $post_id = null ) {
 	$media_post = get_post( $post_id );
+
 	if ( 'attachment' === $media_post->post_type ) {
 		return false;
 	}
+
 	return $open;
 }
 add_filter( 'comments_open', 'themes_starter_filter_media_comment_status', 10, 2 );
-
 
 /**
  * Style Edit buttons as badges: https://getbootstrap.com/docs/5.0/components/badge
  *
  * @since v1.0
+ *
+ * @param string $link Post Edit Link.
+ *
+ * @return string
  */
-function themes_starter_custom_edit_post_link( $output ) {
-	return str_replace( 'class="post-edit-link"', 'class="post-edit-link badge bg-secondary"', $output );
+function themes_starter_custom_edit_post_link( $link ) {
+	return str_replace( 'class="post-edit-link"', 'class="post-edit-link badge bg-secondary"', $link );
 }
 add_filter( 'edit_post_link', 'themes_starter_custom_edit_post_link' );
 
-function themes_starter_custom_edit_comment_link( $output ) {
-	return str_replace( 'class="comment-edit-link"', 'class="comment-edit-link badge bg-secondary"', $output );
+/**
+ * Style Edit buttons as badges: https://getbootstrap.com/docs/5.0/components/badge
+ *
+ * @since v1.0
+ *
+ * @param string $link Comment Edit Link.
+ */
+function themes_starter_custom_edit_comment_link( $link ) {
+	return str_replace( 'class="comment-edit-link"', 'class="comment-edit-link badge bg-secondary"', $link );
 }
 add_filter( 'edit_comment_link', 'themes_starter_custom_edit_comment_link' );
-
 
 /**
  * Responsive oEmbed filter: https://getbootstrap.com/docs/5.0/helpers/ratio
  *
  * @since v1.0
+ *
+ * @param string $html Inner HTML.
+ *
+ * @return string
  */
 function themes_starter_oembed_filter( $html ) {
 	return '<div class="ratio ratio-16x9">' . $html . '</div>';
 }
-add_filter( 'embed_oembed_html', 'themes_starter_oembed_filter', 10, 4 );
-
+add_filter( 'embed_oembed_html', 'themes_starter_oembed_filter', 10 );
 
 if ( ! function_exists( 'themes_starter_content_nav' ) ) {
 	/**
 	 * Display a navigation to next/previous pages when applicable.
 	 *
 	 * @since v1.0
+	 *
+	 * @param string $nav_id Navigation ID.
 	 */
 	function themes_starter_content_nav( $nav_id ) {
 		global $wp_query;
@@ -190,7 +212,13 @@ if ( ! function_exists( 'themes_starter_content_nav' ) ) {
 		}
 	}
 
-	// Add Class.
+	/**
+	 * Add Class.
+	 *
+	 * @since v1.0
+	 *
+	 * @return string
+	 */
 	function posts_link_attributes() {
 		return 'class="btn btn-secondary btn-lg"';
 	}
@@ -198,11 +226,12 @@ if ( ! function_exists( 'themes_starter_content_nav' ) ) {
 	add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
 }
 
-
 /**
  * Init Widget areas in Sidebar.
  *
  * @since v1.0
+ *
+ * @return void
  */
 function themes_starter_widgets_init() {
 	// Area 1.
@@ -243,7 +272,6 @@ function themes_starter_widgets_init() {
 }
 add_action( 'widgets_init', 'themes_starter_widgets_init' );
 
-
 if ( ! function_exists( 'themes_starter_article_posted_on' ) ) {
 	/**
 	 * "Theme posted on" pattern.
@@ -264,11 +292,12 @@ if ( ! function_exists( 'themes_starter_article_posted_on' ) ) {
 	}
 }
 
-
 /**
  * Template for Password protected post form.
  *
  * @since v1.0
+ *
+ * @return string
  */
 function themes_starter_password_form() {
 	global $post;
@@ -285,6 +314,7 @@ function themes_starter_password_form() {
 			$output .= '</div><!-- /.col -->';
 		$output .= '</form>';
 	$output .= '</div><!-- /.row -->';
+
 	return $output;
 }
 add_filter( 'the_password_form', 'themes_starter_password_form' );
@@ -295,6 +325,10 @@ if ( ! function_exists( 'themes_starter_comment' ) ) {
 	 * Style Reply link.
 	 *
 	 * @since v1.0
+	 *
+	 * @param string $class Link class.
+	 *
+	 * @return string
 	 */
 	function themes_starter_replace_reply_link_class( $class ) {
 		return str_replace( "class='comment-reply-link", "class='comment-reply-link btn btn-outline-secondary", $class );
@@ -306,6 +340,10 @@ if ( ! function_exists( 'themes_starter_comment' ) ) {
 	 * add function to comments.php ... wp_list_comments( array( 'callback' => 'themes_starter_comment' ) );
 	 *
 	 * @since v1.0
+	 *
+	 * @param object $comment Comment object.
+	 * @param array  $args    Comment args.
+	 * @param int    $depth   Comment depth.
 	 */
 	function themes_starter_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
@@ -385,6 +423,11 @@ if ( ! function_exists( 'themes_starter_comment' ) ) {
 	 * @since v1.0
 	 * @since v1.1: Added 'submit_button' and 'submit_field'
 	 * @since v2.0.2: Added '$consent' and 'cookies'
+	 *
+	 * @param array $args    Form args.
+	 * @param int   $post_id Post ID.
+	 *
+	 * @return array
 	 */
 	function themes_starter_custom_commentform( $args = array(), $post_id = null ) {
 		if ( null === $post_id ) {
@@ -446,13 +489,14 @@ if ( ! function_exists( 'themes_starter_comment' ) ) {
 	add_filter( 'comment_form_defaults', 'themes_starter_custom_commentform' );
 }
 
-
-/**
- * Nav menus.
- *
- * @since v1.0
- */
 if ( function_exists( 'register_nav_menus' ) ) {
+	/**
+	 * Nav menus.
+	 *
+	 * @since v1.0
+	 *
+	 * @return void
+	 */
 	register_nav_menus(
 		array(
 			'main-menu'   => 'Main Navigation Menu',
@@ -472,11 +516,12 @@ if ( is_readable( $custom_walker_footer ) ) {
 	require_once $custom_walker_footer;
 }
 
-
 /**
  * Loading All CSS Stylesheets and Javascript Files.
  *
  * @since v1.0
+ *
+ * @return void
  */
 function themes_starter_scripts_loader() {
 	$theme_version = wp_get_theme()->get( 'Version' );

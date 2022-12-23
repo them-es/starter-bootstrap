@@ -29,14 +29,13 @@
 							*/
 							wp_nav_menu(
 								array(
-									'theme_location'  => 'footer-menu',
 									'container'       => 'nav',
 									'container_class' => 'col-md-6',
-									'fallback_cb'     => '',
-									'items_wrap'      => '<ul class="menu nav justify-content-end">%3$s</ul>',
-									//'fallback_cb'    => 'WP_Bootstrap4_Navwalker_Footer::fallback',
+									//'fallback_cb'     => 'WP_Bootstrap4_Navwalker_Footer::fallback',
 									'walker'          => new WP_Bootstrap4_Navwalker_Footer(),
-								)
+									'theme_location'  => 'footer-menu',
+									'items_wrap'      => '<ul class="menu nav justify-content-end">%3$s</ul>',
+								),
 							);
 						endif;
 

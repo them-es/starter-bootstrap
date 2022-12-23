@@ -47,11 +47,11 @@
 						// Loading WordPress Custom Menu (theme_location).
 						wp_nav_menu(
 							array(
-								'theme_location' => 'main-menu',
-								'container'      => '',
 								'menu_class'     => 'navbar-nav me-auto',
+								'container'      => '',
 								'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
 								'walker'         => new WP_Bootstrap_Navwalker(),
+								'theme_location' => 'main-menu',
 							)
 						);
 
