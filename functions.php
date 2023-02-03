@@ -506,12 +506,12 @@ if ( function_exists( 'register_nav_menus' ) ) {
 }
 
 // Custom Nav Walker: wp_bootstrap_navwalker().
-$custom_walker = __DIR__ . '/inc/wp_bootstrap_navwalker.php';
+$custom_walker = __DIR__ . '/inc/wp-bootstrap-navwalker.php';
 if ( is_readable( $custom_walker ) ) {
 	require_once $custom_walker;
 }
 
-$custom_walker_footer = __DIR__ . '/inc/wp_bootstrap_navwalker_footer.php';
+$custom_walker_footer = __DIR__ . '/inc/wp-bootstrap-navwalker-footer.php';
 if ( is_readable( $custom_walker_footer ) ) {
 	require_once $custom_walker_footer;
 }
