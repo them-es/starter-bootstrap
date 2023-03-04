@@ -35,7 +35,7 @@
 									'walker'          => new WP_Bootstrap4_Navwalker_Footer(),
 									'theme_location'  => 'footer-menu',
 									'items_wrap'      => '<ul class="menu nav justify-content-end">%3$s</ul>',
-								),
+								)
 							);
 						endif;
 
