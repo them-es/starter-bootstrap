@@ -4,7 +4,7 @@ Theme URI: https://them.es/starter
 Author: them.es
 Author URI: https://them.es
 Description: I'm an Open-source Starter Theme developed and maintained by them.es
-Version: 3.3.5
+Version: 3.4
 Requires at least: 5.0
 Tested up to: 6.2
 Requires PHP: 7.2
@@ -15,7 +15,6 @@ Text Domain: my-theme
 */
 
 /* Don't overwrite this file. Compile "/assets/main.scss" to "/assets/dist/main.css" */
-
 
 /* From http://codex.wordpress.org/CSS */
 
@@ -56,7 +55,7 @@ a img.alignleft {
 a img.aligncenter {
 	display: block;
 	margin-left: auto;
-	margin-right: auto
+	margin-right: auto;
 }
 
 .wp-caption {
