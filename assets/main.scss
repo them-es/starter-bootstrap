@@ -13,20 +13,22 @@
 // 2. Include any default variable overrides here
 
 // Options
-$enable-caret: true;
+$enable-dark-mode: false;
 $enable-rounded: true;
-$enable-shadows: false;
-$enable-gradients: false;
+$enable-shadows: true;
+$enable-gradients: true;
 $enable-transitions: true;
 $enable-reduced-motion: true;
-$enable-smooth-scroll: true;
 $enable-grid-classes: true;
+$enable-container-classes: true;
+$enable-caret: true;
 $enable-button-pointers: true;
 $enable-rfs: true;
 $enable-validation-icons: true;
-$enable-negative-margins: false;
+$enable-negative-margins: true;
 $enable-deprecation-messages: true;
 $enable-important-utilities: true;
+$enable-smooth-scroll: true;
 
 $spacer: 1rem;
 
@@ -64,6 +66,7 @@ $link-decoration: none;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/variables-dark';
 
 // 4. Include any default map overrides here
 
