@@ -1,36 +1,29 @@
 {
-  "name": "themes-starter",
-  "version": "3.0.0",
-  "license": "GPL-2.0",
-  "description": "A WordPress Starter Theme built with Bootstrap 5.",
-  "homepage": "https://them.es",
-  "author": "them.es",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/them-es/themes-starter.git"
-  },
-  "scripts": {
-    "watch": "gulp watch"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ],
-  "dependencies": {
-    "bootstrap": "^5.2.0",
-    "@popperjs/core": "^2.11.6",
-    "jquery": "^3.6.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.8",
-    "browser-sync": "^2.27.10",
-    "cssnano": "^5.1.13",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^9.0.1",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "postcss": "^8.4.16",
-    "sass": "^1.54.5",
-    "webpack": "^5.74.0",
-    "webpack-stream": "^7.0.0"
-  }
+	"name": "themes-starter",
+	"version": "3.0.0",
+	"license": "GPL-2.0",
+	"description": "A WordPress Starter Theme built with Bootstrap 5.",
+	"homepage": "https://them.es",
+	"author": "them.es",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/them-es/themes-starter.git"
+	},
+	"scripts": {
+		"watch": "webpack serve && wp-scripts start",
+		"build": "wp-scripts build"
+	},
+	"browserslist": [
+		"last 2 versions"
+	],
+	"dependencies": {
+		"bootstrap": "^5.3.1",
+		"@popperjs/core": "^2.11.8",
+		"jquery": "^3.7.0"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.11.0",
+		"path": "^0.12.7",
+		"webpack-remove-empty-scripts": "^1.0.3"
+	}
 }
