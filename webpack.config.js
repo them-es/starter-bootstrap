@@ -1,27 +1,28 @@
-const path = require('path'),
-	removeEmptyScriptsPlugin = require('webpack-remove-empty-scripts'),
-	webpackConfig = require('@wordpress/scripts/config/webpack.config');
+const path = require("path"),
+	removeEmptyScriptsPlugin = require("webpack-remove-empty-scripts"),
+	webpackConfig = require("@wordpress/scripts/config/webpack.config");
 
 // Extend the @wordpress webpack config and add the entry points.
 module.exports = {
 	...webpackConfig,
 	...{
-		mode: 'production',
+		mode: "production",
 		devServer: {
 			static: {
-				directory: path.join(__dirname, 'assets'),
+				directory: path.join(__dirname, "assets"),
 			},
 			client: {
 				overlay: false,
 			},
+			liveReload: true,
 			hot: false,
 			compress: true,
 			devMiddleware: {
 				writeToDisk: true,
 			},
 		},
-		context: path.resolve(__dirname, 'assets'),
-		entry: ['./main.js', './main.scss'],
+		context: path.resolve(__dirname, "assets"),
+		entry: ["./main.js", "./main.scss"],
 		// jQuery support
 		/*externals: {
 			jquery: "jQuery",

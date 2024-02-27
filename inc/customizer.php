@@ -47,8 +47,6 @@ function themes_starter_customize( $wp_customize ) {
 				'label'       => __( 'Upload Header Logo', 'my-theme' ),
 				'description' => __( 'Height: &gt;80px', 'my-theme' ),
 				'section'     => 'theme_header_section',
-				'settings'    => 'header_logo',
-				'priority'    => 1,
 			)
 		)
 	);
@@ -64,16 +62,14 @@ function themes_starter_customize( $wp_customize ) {
 	$wp_customize->add_control(
 		'navbar_scheme',
 		array(
-			'type'     => 'radio',
-			'label'    => __( 'Navbar Scheme', 'my-theme' ),
-			'section'  => 'theme_header_section',
-			'choices'  => array(
+			'type'    => 'radio',
+			'label'   => __( 'Navbar Scheme', 'my-theme' ),
+			'section' => 'theme_header_section',
+			'choices' => array(
 				'navbar-light bg-light'  => __( 'Default', 'my-theme' ),
 				'navbar-dark bg-dark'    => __( 'Dark', 'my-theme' ),
 				'navbar-dark bg-primary' => __( 'Primary', 'my-theme' ),
 			),
-			'settings' => 'navbar_scheme',
-			'priority' => 1,
 		)
 	);
 
@@ -88,16 +84,14 @@ function themes_starter_customize( $wp_customize ) {
 	$wp_customize->add_control(
 		'navbar_position',
 		array(
-			'type'     => 'radio',
-			'label'    => __( 'Navbar', 'my-theme' ),
-			'section'  => 'theme_header_section',
-			'choices'  => array(
+			'type'    => 'radio',
+			'label'   => __( 'Navbar', 'my-theme' ),
+			'section' => 'theme_header_section',
+			'choices' => array(
 				'static'       => __( 'Static', 'my-theme' ),
 				'fixed_top'    => __( 'Fixed to top', 'my-theme' ),
 				'fixed_bottom' => __( 'Fixed to bottom', 'my-theme' ),
 			),
-			'settings' => 'navbar_position',
-			'priority' => 2,
 		)
 	);
 
@@ -112,11 +106,9 @@ function themes_starter_customize( $wp_customize ) {
 	$wp_customize->add_control(
 		'search_enabled',
 		array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Show Searchfield?', 'my-theme' ),
-			'section'  => 'theme_header_section',
-			'settings' => 'search_enabled',
-			'priority' => 3,
+			'type'    => 'checkbox',
+			'label'   => __( 'Show Searchfield?', 'my-theme' ),
+			'section' => 'theme_header_section',
 		)
 	);
 }
