@@ -134,6 +134,8 @@ if ( ! function_exists( 'themes_starter_add_user_fields' ) ) {
  *
  * @since v1.0
  *
+ * @global WP_Post $post Global post object.
+ *
  * @return bool
  */
 function is_blog() {
@@ -312,11 +314,13 @@ if ( ! function_exists( 'themes_starter_article_posted_on' ) ) {
  *
  * @since v1.0
  *
+ * @global WP_Post $post Global post object.
+ *
  * @return string
  */
 function themes_starter_password_form() {
 	global $post;
-	$label = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
+	$label = 'pwbox-' . ( empty( $post->ID ) ? wp_rand() : $post->ID );
 
 	$output                  = '<div class="row">';
 		$output             .= '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">';

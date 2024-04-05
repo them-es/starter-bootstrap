@@ -112,7 +112,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 					} else {
 						$atts['class'] = 'nav-link'; // First level.
 					}
-					if ( in_array( 'current-menu-item', $classes ) ) {
+					if ( in_array( 'current-menu-item', $classes, true ) ) {
 						$atts['class'] .= ' active';
 					}
 				}

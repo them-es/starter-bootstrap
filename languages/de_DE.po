@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: them.es Starter Theme v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-20 13:02+0000\n"
-"PO-Revision-Date: 2020-10-20 13:12+0000\n"
+"PO-Revision-Date: 2024-03-18 13:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -27,17 +27,43 @@ msgstr ""
 "X-Loco-Target-Locale: de_DE\n"
 "X-Loco-Version: 2.4.3; wp-5.6-alpha-49185"
 
-#: functions.php:142
-msgid "Page "
-msgstr "Seite "
+#. 1: date, 2: time
+#: functions.php:357
+#, php-format
+msgid "%1$s ago"
+msgstr "vor %1$s"
 
-#: functions.php:204
-msgid "Older posts"
-msgstr "Ältere Einträge"
+#. 1: comment author, 2: date and time
+#: functions.php:351
+#, php-format
+msgid "%1$s, %2$s"
+msgstr ""
 
-#: functions.php:205
-msgid "Newer posts"
-msgstr "Neuere Einträge"
+#: content-index.php:19
+#, php-format
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] "%s Kommentar"
+msgstr[1] "%s Kommentare"
+
+#: comments.php:51 comments.php:71
+msgid "&larr; Older Comments"
+msgstr "&larr; Ältere Kommentare"
+
+#. used between list items, there is a space after the comma
+#: content-single.php:40 content-single.php:43 content.php:43 content.php:54
+msgid ", "
+msgstr ""
+
+#: content.php:47
+#, php-format
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Veröffentlicht unter</span> %2$s"
+
+#: content.php:64
+#, php-format
+msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+msgstr "<span class=\"%1$s\">Getagged</span> %2$s"
 
 #: functions.php:274
 #, php-format
@@ -54,28 +80,85 @@ msgstr ""
 "class=\"author-meta vcard\"><a class=\"url fn n\" href=\"%5$s\" "
 "title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
-#: functions.php:280
+#: author-bio.php:14
 #, php-format
-msgid "View all posts by %s"
-msgstr "Zeige alle Artikel von %s"
+msgid "About %s"
+msgstr "Über %s"
 
-#: functions.php:298
-msgid ""
-"This content is password protected. To view it please enter your password "
-"below."
-msgstr "Dieser Inhalt ist passwortgeschützt. Bitte geben Sie das Passwort ein."
+#: content-none.php:13
+msgid "Apologies, but no results were found for the requested archive."
+msgstr "Leider wurden in diesem Archiv keine Einträge gefunden."
 
-#: functions.php:301
-msgid "Password"
-msgstr "Passwort"
+#: author.php:21
+#, php-format
+msgid "Author Archives: %s"
+msgstr "Autor: %s"
 
-#: functions.php:302
-msgid "Submit"
-msgstr "Senden"
+#: archive.php:19
+msgid "Blog Archives"
+msgstr "Blog Archiv"
 
-#: functions.php:337
-msgid "Pingback:"
+#. Name of the template
+msgid "Blog Index"
 msgstr ""
+
+#: functions.php:431
+msgid "Cancel reply"
+msgstr "Antwort abbrechen"
+
+#: sidebar.php:58
+msgid "Categories"
+msgstr "Kategorien"
+
+#: category.php:11
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Kategorie: %s"
+
+#: functions.php:418
+msgid "Comment"
+msgstr "Kommentar"
+
+#: comments.php:50 comments.php:70
+msgid "Comment navigation"
+msgstr "Kommentar Navigation"
+
+#: comments.php:82
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#. 1: number of comments, 2: post title
+#: comments.php:34
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s Antwort zu &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Antworten zu &ldquo;%2$s&rdquo;"
+
+#. %s: post title
+#: comments.php:30
+#, php-format
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr "Eine Antwort zu &ldquo;%s&rdquo;"
+
+#: content.php:32
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+#: archive.php:13
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Tages-Archiv: %s"
+
+#: inc/customizer.php:55
+msgid "Dark"
+msgstr ""
+
+#: inc/customizer.php:54
+msgid "Default"
+msgstr "Standard"
 
 #: functions.php:337 functions.php:361 content-single.php:34 index.php:17
 #: page-full.php:21 content.php:86 footer.php:49 page.php:23 sidebar.php:19
@@ -83,50 +166,50 @@ msgstr ""
 msgid "Edit"
 msgstr "Editieren"
 
-#. 1: comment author, 2: date and time
-#: functions.php:351
-#, php-format
-msgid "%1$s, %2$s"
-msgstr ""
-
-#. 1: date, 2: time
-#: functions.php:357
-#, php-format
-msgid "%1$s ago"
-msgstr "vor %1$s"
-
-#: functions.php:366
-msgid "Your comment is awaiting moderation."
-msgstr "Ihr Kommentar wird derzeit überprüft."
-
-#: functions.php:375
-msgid "Reply"
-msgstr "Antworten"
-
-#: functions.php:406
-msgid "Name"
-msgstr ""
-
 #: functions.php:408
 msgid "Email"
 msgstr "E-Mail-Adresse"
 
-#: functions.php:412
-msgid ""
-"Save my name, email, and website in this browser for the next time I comment."
+#: content.php:13
+msgid "Featured"
+msgstr "Empfohlen"
+
+#: inc/customizer.php:74
+msgid "Fixed to bottom"
 msgstr ""
-"Name, E-Mail und Website im Browser für das nächste Mal speichern wenn ich "
-"einen Kommentar abgebe."
 
-#: functions.php:418
-msgid "Comment"
-msgstr "Kommentar"
+#: inc/customizer.php:73
+msgid "Fixed to top"
+msgstr ""
 
-#: functions.php:420
+#: inc/customizer.php:38
+msgid "Height: &gt;80px"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://them.es"
+msgstr ""
+
+#. URI of the theme
+msgid "https://them.es/starter"
+msgstr ""
+
+#. Description of the theme
+msgid "I'm an Open-source Starter Theme developed and maintained by them.es"
+msgstr ""
+
+#: 404.php:15
+msgid "It looks like nothing was found at this location."
+msgstr "An dieser Stelle wurde nichts gefunden."
+
+#: content.php:79
+msgid "Leave a comment"
+msgstr "Einen Kommentar abgeben"
+
+#: functions.php:430
 #, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
-"Bitte <a href=\"%s\">loggen Sie sich ein</a> um einen Kommentar zu posten."
+msgid "Leave a Reply to %s"
+msgstr "Kommentar abgeben zu %s"
 
 #: functions.php:422
 #, php-format
@@ -137,37 +220,199 @@ msgstr ""
 "Eingeloggt als <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Aus dem "
 "Account ausloggen?\">Ausloggen?</a>"
 
-#: functions.php:424
-msgid "Your Email address will not be published."
-msgstr "Ihre Email Adresse wird nicht veröffentlicht."
+#: archive.php:15
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
 
-#: functions.php:430
+#: archive.php:15
 #, php-format
-msgid "Leave a Reply to %s"
-msgstr "Kommentar abgeben zu %s"
+msgid "Monthly Archives: %s"
+msgstr "Monats-Archiv: %s"
 
-#: functions.php:431
-msgid "Cancel reply"
-msgstr "Antwort abbrechen"
+#: content-index.php:43 content.php:84 sidebar.php:65
+msgid "more"
+msgstr "mehr"
 
-#: functions.php:432
-msgid "Post Comment"
-msgstr "Kommentar posten"
+#: functions.php:406
+msgid "Name"
+msgstr ""
 
-#: category.php:11
-#, php-format
-msgid "Category Archives: %s"
-msgstr "Kategorie: %s"
+#: inc/customizer.php:69
+msgid "Navbar"
+msgstr ""
+
+#: inc/customizer.php:51
+msgid "Navbar Scheme"
+msgstr ""
+
+#: comments.php:52 comments.php:72
+msgid "Newer Comments &rarr;"
+msgstr "Neuere Kommentare &rarr;"
+
+#: functions.php:205
+msgid "Newer posts"
+msgstr "Neuere Einträge"
+
+#: image.php:20
+#, fuzzy
+#| msgid "Next Image"
+msgid "Next image"
+msgstr "Nächstes Bild"
+
+#: comments.php:19
+msgid "No Comments yet!"
+msgstr "Noch keine Kommentare!"
+
+#. Name of the template
+#: 404.php:13
+msgid "Not found"
+msgstr "Nicht gefunden"
+
+#: content-none.php:10 search.php:19
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#: functions.php:204
+msgid "Older posts"
+msgstr "Ältere Einträge"
+
+#: image.php:52
+msgid "Page"
+msgstr "Seite"
+
+#: functions.php:142
+msgid "Page "
+msgstr "Seite "
+
+#. Name of the template
+msgid "Page (Default)"
+msgstr ""
+
+#. Name of the template
+msgid "Page (Full width)"
+msgstr ""
 
 #: content-single.php:30 content-index.php:39 page-full.php:18 content.php:33
 #: page.php:20 image.php:48
 msgid "Pages:"
 msgstr "Seiten:"
 
-#. used between list items, there is a space after the comma
-#: content-single.php:40 content-single.php:43 content.php:43 content.php:54
-msgid ", "
+#: image.php:74
+msgid "Parent post"
 msgstr ""
+
+#: image.php:73
+#, fuzzy
+msgctxt "Parent post link"
+msgid "Published in %title"
+msgstr ""
+"<span class=\"meta-nav\">Veröffentlicht in</span> <span class=\"post-title\">"
+"%title</span>"
+
+#: functions.php:301
+msgid "Password"
+msgstr "Passwort"
+
+#: content-index.php:10 content.php:12 content.php:16 sidebar.php:47
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permalink zu %s"
+
+#: functions.php:337
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:432
+msgid "Post Comment"
+msgstr "Kommentar posten"
+
+#: image.php:19
+#, fuzzy
+#| msgid "Previous Image"
+msgid "Previous image"
+msgstr "Voriges Bild"
+
+#: inc/customizer.php:56
+msgid "Primary"
+msgstr ""
+
+#: sidebar.php:36
+msgid "Recent Posts"
+msgstr "Aktuelle Einträge"
+
+#: functions.php:375
+msgid "Reply"
+msgstr "Antworten"
+
+#: functions.php:412
+msgid ""
+"Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+"Name, E-Mail und Website im Browser für das nächste Mal speichern wenn ich "
+"einen Kommentar abgebe."
+
+#: header.php:63 header.php:64 searchform.php:7 searchform.php:11
+#: searchform.php:13
+msgid "Search"
+msgstr "Suche"
+
+#: search.php:11
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Suchresultat für: %s"
+
+#: inc/customizer.php:87
+msgid "Show Searchfield?"
+msgstr "Suchfeld anzeigen?"
+
+#: header.php:22
+msgid "Skip to main content"
+msgstr "Zum Hauptinhalt springen"
+
+#: search.php:21
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Leider wurde zu diesem Suchbegriff nichts gefunden. Bitte versuchen Sie es "
+"erneut."
+
+#: inc/customizer.php:72
+msgid "Static"
+msgstr ""
+
+#: functions.php:302
+msgid "Submit"
+msgstr "Senden"
+
+#: tag.php:11
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#. Author of the theme
+msgid "them.es"
+msgstr ""
+
+#. Name of the theme
+msgid "them.es Starter Theme (Bootstrap 4)"
+msgstr ""
+
+#: functions.php:298
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below."
+msgstr "Dieser Inhalt ist passwortgeschützt. Bitte geben Sie das Passwort ein."
+
+#: content-single.php:49
+#, php-format
+msgid ""
+"This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
+"href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dieser Eintrag wurde von <a href=\"%6$s\">%5$s</a> veröffentlicht. Bookmark "
+"<a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">erstellen</a>."
 
 #: content-single.php:45
 #, php-format
@@ -190,57 +435,26 @@ msgstr ""
 "Bookmark <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">"
 "erstellen</a>."
 
-#: content-single.php:49
+#: header.php:43
+msgid "Toggle navigation"
+msgstr "Navigation umschalten"
+
+#: inc/customizer.php:37
+msgid "Upload Header Logo"
+msgstr "Headerlogo hochladen"
+
+#: functions.php:280
 #, php-format
-msgid ""
-"This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
-"href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
-"Dieser Eintrag wurde von <a href=\"%6$s\">%5$s</a> veröffentlicht. Bookmark "
-"<a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">erstellen</a>."
+msgid "View all posts by %s"
+msgstr "Zeige alle Artikel von %s"
 
-#. Name of the template
-#: 404.php:13
-msgid "Not found"
-msgstr "Nicht gefunden"
-
-#: 404.php:15
-msgid "It looks like nothing was found at this location."
-msgstr "An dieser Stelle wurde nichts gefunden."
-
-#: content-index.php:10 content.php:12 content.php:16 sidebar.php:47
-#, php-format
-msgid "Permalink to %s"
-msgstr "Permalink zu %s"
-
-#: content-index.php:19
-#, php-format
-msgid "%s Comment"
-msgid_plural "%s Comments"
-msgstr[0] "%s Kommentar"
-msgstr[1] "%s Kommentare"
-
-#: content-index.php:43 content.php:84 sidebar.php:65
-msgid "more"
-msgstr "mehr"
-
-#. Name of the template
-msgid "Blog Index"
+#: author-bio.php:23
+msgid "Website"
 msgstr ""
 
-#: archive.php:13
-#, php-format
-msgid "Daily Archives: %s"
-msgstr "Tages-Archiv: %s"
-
-#: archive.php:15
-#, php-format
-msgid "Monthly Archives: %s"
-msgstr "Monats-Archiv: %s"
-
-#: archive.php:15
-msgctxt "monthly archives date format"
-msgid "F Y"
+#: archive.php:17
+msgctxt "yearly archives date format"
+msgid "Y"
 msgstr ""
 
 #: archive.php:17
@@ -248,232 +462,16 @@ msgstr ""
 msgid "Yearly Archives: %s"
 msgstr "Jahres-Archiv: %s"
 
-#: archive.php:17
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: archive.php:19
-msgid "Blog Archives"
-msgstr "Blog Archiv"
-
-#: content-none.php:10 search.php:19
-msgid "Nothing Found"
-msgstr "Nichts gefunden"
-
-#: content-none.php:13
-msgid "Apologies, but no results were found for the requested archive."
-msgstr "Leider wurden in diesem Archiv keine Einträge gefunden."
-
-#. Name of the template
-msgid "Page (Full width)"
-msgstr ""
-
-#: comments.php:19
-msgid "No Comments yet!"
-msgstr "Noch keine Kommentare!"
-
-#. %s: post title
-#: comments.php:30
+#: functions.php:420
 #, php-format
-msgctxt "comments title"
-msgid "One Reply to &ldquo;%s&rdquo;"
-msgstr "Eine Antwort zu &ldquo;%s&rdquo;"
-
-#. 1: number of comments, 2: post title
-#: comments.php:34
-#, php-format
-msgctxt "comments title"
-msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s Antwort zu &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s Antworten zu &ldquo;%2$s&rdquo;"
-
-#: comments.php:50 comments.php:70
-msgid "Comment navigation"
-msgstr "Kommentar Navigation"
-
-#: comments.php:51 comments.php:71
-msgid "&larr; Older Comments"
-msgstr "&larr; Ältere Kommentare"
-
-#: comments.php:52 comments.php:72
-msgid "Newer Comments &rarr;"
-msgstr "Neuere Kommentare &rarr;"
-
-#: comments.php:82
-msgid "Comments are closed."
-msgstr "Kommentare sind geschlossen."
-
-#: tag.php:11
-#, php-format
-msgid "Tag: %s"
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
+"Bitte <a href=\"%s\">loggen Sie sich ein</a> um einen Kommentar zu posten."
 
-#: content.php:13
-msgid "Featured"
-msgstr "Empfohlen"
+#: functions.php:366
+msgid "Your comment is awaiting moderation."
+msgstr "Ihr Kommentar wird derzeit überprüft."
 
-#: content.php:32
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
-
-#: content.php:47
-#, php-format
-msgid "<span class=\"%1$s\">Posted in</span> %2$s"
-msgstr "<span class=\"%1$s\">Veröffentlicht unter</span> %2$s"
-
-#: content.php:64
-#, php-format
-msgid "<span class=\"%1$s\">Tagged</span> %2$s"
-msgstr "<span class=\"%1$s\">Getagged</span> %2$s"
-
-#: content.php:79
-msgid "Leave a comment"
-msgstr "Einen Kommentar abgeben"
-
-#: search.php:11
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Suchresultat für: %s"
-
-#: search.php:21
-msgid ""
-"Sorry, but nothing matched your search criteria. Please try again with some "
-"different keywords."
-msgstr ""
-"Leider wurde zu diesem Suchbegriff nichts gefunden. Bitte versuchen Sie es "
-"erneut."
-
-#: header.php:22
-msgid "Skip to main content"
-msgstr "Zum Hauptinhalt springen"
-
-#: header.php:43
-msgid "Toggle navigation"
-msgstr "Navigation umschalten"
-
-#: header.php:63 header.php:64 searchform.php:7 searchform.php:11
-#: searchform.php:13
-msgid "Search"
-msgstr "Suche"
-
-#: author-bio.php:14
-#, php-format
-msgid "About %s"
-msgstr "Über %s"
-
-#: author-bio.php:23
-msgid "Website"
-msgstr ""
-
-#. Name of the template
-msgid "Page (Default)"
-msgstr ""
-
-#: author.php:21
-#, php-format
-msgid "Author Archives: %s"
-msgstr "Autor: %s"
-
-#: sidebar.php:36
-msgid "Recent Posts"
-msgstr "Aktuelle Einträge"
-
-#: sidebar.php:58
-msgid "Categories"
-msgstr "Kategorien"
-
-#: image.php:19
-#, fuzzy
-#| msgid "Previous Image"
-msgid "Previous image"
-msgstr "Voriges Bild"
-
-#: image.php:20
-#, fuzzy
-#| msgid "Next Image"
-msgid "Next image"
-msgstr "Nächstes Bild"
-
-#: image.php:52
-msgid "Page"
-msgstr "Seite"
-
-#: image.php:73
-#, fuzzy
-#| "<span class=\"meta-nav\">Published in</span> <span class=\"post-title\">"
-#| "%title</span>"
-msgctxt "Parent post link"
-msgid "Published in %title"
-msgstr ""
-"<span class=\"meta-nav\">Veröffentlicht in</span> <span class=\"post-title\">"
-"%title</span>"
-
-#: image.php:74
-msgid "Parent post"
-msgstr ""
-
-#: inc/customizer.php:37
-msgid "Upload Header Logo"
-msgstr "Headerlogo hochladen"
-
-#: inc/customizer.php:38
-msgid "Height: &gt;80px"
-msgstr ""
-
-#: inc/customizer.php:51
-msgid "Navbar Scheme"
-msgstr ""
-
-#: inc/customizer.php:54
-msgid "Default"
-msgstr "Standard"
-
-#: inc/customizer.php:55
-msgid "Dark"
-msgstr ""
-
-#: inc/customizer.php:56
-msgid "Primary"
-msgstr ""
-
-#: inc/customizer.php:69
-msgid "Navbar"
-msgstr ""
-
-#: inc/customizer.php:72
-msgid "Static"
-msgstr ""
-
-#: inc/customizer.php:73
-msgid "Fixed to top"
-msgstr ""
-
-#: inc/customizer.php:74
-msgid "Fixed to bottom"
-msgstr ""
-
-#: inc/customizer.php:87
-msgid "Show Searchfield?"
-msgstr "Suchfeld anzeigen?"
-
-#. Name of the theme
-msgid "them.es Starter Theme (Bootstrap 4)"
-msgstr ""
-
-#. Description of the theme
-msgid "I'm an Open-source Starter Theme developed and maintained by them.es"
-msgstr ""
-
-#. URI of the theme
-msgid "https://them.es/starter"
-msgstr ""
-
-#. Author of the theme
-msgid "them.es"
-msgstr ""
-
-#. Author URI of the theme
-msgid "https://them.es"
-msgstr ""
+#: functions.php:424
+msgid "Your Email address will not be published."
+msgstr "Ihre Email Adresse wird nicht veröffentlicht."
