@@ -22,8 +22,8 @@
 		"jquery": "^3.7.0"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.11.0",
+		"@wordpress/scripts": "^27.7.0",
 		"path": "^0.12.7",
-		"webpack-remove-empty-scripts": "^1.0.3"
+		"webpack-remove-empty-scripts": "^1.0.4"
 	}
 }
