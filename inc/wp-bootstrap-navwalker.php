@@ -70,9 +70,9 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			} elseif ( 0 === strcasecmp( $item->attr_title, 'disabled' ) ) {
 				$output .= '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 			} else {
-				$atts        = array();
+				$atts = array();
 
-				$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
+				$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 				if ( 0 === $depth ) {
 					$classes[] = 'nav-item'; // First level.
 				}
@@ -86,10 +86,10 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				}
 				$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-				$id          = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
-				$id          = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+				$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
+				$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-				$output     .= '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
+				$output .= '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
 
 				if ( empty( $item->attr_title ) ) {
 					$atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : '';
@@ -97,6 +97,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 					$atts['title'] = $item->attr_title;
 				}
 
+				$atts['role']   = 'menuitem';
 				$atts['target'] = ! empty( $item->target ) ? $item->target : '';
 				$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 				// If item has_children add atts to a.
@@ -204,9 +205,9 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				if ( $container ) {
 					$output .= '<' . esc_attr( $container ) . ( $container_id ? ' id="' . esc_attr( $container_id ) . '"' : '' ) . ( $container_class ? ' class="' . esc_attr( $container_class ) . '"' : '' ) . '>';
 				}
-				$output .= '<ul' . ( $menu_id ? ' id="' . esc_attr( $menu_id ) . '"' : '' ) . ( $menu_class ? ' class="' . esc_attr( $menu_class ) . '"' : '' ) . '>';
+				$output     .= '<ul' . ( $menu_id ? ' id="' . esc_attr( $menu_id ) . '"' : '' ) . ( $menu_class ? ' class="' . esc_attr( $menu_class ) . '"' : '' ) . '>';
 					$output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_html__( 'Add a menu', 'my-theme' ) . '</a></li>';
-				$output .= '</ul>';
+				$output     .= '</ul>';
 				if ( $container ) {
 					$output .= '</' . esc_attr( $container ) . '>';
 				}

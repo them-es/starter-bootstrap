@@ -43,7 +43,7 @@ if ( ! class_exists( 'WP_Bootstrap4_Navwalker_Footer' ) ) {
 				$classes[] = 'nav-item'; // First level.
 			}
 			if ( preg_grep( '/^current/', $classes ) ) {
-				$classes[] = 'active';
+				$classes[]            = 'active';
 				$atts['aria-current'] = 'page';
 			}
 
@@ -55,6 +55,7 @@ if ( ! class_exists( 'WP_Bootstrap4_Navwalker_Footer' ) ) {
 
 			$output .= '<li' . $class_names . '>';
 
+			$atts['role']   = 'menuitem';
 			$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
 			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
 			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
@@ -65,19 +66,18 @@ if ( ! class_exists( 'WP_Bootstrap4_Navwalker_Footer' ) ) {
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
 				if ( ! empty( $value ) ) {
-					$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+					$value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 					$attributes .= ' ' . esc_attr( $attr ) . '="' . $value . '"';
 				}
 			}
 
-			$item_output = $args->before;
-			$item_output .= '<a' . $attributes . ' class="nav-link">';
+			$item_output      = $args->before;
+			$item_output     .= '<a' . $attributes . ' class="nav-link">';
 				$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= '</a>';
-			$item_output .= $args->after;
+			$item_output     .= '</a>';
+			$item_output     .= $args->after;
 
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}
-
 	}
 }
