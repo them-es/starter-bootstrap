@@ -2,6 +2,6 @@
  * them.es Theme Editor Styles
  */
 
-body {
-	font-family: inherit !important;
+html :where(.editor-styles-wrapper) {
+	font-family: inherit;
 }
